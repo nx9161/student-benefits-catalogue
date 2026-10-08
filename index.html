@@ -275,6 +275,25 @@
 
       footer { margin-top: 64px; border-top: 1px solid var(--line); padding-top: 20px; color: var(--ink-3); font-size: 13px; }
       footer p { margin: 6px 0; }
+      .kofi-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin: 18px 0 4px; }
+      .kofi-row .kofi-note { font-size: 13.5px; color: var(--ink-2); max-width: 560px; }
+      .kofi-btn {
+        display: inline-flex; align-items: center; gap: 8px;
+        background: var(--accent); color: var(--accent-ink);
+        font-size: 15px; font-weight: 700; line-height: 1;
+        border-radius: 999px; padding: 13px 22px; white-space: nowrap;
+        box-shadow: var(--shadow); border: 1px solid transparent;
+      }
+      .kofi-btn:hover { text-decoration: none; filter: brightness(1.08); }
+      .kofi-btn:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 2px; }
+      .kofi-btn .kofi-cup { font-size: 17px; line-height: 1; }
+      .support-cta {
+        margin-top: 36px; background: var(--surface); border: 1px solid var(--line);
+        border-radius: 14px; padding: 22px; box-shadow: var(--shadow);
+        display: flex; flex-wrap: wrap; gap: 14px 20px; align-items: center; justify-content: space-between;
+      }
+      .support-cta h3 { margin: 0 0 4px; font-size: 18px; }
+      .support-cta p { margin: 0; color: var(--ink-2); font-size: 14.5px; max-width: 640px; }
       .hidden-by-filter { display: none !important; }
     </style>
   </head>
@@ -289,6 +308,10 @@
         <h1>Every student benefit, in one place</h1>
         <p class="lede">The complete GitHub Student Developer Pack, plus everything a verified US student email unlocks off GitHub — in stores, on campus, and online. Search it, filter it, work through it.</p>
         <p class="byline">Prepared by <b>Naman Parmar</b> — Graduate student in Data Science at Rowan University</p>
+        <div class="kofi-row">
+          <a class="kofi-btn" href="https://ko-fi.com/nx9161" target="_blank" rel="noopener"><span class="kofi-cup" aria-hidden="true">☕</span> Support Us on Ko-fi</a>
+          <span class="kofi-note">If this catalogue saved you money, a coffee helps keep it updated and free for the next student.</span>
+        </div>
         <div class="freeband" role="note">
           <div class="fb-grid">
             <div class="fb-item"><b>205</b><span>benefits in this catalogue</span></div>
@@ -387,9 +410,18 @@
         <p>Try a broader term — a brand name, or a category like “music”, “cloud”, or “domain”.</p>
       </div>
 
+      <div class="support-cta">
+        <div>
+          <h3>Found this useful? Support the catalogue</h3>
+          <p>It's free for every student, and tips on Ko-fi help cover the time it takes to keep 205 offers checked and current.</p>
+        </div>
+        <a class="kofi-btn" href="https://ko-fi.com/nx9161" target="_blank" rel="noopener"><span class="kofi-cup" aria-hidden="true">☕</span> Support on Ko-fi</a>
+      </div>
+
       <footer>
         <p>Compiled October 8, 2026. Every entry has an <b>Apply</b> button that opens the page where the offer is actually claimed — the offer card on the GitHub Pack page for Pack partners, the brand's own student page or its verification platform (UNiDAYS, Student Beans, SheerID, ID.me) for the rest — plus a step-by-step claim guide that runs from signup to the redeemed offer. A few in-person-only deals (show student ID at the counter) have steps instead of a button, because there is nothing to apply for online. Pack offers are dynamic — partners leave and terms change (DigitalOcean exited in July 2026) — so confirm the terms on the claim page before counting on one.</p>
         <p>Items tagged <b>unconfirmed</b> could not be verified as current — they're kept visible rather than silently dropped, and the open questions (hotel discounts, US IKEA, concert ticketing, Paramount+/Peacock exact tiers) are marked where they sit.</p>
+        <p>If the button doesn't work for you, email me at <a href="mailto:namanparmar9161@gmail.com">namanparmar9161@gmail.com</a> and we'll find another way you can support.</p>
       </footer>
     </div>
 
@@ -1530,6 +1562,15 @@
           : TOTAL + " benefits across the Pack, in-person, and online lists";
       }
       applyFilter();
+    </script>
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+      kofiWidgetOverlay.draw('nx9161', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Support Us',
+        'floating-chat.donateButton.background-color': '#fcbf47',
+        'floating-chat.donateButton.text-color': '#323842'
+      });
     </script>
   </body>
 </html>
