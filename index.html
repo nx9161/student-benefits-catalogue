@@ -395,6 +395,74 @@
       }
       .support-cta h3 { margin: 0 0 4px; font-size: 18px; }
       .support-cta p { margin: 0; color: var(--ink-2); font-size: 14.5px; max-width: 640px; }
+      /* ---------- Page nav (hash routing) ---------- */
+      .pagenav {
+        display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 6px;
+        background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px;
+        box-shadow: var(--shadow);
+      }
+      .pagenav a {
+        flex: 1 1 auto; text-align: center; text-decoration: none;
+        font-weight: 600; font-size: 14.5px; line-height: 1.2;
+        padding: 12px 16px; border-radius: 999px; color: var(--ink-2);
+        min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+        border: 1px solid transparent;
+      }
+      .pagenav a:hover { text-decoration: none; color: var(--ink); }
+      .pagenav a[aria-current="page"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+      .pagenav a:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 2px; }
+      @media (max-width: 640px) { .pagenav { border-radius: 16px; } .pagenav a { flex: 1 1 40%; font-size: 14px; padding: 12px 10px; } }
+      /* ---------- Graduation freebies ---------- */
+      .grad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+      @media (max-width: 760px) { .grad-grid { grid-template-columns: 1fr; } }
+      .grad-card {
+        background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+        padding: 18px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 10px;
+      }
+      .grad-card h3 { margin: 0; font-size: 17px; line-height: 1.25; }
+      .grad-card .g-what { margin: 0; font-size: 14.5px; color: var(--ink); }
+      .grad-card .g-what b { color: var(--accent); }
+      .grad-card .g-method { margin: 0; font-size: 13.5px; color: var(--ink-2); line-height: 1.55; }
+      .grad-card .g-method b { color: var(--ink); }
+      .grad-flags { display: flex; flex-wrap: wrap; gap: 6px; }
+      .bring-list { margin: 6px 0 0; padding-left: 18px; font-size: 13.5px; color: var(--ink-2); }
+      .bring-list li { margin: 4px 0; }
+      .bring-list li b { color: var(--ink); }
+      .bring-title { font-family: "IBM Plex Mono", monospace; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 8px 0 0; }
+      .template-box {
+        margin-top: 8px; border: 1px dashed var(--accent); background: var(--accent-soft);
+        border-radius: 12px; padding: 12px;
+      }
+      .template-box .tb-head {
+        display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between;
+      }
+      .template-box .tb-title { font-family: "IBM Plex Mono", monospace; font-size: 11px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: var(--accent); }
+      .template-box textarea {
+        width: 100%; margin-top: 10px; border: 1px solid var(--line); border-radius: 10px;
+        background: var(--surface); color: var(--ink); font-family: "IBM Plex Mono", monospace;
+        font-size: 12.5px; line-height: 1.55; padding: 10px; resize: vertical; min-height: 168px;
+      }
+      .template-box textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+      .copy-template-btn {
+        cursor: pointer; background: var(--accent); color: var(--accent-ink); border: 1px solid var(--accent);
+        border-radius: 999px; padding: 10px 14px; font: inherit; font-size: 13px; font-weight: 700;
+        min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; white-space: nowrap;
+      }
+      .copy-template-btn:active { transform: scale(.98); }
+      .template-note { margin: 8px 0 0; font-size: 12.5px; color: var(--ink-2); line-height: 1.5; }
+      .template-note a { text-decoration: underline; text-underline-offset: 2px; }
+      .grad-promo {
+        margin-top: 22px; background: var(--ink); color: var(--bg); border-radius: 14px; padding: 18px;
+        display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center; justify-content: space-between;
+      }
+      .grad-promo h3 { margin: 0 0 4px; font-size: 17px; color: inherit; }
+      .grad-promo p { margin: 0; font-size: 14px; opacity: .9; max-width: 640px; }
+      .grad-promo a {
+        background: var(--accent); color: var(--accent-ink); text-decoration: none; font-weight: 700;
+        border-radius: 999px; padding: 12px 18px; min-height: 48px; display: inline-flex; align-items: center; white-space: nowrap;
+      }
+      @media (max-width: 640px) { .grad-promo a { width: 100%; justify-content: center; } .template-box textarea { min-height: 190px; font-size: 12px; } }
+      [hidden] { display: none !important; }
       .hidden-by-filter { display: none !important; }
       .kofi-hidden { display: none !important; }
       .insta-btn {
@@ -511,19 +579,23 @@
           <p class="tip-micro">SOL &middot; BTC &middot; ETH &mdash; tip only what you can afford. Every tip is appreciated.</p>
         </div>
         <p class="byline byline-under-tip">Prepared by <b>Naman Parmar</b> — Graduate student in Data Science at Rowan University</p>
-        <div class="hero-meta">
+        <nav class="pagenav" aria-label="Site pages">
+          <a href="#/" data-route-link="home" aria-current="page">📚 Catalogue — 205 benefits</a>
+          <a href="#/graduation-freebies" data-route-link="graduation">🎓 Graduation Freebies</a>
+        </nav>
+        <div class="hero-meta home-only">
           <span><span class="dot"></span>&nbsp; Snapshot compiled October 8, 2026</span>
           <span>GitHub Pack read live from education.github.com/pack that day</span>
           <span>Offers change — re-verify before relying on any single one</span>
         </div>
-        <h1>Every student benefit, in one place</h1>
-        <p class="lede">The complete GitHub Student Developer Pack, plus everything a verified US student email unlocks off GitHub — in stores, on campus, and online. Search it, filter it, work through it.</p>
+        <h1 class="home-only">Every student benefit, in one place</h1>
+        <p class="lede home-only">The complete GitHub Student Developer Pack, plus everything a verified US student email unlocks off GitHub — in stores, on campus, and online. Search it, filter it, work through it.</p>
         <!-- Ko-fi hero button hidden for now (kept restorable): set .kofi-hidden removal or SHOW_KOFI_WIDGETS=true to bring it back. -->
         <div class="kofi-row kofi-hidden" aria-hidden="true">
           <a class="kofi-btn" href="https://ko-fi.com/nx9161" target="_blank" rel="noopener" tabindex="-1"><span class="kofi-cup" aria-hidden="true">☕</span> Support Us on Ko-fi</a>
           <span class="kofi-note">If this catalogue saved you money, a coffee helps keep it updated and free for the next student.</span>
         </div>
-        <div class="freeband" role="note">
+        <div class="freeband home-only" role="note">
           <div class="fb-grid">
             <div class="fb-item"><b>205</b><span>benefits in this catalogue</span></div>
             <div class="fb-item"><b>127</b><span>completely free — no payment</span></div>
@@ -531,14 +603,14 @@
           </div>
           <p class="fb-note">Counted from the listings below (October 8, 2026). “Completely free” means $0 out of pocket for the stated term — free plans, licenses, trials, and credits you can claim and use without paying; percentage discounts don’t count. The value totals only the dollar figures printed in the listings (account credits, stated plan values, and priced plans during their free months) — most free offers state no dollar value at all, so the real combined value is considerably higher.</p>
         </div>
-        <div class="stats">
+        <div class="stats home-only">
           <div class="stat"><b>83</b><span>GITHUB PACK OFFERS</span></div>
           <div class="stat"><b>110+</b><span>.EDU BENEFITS LISTED</span></div>
           <div class="stat"><b>5</b><span>VERIFICATION PLATFORMS</span></div>
           <div class="stat"><b>3</b><span>UPCOMING CLAIM DEADLINES</span></div>
         </div>
 
-        <div class="deadlines" role="note">
+        <div class="deadlines home-only" role="note">
           <h2>Act soon — dated offers</h2>
           <ul>
             <li><span class="when">By Oct 12, 2026</span> <span><a href="https://www.doordash.com/dashpass/student" target="_blank" rel="noopener"><b>DoorDash</b></a> — claim one free year of DashPass for Students (SheerID, in-app; canceling early ends benefits that month).</span> <span class="days">4 days left</span></li>
@@ -549,6 +621,7 @@
       </header>
 
       <main id="main-content">
+      <div id="view-home" data-view="home">
       <section class="block" id="verify">
         <div class="sec-head"><h2>Verify once, claim everywhere</h2></div>
         <p class="sec-intro">Most student discounts don't check your .edu email directly — they route through one of these five. Set them up once and the claims below get much faster.</p>
@@ -621,6 +694,284 @@
         <p><b>Nothing matches that search.</b></p>
         <p>Try a broader term — a brand name, or a category like “music”, “cloud”, or “domain”.</p>
       </div>
+
+      <div class="grad-promo">
+        <div>
+          <h3>🎓 Graduating soon? Don’t miss the freebies page</h3>
+          <p>Separate page just for Class of 2026: in-store free treats in cap &amp; gown, the viral “mail your announcement to brands” trend, and copy-paste outreach templates with placeholders — no invented emails, no guaranteed promises.</p>
+        </div>
+        <a href="#/graduation-freebies">Open Graduation Freebies →</a>
+      </div>
+      </div><!-- /view-home -->
+
+      <div id="view-graduation" data-view="graduation" hidden>
+      <section class="block" id="graduation-freebies">
+        <div class="sec-head"><h2>Graduation Freebies — Class of 2026</h2><span class="count">verified programs only · year-specific · check before you go</span></div>
+        <p class="sec-intro">These are <b>not</b> the year-round student discounts on the catalogue page. They’re short, graduation-season treats — mostly “show up in cap &amp; gown on one day” or “a local franchise chooses to be generous.” Dates, participating locations, and stock change every year, so treat every card as <b>verify before you rely on it</b>.</p>
+
+        <div class="callout">
+          <h3>How to use this page (read this first)</h3>
+          <p><b>1) In-store treats:</b> go on the exact date, in cap &amp; gown or with diploma / student ID, to a <b>participating</b> location only. <b>2) Local-only treats (Chick-fil-A, Golden Corral):</b> there is no national program — check your store’s Facebook / Instagram or call ahead. <b>3) Mail-an-announcement trend:</b> you physically mail a graduation announcement to a brand HQ. Some students report surprise gifts (LEGO, Sun Bum, Crumbl and others go viral most years) — <b>responses are NOT guaranteed</b>, most brands never reply, and postage is on you. Only mail brands you actually like, and never send original documents.</p>
+        </div>
+
+        <div class="plainbox">
+          <h3>Honest note on Nike &amp; Adidas</h3>
+          <ul>
+            <li><b>Nike and Adidas do NOT run “free stuff if you email us that you’re graduating” programs.</b> Nike has a 10% student discount (SheerID) and a “gifts for graduation” shopping guide; Adidas has a student discount via UNiDAYS. Those are discounts on the <a href="#/">Catalogue page</a> — not graduation freebies, and emailing them will not mail you free shoes.</li>
+            <li>No brand on this page has promised to email/mail you a freebie just because you wrote from a .edu address. Where outreach helps (asking a local store, or mailing an announcement), the template says so plainly.</li>
+          </ul>
+        </div>
+
+        <h3 class="group-title">In-store — one-day &amp; graduation-week treats</h3>
+        <div class="grad-grid">
+
+          <article class="grad-card">
+            <div class="grad-flags"><span class="tag">In-store / drive-thru</span><span class="tag amber">Date-specific · annual</span><span class="tag gray">Participating locations only</span></div>
+            <h3>Krispy Kreme — Free 3-pack for the Class of 2026</h3>
+            <p class="g-what">What you get: <b>Free 3-pack of Original Glazed® doughnuts</b> for graduating seniors.</p>
+            <p class="g-method"><b>Real claim method:</b> Krispy Kreme has run this as an <b>annual, one-day</b> graduation giveaway — listed here as <b>May 21, 2026</b> for the Class of 2026. Show up <b>in cap &amp; gown</b> (or with Class of 2026 gear / proof) at a participating shop, in-store or drive-thru. No purchase / no email signup announced for the giveaway itself. Date and terms are set by Krispy Kreme each spring — confirm the 2026 date on <a href="https://www.krispykreme.com" target="_blank" rel="noopener">krispykreme.com</a> and your local shop before you drive over.</p>
+            <p class="bring-title">What to bring — checklist</p>
+            <ul class="bring-list">
+              <li><b>Cap &amp; gown</b> (or 2026 senior shirt/gear if your shop accepts it)</li>
+              <li><b>Proof you’re Class of 2026</b> — student ID, diploma photo, or graduation program with your name</li>
+              <li><b>Before you go:</b> check “participating locations” + the exact date/time window for 2026</li>
+            </ul>
+          </article>
+
+          <article class="grad-card">
+            <div class="grad-flags"><span class="tag gray">Local only</span><span class="tag amber">Not guaranteed</span></div>
+            <h3>Chick-fil-A — Local graduation treats (no national program)</h3>
+            <p class="g-what">What you get: <b>Varies by franchise</b> — some locations give grads a free sandwich, entrée, or meal.</p>
+            <p class="g-method"><b>Real claim method:</b> There is <b>no national Chick-fil-A graduation freebie</b>. Individual franchised restaurants choose their own graduation-week offers (often posted only on that store’s Facebook/Instagram). Go in <b>cap &amp; gown or with proof of graduation</b> and ask — or message your local store before graduation week using the template on this card. If your store isn’t running one, that’s the answer; don’t argue it.</p>
+            <p class="bring-title">What to bring — checklist</p>
+            <ul class="bring-list">
+              <li><b>Cap &amp; gown</b> or diploma / graduation proof</li>
+              <li><b>Student ID</b> as backup</li>
+              <li><b>Check first:</b> your local store’s social page or a quick call — “Are you doing anything for Class of 2026 grads?”</li>
+            </ul>
+            <div class="template-box">
+              <div class="tb-head"><span class="tb-title">Ask your local store — copy &amp; paste</span><button class="copy-template-btn" type="button" data-copy-target="tpl-cfa">Copy template</button></div>
+              <textarea id="tpl-cfa" readonly>Subject: Quick question — Class of 2026 graduation treat at your location?
+
+Hello [STORE LOCATION / TEAM NAME] team,
+
+My name is [YOUR FULL NAME] and I’m graduating from [UNIVERSITY] on [GRADUATION DATE] with a [DEGREE].
+
+I’m reaching out from my student email ([STUDENT EMAIL]) to ask if your location is offering anything for Class of 2026 graduates this year (for example, in cap &amp; gown during graduation week). I completely understand if not — I just wanted to check before the day.
+
+If you are, could you let me know the date, what to bring, and whether it’s in-store only?
+
+Thank you so much, and thanks for feeding our campus community.
+
+Best,
+[YOUR FULL NAME]
+[UNIVERSITY] — Class of 2026
+[STUDENT EMAIL]
+[MAILING ADDRESS — only if they ask for it]</textarea>
+              <p class="template-note">Don’t invent a store email. Send this via your local restaurant’s official contact / social page or Chick-fil-A’s official contact page: <a href="https://www.chick-fil-a.com" target="_blank" rel="noopener">chick-fil-a.com</a> → Contact. Replace every [PLACEHOLDER] first.</p>
+            </div>
+          </article>
+
+          <article class="grad-card">
+            <div class="grad-flags"><span class="tag">In-store</span><span class="tag gray">Cap &amp; gown</span></div>
+            <h3>Insomnia Cookies — BOGO for grads in cap &amp; gown</h3>
+            <p class="g-what">What you get: <b>Buy-one-get-one cookies</b> for graduates in graduation gear (offer shape can vary by year).</p>
+            <p class="g-method"><b>Real claim method:</b> Insomnia’s graduation promo is an <b>in-store, cap-&amp;-gown</b> offer during graduation season at participating bakeries. No email claim — you redeem at the counter. Confirm the 2026 dates and “BOGO” terms on <a href="https://insomniacookies.com" target="_blank" rel="noopener">insomniacookies.com</a> / the store’s socials before you go; late-night hours fill up on graduation weekend.</p>
+            <p class="bring-title">What to bring — checklist</p>
+            <ul class="bring-list">
+              <li><b>Cap &amp; gown</b> (photo of you in it on your phone helps if you’ve already returned the gown)</li>
+              <li><b>Student ID / graduation proof</b></li>
+              <li>A friend — BOGO is better shared, and lines move faster together</li>
+            </ul>
+          </article>
+
+          <article class="grad-card">
+            <div class="grad-flags"><span class="tag">In-store</span><span class="tag gray">Grad gear / diploma</span></div>
+            <h3>Magnolia Bakery — Free cupcake for grads</h3>
+            <p class="g-what">What you get: <b>Free cupcake</b> for graduates in grad gear or with a diploma (seasonal promo).</p>
+            <p class="g-method"><b>Real claim method:</b> Magnolia has run graduation cupcake treats as a <b>bakery-counter</b> promo — wear grad gear / show your diploma at a participating bakery during the promo window. It’s not an email or mail-in offer. Check <a href="https://www.magnoliabakery.com" target="_blank" rel="noopener">magnoliabakery.com</a> and your bakery’s socials for the 2026 window; NYC-area locations are the usual participants.</p>
+            <p class="bring-title">What to bring — checklist</p>
+            <ul class="bring-list">
+              <li><b>Grad gear</b> (cap, gown, stole, or 2026 shirt) <b>or diploma</b></li>
+              <li><b>Student ID</b> as backup proof</li>
+              <li>Go early in the day — promo cupcakes run out</li>
+            </ul>
+          </article>
+
+          <article class="grad-card">
+            <div class="grad-flags"><span class="tag">In-store</span><span class="tag gray">With entrée + ID</span></div>
+            <h3>TGI Fridays — Free dessert for grads</h3>
+            <p class="g-what">What you get: <b>Free dessert with an entrée purchase</b> for graduates (graduation-season promo).</p>
+            <p class="g-method"><b>Real claim method:</b> Dine-in graduation promo redeemed <b>at the table</b> — order an entrée, show <b>student ID / graduation proof</b>, and ask your server to apply the graduation dessert offer. Not a mail-in or email freebie, and not every franchise participates every year. Confirm on <a href="https://www.tgifridays.com" target="_blank" rel="noopener">tgifridays.com</a> / with your restaurant before you sit down.</p>
+            <p class="bring-title">What to bring — checklist</p>
+            <ul class="bring-list">
+              <li><b>Student ID</b> or graduation proof (diploma photo works)</li>
+              <li>Budget for the <b>entrée</b> — the dessert is the free part</li>
+              <li>Ask <b>before you order</b> so the server can apply it correctly</li>
+            </ul>
+          </article>
+
+          <article class="grad-card">
+            <div class="grad-flags"><span class="tag">In-store / catering</span><span class="tag amber">Code may expire</span></div>
+            <h3>Buca di Beppo &amp; Brio — Free cannoli &amp; grad catering code</h3>
+            <p class="g-what">What you get: <b>Free cannoli promos</b> for grads in season, plus graduation catering offers (code <b>GRAD2026</b> has been used for catering).</p>
+            <p class="g-method"><b>Real claim method:</b> Two different things: (1) in-restaurant cannoli treats are <b>counter/table promos</b> at participating locations during graduation season — show grad proof and ask; (2) <b>GRAD2026</b> is a <b>catering promo code</b> to try at checkout / with the catering team for a graduation party order — it is not a personal free-meal code and may be expired or location-limited by the time you read this. Verify current terms on <a href="https://www.bucadibeppo.com" target="_blank" rel="noopener">bucadibeppo.com</a> / <a href="https://www.brioitalian.com" target="_blank" rel="noopener">brioitalian.com</a> before ordering.</p>
+            <p class="bring-title">What to bring / have ready — checklist</p>
+            <ul class="bring-list">
+              <li><b>Grad proof + student ID</b> for any in-store cannoli promo</li>
+              <li>For catering: party date, headcount, and code <b>GRAD2026</b> to quote — confirm it still applies before you pay a deposit</li>
+            </ul>
+          </article>
+
+          <article class="grad-card">
+            <div class="grad-flags"><span class="tag amber">Giveaway — entry deadline</span><span class="tag gray">Not guaranteed</span></div>
+            <h3>Raising Cane’s — Grad Gift Box giveaway</h3>
+            <p class="g-what">What you get: Chance at a <b>Raising Cane’s Grad Gift Box</b> (merch / gift-card style prize pack) via its graduation giveaway.</p>
+            <p class="g-method"><b>Real claim method:</b> This is a <b>sweepstakes-style entry</b>, not “email us and we mail everyone a box.” Raising Cane’s runs it with an <b>entry deadline</b> on its official channels — enter only through the official Raising Cane’s site / socials before that deadline, with the exact details they ask for. Winners are drawn; entering does not guarantee a box. Never pay a third party to “enter” you.</p>
+            <p class="bring-title">Before you enter — checklist</p>
+            <ul class="bring-list">
+              <li>Enter only on <a href="https://www.raisingcanes.com" target="_blank" rel="noopener">raisingcanes.com</a> / verified Raising Cane’s socials</li>
+              <li>Note the <b>entry deadline</b> the official post lists — late entries don’t count</li>
+              <li>Use an email you actually check ([STUDENT EMAIL] is fine) for winner notification</li>
+            </ul>
+          </article>
+
+          <article class="grad-card">
+            <div class="grad-flags"><span class="tag gray">Varies by location</span><span class="tag amber">Not guaranteed</span></div>
+            <h3>Golden Corral — Free meal in cap &amp; gown (where offered)</h3>
+            <p class="g-what">What you get: <b>Free meal for grads in cap &amp; gown</b> at locations that choose to run it.</p>
+            <p class="g-method"><b>Real claim method:</b> Golden Corral is franchised — <b>some locations</b> run a graduation free-meal day, many don’t. There is no national coupon to print. Call your Golden Corral or check its local Facebook page for “Class of 2026” before you go in gear. If they’re running it, it’s redeemed <b>at the door in cap &amp; gown with graduation proof</b>.</p>
+            <p class="bring-title">What to bring — checklist</p>
+            <ul class="bring-list">
+              <li><b>Cap &amp; gown</b> + diploma / student ID</li>
+              <li><b>Call first</b> — confirm your location, date, and whether family pays full price (they usually do)</li>
+            </ul>
+          </article>
+
+        </div>
+
+        <h3 class="group-title">Mail your graduation announcement to brands — the viral trend</h3>
+        <p class="sec-intro">Every spring, graduates mail a printed graduation announcement (the card you’d send family) to favourite brands’ HQ / consumer-relations addresses. A few brands sometimes mail back samples, coupons, or a congrats gift — <b>most send nothing</b>. It’s a fun, low-odds tradition, not a program. Budget your own envelopes + stamps, send only copies, and don’t expect a reply before graduation day.</p>
+
+        <div class="grad-grid">
+          <article class="grad-card">
+            <div class="grad-flags"><span class="tag">Physical mail</span><span class="tag amber">Not guaranteed</span></div>
+            <h3>LEGO — Mail an announcement (viral reports)</h3>
+            <p class="g-what">What students report: Occasionally a congrats reply / small surprise — <b>not a published LEGO program</b>.</p>
+            <p class="g-method"><b>Real claim method:</b> Print your announcement, add a short handwritten note (template on this card), and mail it to LEGO’s official consumer-service address listed on <a href="https://www.lego.com/en-us/service" target="_blank" rel="noopener">lego.com/service</a>. There is no LEGO “graduation freebie email” — emailing customer service will just get a polite reply, not a mailed set.</p>
+            <div class="template-box">
+              <div class="tb-head"><span class="tb-title">Announcement insert — copy, print &amp; mail</span><button class="copy-template-btn" type="button" data-copy-target="tpl-lego">Copy template</button></div>
+              <textarea id="tpl-lego" readonly>Dear LEGO Team,
+
+Hello! My name is [YOUR FULL NAME] and I’m graduating from [UNIVERSITY] on [GRADUATION DATE] with a [DEGREE].
+
+I’ve loved LEGO for as long as I can remember, so I wanted to share my graduation announcement with you — no request attached, just a thank-you for being part of how I grew up (and how I still unwind between study sessions).
+
+If you ever send congrats notes or samples to graduates, I’d be honoured to receive one at the address below. Either way, thank you for reading this.
+
+With gratitude,
+[YOUR FULL NAME]
+[UNIVERSITY] — Class of 2026
+[STUDENT EMAIL]
+[MAILING ADDRESS]</textarea>
+              <p class="template-note">Mail — don’t email — this one. Get the current mailing address from LEGO’s official service page above; addresses change. Responses are not guaranteed.</p>
+            </div>
+          </article>
+
+          <article class="grad-card">
+            <div class="grad-flags"><span class="tag">Physical mail</span><span class="tag amber">Not guaranteed</span></div>
+            <h3>Sun Bum — Mail an announcement (viral reports)</h3>
+            <p class="g-what">What students report: Sometimes sunscreen samples / stickers / a congrats note — <b>not a published Sun Bum program</b>.</p>
+            <p class="g-method"><b>Real claim method:</b> Same tradition: printed announcement + short note, mailed to the consumer-relations address on <a href="https://www.sunbum.com" target="_blank" rel="noopener">sunbum.com</a> (Contact page). Sun Bum is one of the brands most mentioned in viral “brands that mailed me back” posts — which is exactly why you should expect <b>silence is the normal outcome</b> and anything back is a bonus.</p>
+            <div class="template-box">
+              <div class="tb-head"><span class="tb-title">Announcement insert — copy, print &amp; mail</span><button class="copy-template-btn" type="button" data-copy-target="tpl-sunbum">Copy template</button></div>
+              <textarea id="tpl-sunbum" readonly>Dear Sun Bum Team,
+
+Hi! I’m [YOUR FULL NAME], graduating from [UNIVERSITY] on [GRADUATION DATE] with a [DEGREE].
+
+Your sunscreen has been in my beach / game-day / walk-to-class bag for years, so I’m mailing you my graduation announcement as a thank-you. I’m not writing to demand anything — I just wanted you to know a Sun Bum fan made it to graduation.
+
+If you send anything to grads, my mailing address is below and I’d love it. No worries at all if not.
+
+Sunny thanks,
+[YOUR FULL NAME]
+[UNIVERSITY] — Class of 2026
+[STUDENT EMAIL]
+[MAILING ADDRESS]</textarea>
+              <p class="template-note">Use the Contact / mailing address on Sun Bum’s official site. Don’t DM random “Sun Bum freebie” accounts — they’re not the brand.</p>
+            </div>
+          </article>
+
+          <article class="grad-card">
+            <div class="grad-flags"><span class="tag">Physical mail</span><span class="tag amber">Not guaranteed</span></div>
+            <h3>Crumbl — Mail an announcement (viral reports)</h3>
+            <p class="g-what">What students report: Occasionally a congrats reply or coupon — <b>not a published Crumbl program</b>.</p>
+            <p class="g-method"><b>Real claim method:</b> Printed announcement + note mailed to Crumbl HQ via the address on <a href="https://crumblcookies.com" target="_blank" rel="noopener">crumblcookies.com</a> (Contact). Crumbl stores are franchised, so a mailed announcement goes to the brand team, not your local cookie counter — your local store can’t honour a “HQ freebie” that doesn’t exist. Keep expectations at zero and the stamp as the cost of a fun story.</p>
+            <div class="template-box">
+              <div class="tb-head"><span class="tb-title">Announcement insert — copy, print &amp; mail</span><button class="copy-template-btn" type="button" data-copy-target="tpl-crumbl">Copy template</button></div>
+              <textarea id="tpl-crumbl" readonly>Dear Crumbl Team,
+
+Hello! My name is [YOUR FULL NAME] and I’m graduating from [UNIVERSITY] on [GRADUATION DATE] with a [DEGREE].
+
+Friday Crumbl runs got me through more study weeks than I can count, so I’m sharing my graduation announcement with you as a thank-you. I’m not expecting anything back — I just wanted the team behind my favourite study treat to know.
+
+If you do send congrats notes to graduates, I’d be thrilled to receive one at:
+
+[YOUR FULL NAME]
+[MAILING ADDRESS]
+[STUDENT EMAIL]
+
+Thank you for the cookies and for reading this.
+
+Sweet regards,
+[YOUR FULL NAME]
+[UNIVERSITY] — Class of 2026</textarea>
+              <p class="template-note">Confirm Crumbl’s current HQ / contact address on its official site before you stamp the envelope. Not guaranteed — most mail gets no reply.</p>
+            </div>
+          </article>
+
+          <article class="grad-card">
+            <div class="grad-flags"><span class="tag">Email via official contact page</span><span class="tag amber">Not guaranteed</span></div>
+            <h3>Any other brand you love — polite outreach email</h3>
+            <p class="g-what">What this is: A <b>polite, no-promises</b> email you can send to a brand’s official customer-service contact when there’s no store to walk into.</p>
+            <p class="g-method"><b>Real claim method:</b> Find the brand’s <b>official</b> Contact / Customer Service page (from its homepage — never a “freebie email list” blog). Paste the template, replace every placeholder, and send from your <b>[STUDENT EMAIL]</b> if you want them to see you’re a student. A kind “do you ever do anything for graduates?” sometimes earns a coupon; usually it earns a kind no. Both are fine.</p>
+            <div class="template-box">
+              <div class="tb-head"><span class="tb-title">General graduation outreach — copy &amp; paste</span><button class="copy-template-btn" type="button" data-copy-target="tpl-general">Copy template</button></div>
+              <textarea id="tpl-general" readonly>Subject: Class of 2026 graduate &amp; longtime customer — [YOUR FULL NAME], [UNIVERSITY]
+
+Hello [BRAND NAME] Customer Care team,
+
+My name is [YOUR FULL NAME] and I’m graduating from [UNIVERSITY] on [GRADUATION DATE] with a [DEGREE]. I’m writing from my student email, [STUDENT EMAIL].
+
+I’ve been a customer / fan of [BRAND NAME] throughout college, and I’m reaching out to ask if you offer anything for Class of 2026 graduates — a sample, coupon, or congrats offer. I completely understand if you don’t have a program like that; I wanted to ask politely rather than assume.
+
+If anything is available by mail, my address is:
+[MAILING ADDRESS]
+
+Thank you for your time, and for being part of my college years either way.
+
+Warmly,
+[YOUR FULL NAME]
+[UNIVERSITY] — Class of 2026
+[STUDENT EMAIL]</textarea>
+              <p class="template-note">Replace [BRAND NAME] too. Send only via the brand’s official contact page/form — this page does not list brand email addresses because most brands don’t publish a direct freebie inbox, and invented addresses bounce or go to scammers.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="plainbox">
+          <h3>Before you stamp anything — safety checklist</h3>
+          <ul>
+            <li>Mail <b>copies</b> of your announcement, never your original diploma, transcript, or ID.</li>
+            <li>Your [MAILING ADDRESS] should be somewhere you’ll actually get mail after graduation — dorm mailboxes close fast in May.</li>
+            <li>Never pay a site that promises to “get you” these freebies, and never send gift cards, Venmo, or “shipping fees” to claim one.</li>
+            <li>Offers on this page are <b>year-specific (Class of 2026)</b> and change without notice — the brand’s own page that week beats any screenshot, including this one.</li>
+          </ul>
+        </div>
+
+        <p style="margin-top:18px;"><a href="#/">← Back to the full Catalogue (205 benefits)</a></p>
+      </section>
+      </div><!-- /view-graduation -->
 
       <div class="support-cta" id="support">
         <div style="flex:1 1 100%;">
@@ -1810,6 +2161,67 @@
           : TOTAL + " benefits across the Pack, in-person, and online lists";
       }
       applyFilter();
+    </script>
+    <script>
+      /* ============ HASH ROUTING (#/ catalogue, #/graduation-freebies) ============ */
+      (function () {
+        var viewHome = document.getElementById("view-home");
+        var viewGrad = document.getElementById("view-graduation");
+        var links = document.querySelectorAll("[data-route-link]");
+        function routeFromHash(hash) {
+          if (hash === "#/graduation-freebies") return "graduation";
+          if (hash === "#/" || hash === "#/home" || hash === "" || hash === "#") return "home";
+          return null; // e.g. #support — not a route, let the anchor work
+        }
+        function showRoute(route, scrollTop) {
+          var isGrad = route === "graduation";
+          if (viewHome) viewHome.hidden = isGrad;
+          if (viewGrad) viewGrad.hidden = !isGrad;
+          document.querySelectorAll(".home-only").forEach(function (el) { el.hidden = isGrad; });
+          links.forEach(function (a) {
+            var r = a.getAttribute("data-route-link");
+            if ((r === "graduation") === isGrad) { a.setAttribute("aria-current", "page"); }
+            else { a.removeAttribute("aria-current"); }
+          });
+          document.title = isGrad
+            ? "Graduation Freebies — Class of 2026 | Student Benefits Catalogue"
+            : "Student Benefits Catalogue — 200+ Student Discounts & Freebies Worth $2,500+";
+          if (scrollTop) window.scrollTo({ top: 0, behavior: "auto" });
+        }
+        function handleHash(scrollTop) {
+          var r = routeFromHash(window.location.hash || "");
+          if (r) showRoute(r, scrollTop);
+        }
+        window.addEventListener("hashchange", function () { handleHash(true); });
+        // Direct load: #/graduation-freebies opens the right view immediately
+        handleHash(false);
+        if (!routeFromHash(window.location.hash || "")) showRoute("home", false);
+      })();
+      /* ============ COPY EMAIL / LETTER TEMPLATES ============ */
+      (function () {
+        document.querySelectorAll("[data-copy-target]").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var ta = document.getElementById(btn.getAttribute("data-copy-target"));
+            if (!ta) return;
+            var text = ta.value;
+            var done = function () {
+              var old = btn.textContent;
+              btn.textContent = "Copied ✓ — replace the [BRACKETS]";
+              setTimeout(function () { btn.textContent = old; }, 2200);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(text).then(done).catch(function () { fallback(); });
+            } else { fallback(); }
+            function fallback() {
+              ta.removeAttribute("readonly"); ta.select();
+              try { document.execCommand("copy"); } catch (e) {}
+              ta.setAttribute("readonly", "");
+              if (window.getSelection) window.getSelection().removeAllRanges();
+              done();
+            }
+          });
+        });
+      })();
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script>
