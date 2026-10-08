@@ -1,0 +1,13 @@
+{
+  "name": "student-benefits-catalogue",
+  "version": "1.0.0",
+  "description": "Student Benefits Catalogue — 200+ Student Discounts & Freebies",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'No build step required for static HTML'"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.3.1"
+  }
+}
