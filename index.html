@@ -4,8 +4,51 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b6b45" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0d1210" />
     <link rel="icon" href="data:," />
-    <title>Student Benefits Catalogue</title>
+    <title>Student Benefits Catalogue — 200+ Student Discounts &amp; Freebies Worth $2,500+</title>
+    <meta name="description" content="Discover 200+ student discounts and free benefits — GitHub Student Developer Pack offers, .edu perks, software, and services, most with direct application links and step-by-step claim guides. 127 completely free." />
+    <meta name="keywords" content="student discounts, student benefits, student freebies, GitHub Student Developer Pack, GitHub Student Pack, .edu discounts, student software discounts, free tools for students, college student discounts, student deals, UNiDAYS, Student Beans, SheerID, student streaming discounts, student travel discounts" />
+    <meta name="author" content="Naman Parmar" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://student-benefits-catalogue.vercel.app/" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://student-benefits-catalogue.vercel.app/" />
+    <meta property="og:site_name" content="Student Benefits Catalogue" />
+    <meta property="og:title" content="Student Benefits Catalogue — 200+ Student Discounts &amp; Freebies Worth $2,500+" />
+    <meta property="og:description" content="Discover 200+ student discounts and free benefits — GitHub Student Developer Pack offers, .edu perks, software, and services, most with direct application links and step-by-step claim guides. 127 completely free." />
+    <meta property="og:image" content="https://student-benefits-catalogue.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Student Benefits Catalogue — 205 benefits, 127 free, $2,500+ value. GitHub Student Pack, EDU Discounts and Free Tools." />
+    <meta property="og:locale" content="en_US" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Student Benefits Catalogue — 200+ Student Discounts &amp; Freebies Worth $2,500+" />
+    <meta name="twitter:description" content="Discover 200+ student discounts and free benefits — GitHub Student Developer Pack offers, .edu perks, software, and services, most with direct application links and step-by-step claim guides. 127 completely free." />
+    <meta name="twitter:image" content="https://student-benefits-catalogue.vercel.app/og-image.png" />
+    <meta name="twitter:image:alt" content="Student Benefits Catalogue — 205 benefits, 127 free, $2,500+ value. GitHub Student Pack, EDU Discounts and Free Tools." />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Student Benefits Catalogue",
+      "url": "https://student-benefits-catalogue.vercel.app/",
+      "description": "Discover 200+ student discounts and free benefits — GitHub Student Developer Pack offers, .edu perks, software, and services, most with direct application links and step-by-step claim guides. 127 completely free.",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Naman Parmar",
+        "url": "https://www.instagram.com/namann.50/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Naman Parmar"
+      }
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,650&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -79,6 +122,41 @@
       .lede { font-size: 17.5px; color: var(--ink-2); max-width: 720px; margin: 0; }
       .byline { margin: 14px 0 0; font-size: 13.5px; color: var(--ink-2); }
       .byline b { color: var(--ink); font-weight: 600; }
+      .byline-under-donate { margin: 10px 2px 18px; text-align: center; }
+      /* ---------- Top donate CTA ---------- */
+      .donate-hero {
+        background: var(--accent); color: var(--accent-ink);
+        border-radius: 16px; padding: 22px 22px 20px; margin: 0 0 4px;
+        box-shadow: var(--shadow); text-align: center;
+      }
+      .donate-hero .donate-eyebrow {
+        font-family: "IBM Plex Mono", monospace; font-size: 11.5px; font-weight: 600;
+        letter-spacing: .1em; text-transform: uppercase; opacity: .85; margin: 0 0 8px;
+      }
+      .donate-hero h2.donate-headline, .donate-hero .donate-headline {
+        font-family: "Newsreader", Georgia, serif; font-weight: 650;
+        font-size: clamp(24px, 4vw, 32px); line-height: 1.15; margin: 0 0 8px; letter-spacing: -0.01em;
+      }
+      .donate-hero .donate-copy { margin: 0 auto 16px; font-size: 15px; line-height: 1.55; opacity: .92; max-width: 640px; }
+      .donate-top-btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        background: #ffffff; color: #0b6b45;
+        font-size: 17px; font-weight: 700; line-height: 1;
+        border-radius: 999px; padding: 16px 30px; white-space: nowrap;
+        box-shadow: 0 6px 20px rgba(0,0,0,.18); border: 2px solid #ffffff;
+        min-height: 52px;
+      }
+      @media (prefers-color-scheme: dark) { .donate-top-btn { color: #08130d; } }
+      .donate-top-btn:hover { text-decoration: none; filter: brightness(.97); transform: translateY(-1px); }
+      .donate-top-btn:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px; }
+      .donate-hero .donate-micro { margin: 12px 0 0; font-size: 12.5px; opacity: .8; font-family: "IBM Plex Mono", monospace; letter-spacing: .02em; }
+      @media (prefers-reduced-motion: no-preference) {
+        .donate-top-btn { transition: transform .15s ease, filter .15s ease; }
+      }
+      @media (max-width: 640px) {
+        .donate-hero { padding: 20px 16px 18px; text-align: center; }
+        .donate-top-btn { width: 100%; white-space: normal; text-align: center; }
+      }
       .stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0 6px; }
       .stat {
         background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
@@ -340,6 +418,14 @@
   <body>
     <div class="wrap">
       <header class="hero">
+        <div class="donate-hero">
+          <p class="donate-eyebrow">100% free for every student — no paywall</p>
+          <p class="donate-headline">Saved you money? Tip what it&rsquo;s worth.</p>
+          <p class="donate-copy">This catalogue can save you <strong>$2,500+</strong> in free tools and discounts — and it stays free because readers chip in. If it helped you claim even one deal, a small crypto tip keeps it researched, updated, and free for the next student.</p>
+          <a class="donate-top-btn" href="#support" aria-label="Tip with crypto — jump to the donation section">Tip with Crypto — Takes 30 Seconds <span aria-hidden="true">↓</span></a>
+          <p class="donate-micro">SOL &middot; BTC &middot; ETH &mdash; tip only what you can afford. Every tip is appreciated.</p>
+        </div>
+        <p class="byline byline-under-donate">Prepared by <b>Naman Parmar</b> — Graduate student in Data Science at Rowan University</p>
         <div class="hero-meta">
           <span><span class="dot"></span>&nbsp; Snapshot compiled October 8, 2026</span>
           <span>GitHub Pack read live from education.github.com/pack that day</span>
@@ -347,11 +433,6 @@
         </div>
         <h1>Every student benefit, in one place</h1>
         <p class="lede">The complete GitHub Student Developer Pack, plus everything a verified US student email unlocks off GitHub — in stores, on campus, and online. Search it, filter it, work through it.</p>
-        <p class="byline">Prepared by <b>Naman Parmar</b> — Graduate student in Data Science at Rowan University</p>
-        <div class="social-row">
-          <span class="social-label">Follow the creator</span>
-          <a class="insta-btn" href="https://www.instagram.com/namann.50/" target="_blank" rel="noopener" aria-label="Follow Naman Parmar on Instagram (@namann.50)"><span aria-hidden="true">📷</span> @namann.50 on Instagram</a>
-        </div>
         <!-- Ko-fi hero button hidden for now (kept restorable): set .kofi-hidden removal or SHOW_KOFI_WIDGETS=true to bring it back. -->
         <div class="kofi-row kofi-hidden" aria-hidden="true">
           <a class="kofi-btn" href="https://ko-fi.com/nx9161" target="_blank" rel="noopener" tabindex="-1"><span class="kofi-cup" aria-hidden="true">☕</span> Support Us on Ko-fi</a>
@@ -382,6 +463,7 @@
         </div>
       </header>
 
+      <main id="main-content">
       <section class="block" id="verify">
         <div class="sec-head"><h2>Verify once, claim everywhere</h2></div>
         <p class="sec-intro">Most student discounts don't check your .edu email directly — they route through one of these five. Set them up once and the claims below get much faster.</p>
@@ -397,7 +479,7 @@
       <div class="filterbar">
         <div class="row">
           <label class="search">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
             <input id="searchInput" type="search" placeholder="Search benefits — try &quot;domain&quot;, &quot;streaming&quot;, &quot;Amtrak&quot;…" aria-label="Search benefits" />
           </label>
           <div class="chips" role="group" aria-label="Filter by section">
@@ -468,7 +550,7 @@
             <div class="crypto-card">
               <div class="coin-sub">Solana</div>
               <div class="coin-name">SOL</div>
-              <div class="qr-box" id="qr-sol" role="img" aria-label="QR code for Solana wallet address 4aJVuzjfQEgAFEjitjjBJMCV2yLkjCiXjQ6fXYoViZLX"></div>
+              <div class="qr-box" id="qr-sol" role="img" aria-label="Solana wallet address QR code — 4aJVuzjfQEgAFEjitjjBJMCV2yLkjCiXjQ6fXYoViZLX"></div>
               <div class="addr-box">4aJVuzjfQEgAFEjitjjBJMCV2yLkjCiXjQ6fXYoViZLX</div>
               <button class="copy-btn" type="button" data-copy="4aJVuzjfQEgAFEjitjjBJMCV2yLkjCiXjQ6fXYoViZLX">Copy SOL address</button>
               <p class="fee-note"><b>Network fee:</b> about <b>$0.00025</b> per transfer — effectively free, which makes Solana the best pick for small tips. Fees can move slightly with network congestion.</p>
@@ -476,7 +558,7 @@
             <div class="crypto-card">
               <div class="coin-sub">Bitcoin</div>
               <div class="coin-name">BTC</div>
-              <div class="qr-box" id="qr-btc" role="img" aria-label="QR code for Bitcoin wallet address bc1qu3fefcncyyjysmceddjmmu0zkqx6k9fdd8855d"></div>
+              <div class="qr-box" id="qr-btc" role="img" aria-label="Bitcoin wallet address QR code — bc1qu3fefcncyyjysmceddjmmu0zkqx6k9fdd8855d"></div>
               <div class="addr-box">bc1qu3fefcncyyjysmceddjmmu0zkqx6k9fdd8855d</div>
               <button class="copy-btn" type="button" data-copy="bc1qu3fefcncyyjysmceddjmmu0zkqx6k9fdd8855d">Copy BTC address</button>
               <p class="fee-note"><b>Network fee:</b> about <b>$1–$5</b> depending on how busy the Bitcoin network is. Better for larger tips where the fee is a small share of the amount.</p>
@@ -484,20 +566,18 @@
             <div class="crypto-card">
               <div class="coin-sub">Ethereum</div>
               <div class="coin-name">ETH</div>
-              <div class="qr-box" id="qr-eth" role="img" aria-label="QR code for Ethereum wallet address 0x9bce53780b246602f0c7d48c05302431a705963e"></div>
+              <div class="qr-box" id="qr-eth" role="img" aria-label="Ethereum wallet address QR code — 0x9bce53780b246602f0c7d48c05302431a705963e"></div>
               <div class="addr-box">0x9bce53780b246602f0c7d48c05302431a705963e</div>
               <button class="copy-btn" type="button" data-copy="0x9bce53780b246602f0c7d48c05302431a705963e">Copy ETH address</button>
               <p class="fee-note"><b>Network fee:</b> about <b>$0.50–$5+</b> depending on gas prices and congestion — Ethereum fees spike at busy times, so check the fee in your wallet before sending a small tip.</p>
             </div>
           </div>
-          <div class="social-row" style="margin-top:20px;">
-            <span class="social-label">Follow the creator</span>
-            <a class="insta-btn" href="https://www.instagram.com/namann.50/" target="_blank" rel="noopener" aria-label="Follow Naman Parmar on Instagram (@namann.50)"><span aria-hidden="true">📷</span> @namann.50 on Instagram</a>
-          </div>
         </div>
         <!-- Ko-fi footer button hidden for now (kept restorable): remove .kofi-hidden to bring it back. -->
         <a class="kofi-btn kofi-hidden" href="https://ko-fi.com/nx9161" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="kofi-cup" aria-hidden="true">☕</span> Support on Ko-fi</a>
       </div>
+
+      </main>
 
       <footer>
         <p>Compiled October 8, 2026. Every entry has an <b>Apply</b> button that opens the page where the offer is actually claimed — the offer card on the GitHub Pack page for Pack partners, the brand's own student page or its verification platform (UNiDAYS, Student Beans, SheerID, ID.me) for the rest — plus a step-by-step claim guide that runs from signup to the redeemed offer. A few in-person-only deals (show student ID at the counter) have steps instead of a button, because there is nothing to apply for online. Pack offers are dynamic — partners leave and terms change (DigitalOcean exited in July 2026) — so confirm the terms on the claim page before counting on one.</p>
@@ -1676,6 +1756,12 @@
           var el = document.getElementById(id);
           if (!el || typeof QRCode === 'undefined') return;
           new QRCode(el, { text: text, width: 128, height: 128, correctLevel: QRCode.CorrectLevel.M });
+          /* The container carries the accessible label (role="img" + aria-label);
+             mark the generated canvas/img as decorative so screen readers don't double-announce. */
+          el.querySelectorAll('img, canvas').forEach(function (node) {
+            node.setAttribute('alt', '');
+            node.setAttribute('aria-hidden', 'true');
+          });
         }
         makeQR('qr-sol', '4aJVuzjfQEgAFEjitjjBJMCV2yLkjCiXjQ6fXYoViZLX');
         makeQR('qr-btc', 'bc1qu3fefcncyyjysmceddjmmu0zkqx6k9fdd8855d');
