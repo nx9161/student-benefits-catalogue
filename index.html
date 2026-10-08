@@ -295,6 +295,46 @@
       .support-cta h3 { margin: 0 0 4px; font-size: 18px; }
       .support-cta p { margin: 0; color: var(--ink-2); font-size: 14.5px; max-width: 640px; }
       .hidden-by-filter { display: none !important; }
+      .kofi-hidden { display: none !important; }
+      .insta-btn {
+        display: inline-flex; align-items: center; gap: 8px;
+        background: #d62976; color: #fff;
+        font-size: 14px; font-weight: 700; line-height: 1;
+        border-radius: 999px; padding: 11px 18px; white-space: nowrap;
+        box-shadow: var(--shadow); border: 1px solid transparent;
+      }
+      .insta-btn:hover { text-decoration: none; filter: brightness(1.08); }
+      .insta-btn:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 2px; }
+      .social-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 14px 0 2px; }
+      .social-row .social-label { font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: .06em; color: var(--ink-2); }
+      .crypto-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
+      @media (max-width: 760px) { .crypto-grid { grid-template-columns: 1fr; } }
+      .crypto-card {
+        background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+        padding: 18px 16px 16px; box-shadow: var(--shadow); text-align: center;
+      }
+      .crypto-card .coin-name { font-weight: 700; font-size: 16px; }
+      .crypto-card .coin-sub { font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .06em; color: var(--ink-3); text-transform: uppercase; }
+      .qr-box {
+        width: 144px; height: 144px; margin: 12px auto 10px;
+        background: #ffffff; border: 1px solid var(--line); border-radius: 10px;
+        display: flex; align-items: center; justify-content: center; padding: 8px;
+      }
+      .qr-box img, .qr-box canvas { max-width: 100%; height: auto; }
+      .addr-box {
+        font-family: "IBM Plex Mono", monospace; font-size: 11px; line-height: 1.45;
+        word-break: break-all; background: var(--chip); color: var(--ink-2);
+        border-radius: 8px; padding: 8px 9px; text-align: left;
+      }
+      .copy-btn {
+        margin-top: 10px; width: 100%; cursor: pointer;
+        background: var(--ink); color: var(--bg);
+        border: 1px solid var(--ink); border-radius: 8px;
+        padding: 9px 12px; font: inherit; font-size: 13.5px; font-weight: 600;
+      }
+      .copy-btn:hover { filter: brightness(1.1); }
+      .fee-note { margin-top: 10px; font-size: 12.5px; line-height: 1.5; color: var(--ink-2); }
+      .fee-note b { color: var(--ink); }
     </style>
   </head>
   <body>
@@ -308,8 +348,13 @@
         <h1>Every student benefit, in one place</h1>
         <p class="lede">The complete GitHub Student Developer Pack, plus everything a verified US student email unlocks off GitHub — in stores, on campus, and online. Search it, filter it, work through it.</p>
         <p class="byline">Prepared by <b>Naman Parmar</b> — Graduate student in Data Science at Rowan University</p>
-        <div class="kofi-row">
-          <a class="kofi-btn" href="https://ko-fi.com/nx9161" target="_blank" rel="noopener"><span class="kofi-cup" aria-hidden="true">☕</span> Support Us on Ko-fi</a>
+        <div class="social-row">
+          <span class="social-label">Follow the creator</span>
+          <a class="insta-btn" href="https://www.instagram.com/namann.50/" target="_blank" rel="noopener" aria-label="Follow Naman Parmar on Instagram (@namann.50)"><span aria-hidden="true">📷</span> @namann.50 on Instagram</a>
+        </div>
+        <!-- Ko-fi hero button hidden for now (kept restorable): set .kofi-hidden removal or SHOW_KOFI_WIDGETS=true to bring it back. -->
+        <div class="kofi-row kofi-hidden" aria-hidden="true">
+          <a class="kofi-btn" href="https://ko-fi.com/nx9161" target="_blank" rel="noopener" tabindex="-1"><span class="kofi-cup" aria-hidden="true">☕</span> Support Us on Ko-fi</a>
           <span class="kofi-note">If this catalogue saved you money, a coffee helps keep it updated and free for the next student.</span>
         </div>
         <div class="freeband" role="note">
@@ -410,18 +455,50 @@
         <p>Try a broader term — a brand name, or a category like “music”, “cloud”, or “domain”.</p>
       </div>
 
-      <div class="support-cta">
-        <div>
-          <h3>Found this useful? Support the catalogue</h3>
-          <p>It's free for every student, and tips on Ko-fi help cover the time it takes to keep 205 offers checked and current.</p>
+      <div class="support-cta" id="support">
+        <div style="flex:1 1 100%;">
+          <h3>Found this useful? Tip with crypto</h3>
+          <p>It's free for every student. If it saved you money, you can tip directly to the creator's wallet — scan a QR code with your crypto wallet app, or copy the address. Tips arrive as crypto (SOL, BTC, ETH), not cash, until you choose to convert them later. Always double-check the address matches before sending, and only send the matching coin on its native network (Solana → SOL, Bitcoin → BTC, Ethereum → ETH).</p>
+          <div class="crypto-grid">
+            <div class="crypto-card">
+              <div class="coin-sub">Solana</div>
+              <div class="coin-name">SOL</div>
+              <div class="qr-box" id="qr-sol" role="img" aria-label="QR code for Solana wallet address 4aJVuzjfQEgAFEjitjjBJMCV2yLkjCiXjQ6fXYoViZLX"></div>
+              <div class="addr-box">4aJVuzjfQEgAFEjitjjBJMCV2yLkjCiXjQ6fXYoViZLX</div>
+              <button class="copy-btn" type="button" data-copy="4aJVuzjfQEgAFEjitjjBJMCV2yLkjCiXjQ6fXYoViZLX">Copy SOL address</button>
+              <p class="fee-note"><b>Network fee:</b> about <b>$0.00025</b> per transfer — effectively free, which makes Solana the best pick for small tips. Fees can move slightly with network congestion.</p>
+            </div>
+            <div class="crypto-card">
+              <div class="coin-sub">Bitcoin</div>
+              <div class="coin-name">BTC</div>
+              <div class="qr-box" id="qr-btc" role="img" aria-label="QR code for Bitcoin wallet address bc1qu3fefcncyyjysmceddjmmu0zkqx6k9fdd8855d"></div>
+              <div class="addr-box">bc1qu3fefcncyyjysmceddjmmu0zkqx6k9fdd8855d</div>
+              <button class="copy-btn" type="button" data-copy="bc1qu3fefcncyyjysmceddjmmu0zkqx6k9fdd8855d">Copy BTC address</button>
+              <p class="fee-note"><b>Network fee:</b> about <b>$1–$5</b> depending on how busy the Bitcoin network is. Better for larger tips where the fee is a small share of the amount.</p>
+            </div>
+            <div class="crypto-card">
+              <div class="coin-sub">Ethereum</div>
+              <div class="coin-name">ETH</div>
+              <div class="qr-box" id="qr-eth" role="img" aria-label="QR code for Ethereum wallet address 0x9bce53780b246602f0c7d48c05302431a705963e"></div>
+              <div class="addr-box">0x9bce53780b246602f0c7d48c05302431a705963e</div>
+              <button class="copy-btn" type="button" data-copy="0x9bce53780b246602f0c7d48c05302431a705963e">Copy ETH address</button>
+              <p class="fee-note"><b>Network fee:</b> about <b>$0.50–$5+</b> depending on gas prices and congestion — Ethereum fees spike at busy times, so check the fee in your wallet before sending a small tip.</p>
+            </div>
+          </div>
+          <div class="social-row" style="margin-top:20px;">
+            <span class="social-label">Follow the creator</span>
+            <a class="insta-btn" href="https://www.instagram.com/namann.50/" target="_blank" rel="noopener" aria-label="Follow Naman Parmar on Instagram (@namann.50)"><span aria-hidden="true">📷</span> @namann.50 on Instagram</a>
+          </div>
         </div>
-        <a class="kofi-btn" href="https://ko-fi.com/nx9161" target="_blank" rel="noopener"><span class="kofi-cup" aria-hidden="true">☕</span> Support on Ko-fi</a>
+        <!-- Ko-fi footer button hidden for now (kept restorable): remove .kofi-hidden to bring it back. -->
+        <a class="kofi-btn kofi-hidden" href="https://ko-fi.com/nx9161" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="kofi-cup" aria-hidden="true">☕</span> Support on Ko-fi</a>
       </div>
 
       <footer>
         <p>Compiled October 8, 2026. Every entry has an <b>Apply</b> button that opens the page where the offer is actually claimed — the offer card on the GitHub Pack page for Pack partners, the brand's own student page or its verification platform (UNiDAYS, Student Beans, SheerID, ID.me) for the rest — plus a step-by-step claim guide that runs from signup to the redeemed offer. A few in-person-only deals (show student ID at the counter) have steps instead of a button, because there is nothing to apply for online. Pack offers are dynamic — partners leave and terms change (DigitalOcean exited in July 2026) — so confirm the terms on the claim page before counting on one.</p>
         <p>Items tagged <b>unconfirmed</b> could not be verified as current — they're kept visible rather than silently dropped, and the open questions (hotel discounts, US IKEA, concert ticketing, Paramount+/Peacock exact tiers) are marked where they sit.</p>
-        <p>If the button doesn't work for you, email me at <a href="mailto:namanparmar9161@gmail.com">namanparmar9161@gmail.com</a> and we'll find another way you can support.</p>
+        <!-- Email fallback hidden for now (kept restorable): remove .kofi-hidden to bring it back. -->
+        <p class="kofi-hidden" aria-hidden="true">If the button doesn't work for you, email me at <a href="mailto:namanparmar9161@gmail.com" tabindex="-1">namanparmar9161@gmail.com</a> and we'll find another way you can support.</p>
       </footer>
     </div>
 
@@ -1563,14 +1640,57 @@
       }
       applyFilter();
     </script>
-    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <!-- Ko-fi floating widget hidden for now (kept restorable): set SHOW_KOFI_WIDGETS to true to bring it back. -->
     <script>
-      kofiWidgetOverlay.draw('nx9161', {
-        'type': 'floating-chat',
-        'floating-chat.donateButton.text': 'Support Us',
-        'floating-chat.donateButton.background-color': '#fcbf47',
-        'floating-chat.donateButton.text-color': '#323842'
-      });
+      var SHOW_KOFI_WIDGETS = false;
+      if (SHOW_KOFI_WIDGETS) {
+        var s = document.createElement('script');
+        s.src = 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js';
+        s.onload = function () {
+          if (window.kofiWidgetOverlay) {
+            kofiWidgetOverlay.draw('nx9161', {
+              'type': 'floating-chat',
+              'floating-chat.donateButton.text': 'Support Us',
+              'floating-chat.donateButton.background-color': '#fcbf47',
+              'floating-chat.donateButton.text-color': '#323842'
+            });
+          }
+        };
+        document.body.appendChild(s);
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+      (function () {
+        function makeQR(id, text) {
+          var el = document.getElementById(id);
+          if (!el || typeof QRCode === 'undefined') return;
+          new QRCode(el, { text: text, width: 128, height: 128, correctLevel: QRCode.CorrectLevel.M });
+        }
+        makeQR('qr-sol', '4aJVuzjfQEgAFEjitjjBJMCV2yLkjCiXjQ6fXYoViZLX');
+        makeQR('qr-btc', 'bc1qu3fefcncyyjysmceddjmmu0zkqx6k9fdd8855d');
+        makeQR('qr-eth', '0x9bce53780b246602f0c7d48c05302431a705963e');
+        document.querySelectorAll('[data-copy]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var text = btn.getAttribute('data-copy');
+            var done = function () {
+              var old = btn.textContent;
+              btn.textContent = 'Copied ✓';
+              setTimeout(function () { btn.textContent = old; }, 1600);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(text).then(done).catch(function () { fallback(); });
+            } else { fallback(); }
+            function fallback() {
+              var ta = document.createElement('textarea');
+              ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+              document.body.appendChild(ta); ta.select();
+              try { document.execCommand('copy'); } catch (e) {}
+              document.body.removeChild(ta); done();
+            }
+          });
+        });
+      })();
     </script>
   </body>
 </html>
