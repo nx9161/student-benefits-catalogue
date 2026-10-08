@@ -85,6 +85,23 @@
       .stat b { display: block; font-family: "Newsreader", Georgia, serif; font-size: 28px; font-weight: 650; line-height: 1.1; }
       .stat span { font-size: 12.5px; color: var(--ink-2); font-family: "IBM Plex Mono", monospace; letter-spacing: .03em; }
 
+      /* ---------- Free totals band ---------- */
+      .freeband {
+        margin: 28px 0 4px; background: var(--accent); color: var(--accent-ink);
+        border-radius: 14px; padding: 26px 26px 20px; box-shadow: var(--shadow);
+      }
+      .freeband .fb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      @media (max-width: 640px) { .freeband .fb-grid { grid-template-columns: 1fr; gap: 16px; } }
+      .freeband .fb-item b {
+        display: block; font-family: "Newsreader", Georgia, serif; font-weight: 650;
+        font-size: clamp(44px, 6.5vw, 64px); line-height: 1.02; letter-spacing: -0.01em;
+      }
+      .freeband .fb-item span {
+        font-family: "IBM Plex Mono", monospace; font-size: 12px; font-weight: 600;
+        letter-spacing: .09em; text-transform: uppercase; opacity: .85;
+      }
+      .freeband .fb-note { margin: 18px 0 0; font-size: 12.5px; line-height: 1.55; opacity: .78; max-width: 900px; }
+
       /* ---------- Deadline strip ---------- */
       .deadlines {
         margin: 26px 0 0; background: var(--amber-soft); border: 1px solid var(--amber);
@@ -110,17 +127,6 @@
         margin: 34px 0 4px;
       }
       h3.group-title:first-of-type { margin-top: 22px; }
-
-      /* ---------- Picks ---------- */
-      .picks { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; margin-top: 20px; }
-      .pick {
-        background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
-        padding: 16px 18px; box-shadow: var(--shadow);
-      }
-      .pick .p-name { font-weight: 700; font-size: 16px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-      .pick .p-why { color: var(--ink-2); font-size: 14px; margin: 6px 0 0; }
-      .pick .p-offer { font-size: 13px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); color: var(--ink-2); }
-      .pick .p-offer b { color: var(--ink); }
 
       .tag {
         font-family: "IBM Plex Mono", monospace; font-size: 10.5px; font-weight: 600;
@@ -182,13 +188,13 @@
       .entry .src { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; }
       .entry .src a { color: var(--ink-3); }
       .entry .src a:hover { color: var(--accent); }
-      .entry .e-name a, .packtable td.pname a, .pick .p-name a {
+      .entry .e-name a, .packtable td.pname a {
         color: inherit; text-decoration: none; border-bottom: 1px dotted var(--ink-3);
       }
-      .entry .e-name a::after, .packtable td.pname a::after, .pick .p-name a::after {
+      .entry .e-name a::after, .packtable td.pname a::after {
         content: "↗"; font-size: .68em; margin-left: 3px; color: var(--ink-3);
       }
-      .entry .e-name a:hover, .packtable td.pname a:hover, .pick .p-name a:hover {
+      .entry .e-name a:hover, .packtable td.pname a:hover {
         color: var(--accent); border-bottom: 1px solid var(--accent); text-decoration: none;
       }
       .deadlines a, .callout p a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
@@ -218,8 +224,6 @@
       details.steps ol { margin: 9px 0 2px; padding-left: 21px; font-size: 13.5px; color: var(--ink-2); }
       details.steps li { margin: 4px 0; }
       details.steps li b { color: var(--ink); }
-      .pick .e-actions { margin-top: 10px; }
-      .pick details.steps { border-top: 1px dashed var(--line); padding-top: 10px; }
       .packtable td.claimcell { min-width: 150px; }
       .packtable td.claimcell details.steps { margin-top: 8px; }
       .packtable td.claimcell details.steps ol { min-width: 240px; }
@@ -281,7 +285,15 @@
           <span>Offers change — re-verify before relying on any single one</span>
         </div>
         <h1>Every student benefit, in one place</h1>
-        <p class="lede">The complete GitHub Student Developer Pack (now active on your account), plus everything a verified US student email unlocks off GitHub — in stores, on campus, and online. Search it, filter it, work through it.</p>
+        <p class="lede">The complete GitHub Student Developer Pack, plus everything a verified US student email unlocks off GitHub — in stores, on campus, and online. Search it, filter it, work through it.</p>
+        <div class="freeband" role="note">
+          <div class="fb-grid">
+            <div class="fb-item"><b>205</b><span>benefits in this catalogue</span></div>
+            <div class="fb-item"><b>127</b><span>completely free — no payment</span></div>
+            <div class="fb-item"><b>$2,500+</b><span>estimated combined value of the free ones</span></div>
+          </div>
+          <p class="fb-note">Counted from the listings below (October 8, 2026). “Completely free” means $0 out of pocket for the stated term — free plans, licenses, trials, and credits you can claim and use without paying; percentage discounts don’t count. The value totals only the dollar figures printed in the listings (account credits, stated plan values, and priced plans during their free months) — most free offers state no dollar value at all, so the real combined value is considerably higher.</p>
+        </div>
         <div class="stats">
           <div class="stat"><b>83</b><span>GITHUB PACK OFFERS</span></div>
           <div class="stat"><b>110+</b><span>.EDU BENEFITS LISTED</span></div>
@@ -299,19 +311,13 @@
         </div>
       </header>
 
-      <section class="block" id="picks">
-        <div class="sec-head"><h2>Worth claiming first, for your stack</h2></div>
-        <p class="sec-intro">Filtered for how you actually work — the game studio (GLOAM, STALLBREAKER and the Batch 3 titles), the two offices on GitHub + Notion, and LifeOS. Everything below is in the full lists further down.</p>
-        <div class="picks" id="picksGrid"></div>
-      </section>
-
       <section class="block" id="verify">
         <div class="sec-head"><h2>Verify once, claim everywhere</h2></div>
         <p class="sec-intro">Most student discounts don't check your .edu email directly — they route through one of these five. Set them up once and the claims below get much faster.</p>
         <div class="verify">
           <a class="vcard" href="https://www.myunidays.com" target="_blank" rel="noopener"><span class="v-name">UNiDAYS</span><div class="v-desc">Powers Apple Education, adidas, ASOS, J.Crew, H&amp;M, Max, Uber student offers.</div><span class="v-go">myunidays.com →</span></a>
           <a class="vcard" href="https://www.studentbeans.com" target="_blank" rel="noopener"><span class="v-name">Student Beans</span><div class="v-desc">Alternative aggregator — H&amp;M, Urban Outfitters, Lululemon, plus rotating codes.</div><span class="v-go">studentbeans.com →</span></a>
-          <a class="vcard" href="https://www.sheerid.com" target="_blank" rel="noopener"><span class="v-name">SheerID</span><div class="v-desc">Verification engine behind Spotify, Hulu, Adobe, Max, Paramount+, DoorDash, Perplexity.</div><span class="v-go">sheerid.com →</span></a>
+          <a class="vcard" href="https://www.sheerid.com" target="_blank" rel="noopener"><span class="v-name">SheerID</span><div class="v-desc">Verification engine behind Spotify, Hulu, Adobe, Max, Paramount+, DoorDash.</div><span class="v-go">sheerid.com →</span></a>
           <a class="vcard" href="https://www.id.me" target="_blank" rel="noopener"><span class="v-name">ID.me</span><div class="v-desc">Used by Samsung, HP, Verizon, Skechers, and the ID.me Shop movie-ticket discounts.</div><span class="v-go">id.me →</span></a>
           <a class="vcard" href="https://www.isic.org" target="_blank" rel="noopener"><span class="v-name">ISIC</span><div class="v-desc">International Student Identity Card — hostels, flights, museums, transport worldwide.</div><span class="v-go">isic.org →</span></a>
         </div>
@@ -385,21 +391,6 @@
     </div>
 
     <script>
-      /* ============ PICKS (survey for Naman's stack) ============ */
-      var PICKS = [
-        { name: "GitHub Copilot Student", tag: "Pack · free", why: "Free AI pair-programming for the game builds and LifeOS Swift work — unlimited completions while you're a student, vs $10–20/mo standalone.", offer: "Unlimited completions + AI Credits allowance; chat/agent via auto model selection.", steps: ["Open the Copilot offer on the Pack page (Apply) — your account is already Pack-verified.", "Choose the student plan and confirm Copilot Student is attached to your GitHub account.", "In your editor, install the GitHub Copilot extension and sign in with that same GitHub account.", "Check the Copilot status menu shows an active plan — completions and chat now run on the student plan, free while you're verified."] },
-        { name: "Namecheap .me domain + SSL", tag: "Pack · 1 year", why: "A free .me domain and SSL cert for a year — candidate for a studio or game landing page without touching Namecheap renewals on your existing domains.", offer: "1 year .me registration + 1 year SSL certificate. Renewals paid.", steps: ["Open the Namecheap offer on the Pack page (Apply) and continue to Namecheap.", "Create a Namecheap account (or sign in) and let it confirm your Pack eligibility.", "Search for the .me domain you want and add it to the cart — the price drops to $0 for the first year.", "Add the free 1-year SSL certificate to the same order, then check out at $0 and confirm the domain shows in your Namecheap account. Renewals after year one are paid."] },
-        { name: "Name.com domain (.dev / .app)", tag: "Pack · free", why: "Free domain from 25+ extensions including .dev, .app, .live, .studio — a cheap identity for the next game or the offices.", offer: "One free domain; account needs a unique email/address.", steps: ["Open the Name.com offer on the Pack page (Apply) and continue to Name.com.", "Create your Name.com account with a unique email and street address (required for the free domain).", "Search the 25+ eligible extensions (.dev, .app, .live, .studio, .software…) for the name you want.", "Check out — the domain registers free for one year; confirm it under your Name.com account's domains."] },
-        { name: "Microsoft Azure — $100 credit", tag: "Pack · cloud", why: "Free cloud runway for prototypes: a game backend, a webhook host, or office automation experiments, no credit card required.", offer: "$100 credit + 25+ free services (18+ tier).", steps: ["Open the Microsoft offer on the Pack page (Apply) and choose the Azure for Students signup.", "Sign in with a Microsoft account and verify with your school email — no credit card is asked for.", "Complete the student verification; the $100 credit and 25+ free services attach to your new Azure subscription.", "Open the Azure portal and check Cost Management shows the $100 credit balance — spend against it before it expires (12 months), and keep using the always-free services after."] },
-        { name: "Heroku — $13/mo for 24 months", tag: "Pack · cloud", why: "Two years of small dyno credit covers always-on bots and tiny services for the offices without a card on file.", offer: "$13/month credit, 24 months.", steps: ["Open the Heroku offer on the Pack page (Apply) and continue to Heroku.", "Create a Heroku account (or sign in) and link/verify it through the Pack flow.", "Confirm the student credit program shows on your Heroku account billing page.", "Deploy or scale an app — the $13 monthly credit is consumed before any card is charged, for 24 months."] },
-        { name: "JetBrains — all IDEs free", tag: "Pack · tools", why: "Full All Products Pack (WebStorm, PyCharm Pro, IntelliJ Ultimate) for web tooling around the games and office repos; renewable yearly while enrolled.", offer: "Free subscription to all IDEs, educational use.", steps: ["Open the JetBrains offer on the Pack page (Apply) and continue to JetBrains.", "Create a JetBrains account and apply for the student license (your Pack/GitHub verification carries over).", "Download JetBrains Toolbox (or any IDE), sign in with that account, and the All Products license activates.", "Renew free each year while you're still enrolled — the Toolbox prompts you before the license lapses."] },
-        { name: "Sentry — Team tier, 1 year", tag: "Pack · QA", why: "Real error tracking for shipped web games — 50K errors, 100K transactions, 500 replays beats guessing from playtest reports.", offer: "Team features, 1 year (renewable); on-demand disabled.", steps: ["Open the Sentry offer on the Pack page (Apply) and continue to Sentry.", "Create a Sentry organization (or sign in) and apply the student redemption to it.", "Confirm the billing page shows the Team plan at $0 for the year (50K errors / 100K transactions / 500 replays).", "Add a project, drop the Sentry SDK into a game build, and send a test error — once it lands in Issues, the offer is fully redeemed. Renew free while a student."] },
-        { name: "BrowserStack / LambdaTest", tag: "Pack · QA", why: "A free year of cross-browser/device testing on each — the GLOAM/STALLBREAKER QA pass across phones you don't own.", offer: "Automate Mobile / Live plan, 1 year each.", steps: ["Open the BrowserStack offer on the Pack page (Apply) and redeem the free Automate Mobile year; repeat with the LambdaTest offer for its Live plan year.", "Create each account and confirm the paid plan shows active at $0 for 12 months.", "Point a first session at your game URL on a phone you don't own (Live testing) or wire the Automate endpoint into a test script.", "When a real device session runs your build end to end, the year is redeemed — calendar the renewal/expiry date, since both stop after month 12."] },
-        { name: "Clerk — free Pro plan", tag: "Pack · apps", why: "Drop-in auth if any office or game web app needs accounts — pairs with your existing Supabase knowledge from LifeOS.", offer: "Free Pro plan while a student.", steps: ["Open the Clerk offer on the Pack page (Apply) and continue to Clerk.", "Create your Clerk account and organization, then apply the student redemption.", "Check the billing page shows the Pro plan at $0 while you're a student.", "Create your first application and drop Clerk's sign-in component into a build — once a test user can sign in, it's redeemed."] },
-        { name: "1Password — free 1 year", tag: "Pack · security", why: "Developer Tools tier handles SSH keys and repo secrets properly across the office and game repositories.", offer: "1 year free incl. 1Password Developer Tools.", steps: ["Open the 1Password offer on the Pack page (Apply) and continue to 1Password.", "Create your 1Password account and apply the student redemption during signup.", "Confirm the membership shows 1 year free, including 1Password Developer Tools.", "Install the app/CLI, create a vault, and store your first SSH key or repo secret — after month 12 it converts to paid unless you cancel."] },
-        { name: "Notion Education + AI responses", tag: "Pack · offices", why: "Your Office Operations Boards already live in Notion — the extra AI responses and Plus-class history apply directly.", offer: "Education plan with additional AI responses.", steps: ["Open the Notion offer on the Pack page (Apply) and continue to Notion.", "Sign in to the Notion account tied to your boards and apply the education upgrade.", "Confirm Settings shows the Education plan with the extra AI responses.", "Open one of the Office Operations Boards and check version history/sharing now run at Plus class — that's the redemption live."] },
-        { name: "Figma for Education", tag: "Online · free", why: "Free Professional plan for game UI/HUD mockups before they hit code — higher-ed verified, reapply yearly.", offer: "Unlimited files/editors/teams; education use.", steps: ["Open Figma's education page (Apply) and choose the student application.", "Sign up or sign in with your school email and complete Figma's education verification.", "Confirm your workspace shows the Professional plan (Education) with unlimited files and editors.", "Create a team and your first file — once you're editing at Pro limits, it's redeemed. Reapply each year while enrolled."] }
-      ];
 
       /* ============ GITHUB PACK (83 offers, live page 2026-10-08) ============ */
       var PACK = [
@@ -576,6 +567,7 @@
           { n: "Driver's education discount", o: "5–15% off for completing a state-approved driver's ed course (State Farm up to 15%; GEICO 10% for under-21).", c: "Course certificate", s: [["Insurance Navy", "https://www.insurancenavy.com/drivers-education-car-insurance-discount/"]] }
         ]},
         { g: "Banking, gyms & other", items: [
+          { n: "SoFi (student banking)", o: "$30 cash bonus, no monthly fees: sign up with your .edu email and fund at least $10 within 5 days of opening. Offer expires January 31, 2027.", c: ".edu email signup + $10 funding", s: [["SoFi (official page)", "https://www.sofi.com/banking/checking-account/"], ["CreditDonkey", "https://www.creditdonkey.com/promotions/sofi/?offer=85579"]] },
           { n: "Student banking", o: "Chase College Checking; Bank of America Advantage SafeBalance (no monthly fee for students under 25); Discover Student card (5% rotating cashback + GPA reward); Deserve EDU Mastercard (1% cashback, no credit history needed, includes a year of Prime Student).", c: "Student enrollment", s: [["awesome-edu-perks", "https://github.com/sdhutchins/awesome-edu-perks"]] },
           { n: "Campus gyms & YMCA", o: "Campus gyms are typically included with tuition; many YMCAs offer local student pricing.", c: "Student ID", s: [["awesome-edu-perks", "https://github.com/sdhutchins/awesome-edu-perks"]] },
           { n: "Planet Fitness", o: "Free summer gym access for eligible high school students (teens).", c: "Teen program", s: [["awesome-edu-perks", "https://github.com/sdhutchins/awesome-edu-perks"]] }
@@ -598,7 +590,8 @@
           { n: "Disney+ student", o: "Student bundle pricing (~$4.99/mo via SheerID) reported by one source only.", c: "SheerID", tag: "unconfirmed", s: [["Global Stream Guide", "https://www.globalstreamguide.com/best-streaming-student-discounts"]] },
           { n: "TIDAL student", o: "$6.99/month (lossless / HiRes / Dolby Atmos).", c: "Student verification", s: [["awesome-edu-perks", "https://github.com/sdhutchins/awesome-edu-perks"]] },
           { n: "Apple Creator Studio (student)", o: "Final Cut Pro, Logic Pro, Pixelmator Pro bundle; student pricing reported at £2.99/month in the UK — US price unconfirmed.", c: "Apple Education", tag: "unconfirmed", s: [["Money Saving Girl", "https://www.moneysavinggirl.co.uk/how-to-get-apple-student-discount-steps/"]] },
-          { n: "Netflix", o: "No student discount — confirmed by its absence across 2026 student-discount lists.", c: "—", tag: "none", s: [["Global Stream Guide", "https://www.globalstreamguide.com/best-streaming-student-discounts"]] }
+          { n: "Netflix", o: "No student discount — confirmed by its absence across 2026 student-discount lists.", c: "—", tag: "none", s: [["Global Stream Guide", "https://www.globalstreamguide.com/best-streaming-student-discounts"]] },
+          { n: "Dashlane (student offer)", o: "Dashlane Premium free for 1 year with a student email (~$60 value) — open to new and existing customers; the student Premium excludes the built-in VPN. Standalone offer, separate from the Pack's 6-month version.", c: "Student email at signup", s: [["Dashlane student page (read live Oct 8, 2026)", "https://www.dashlane.com/students"]] }
         ]},
         { g: "Developer & creator tools (beyond the Pack)", items: [
           { n: "JetBrains (direct education license)", o: "Free 1-year license for the full All Products Pack (IntelliJ IDEA Ultimate, PyCharm Professional, WebStorm…), renewable annually while enrolled; non-commercial use. 40% graduation discount for up to 2 years after.", c: "Institutional email or ISIC; 1+ year full-time enrollment", s: [["JetBrains (help)", "https://sales.jetbrains.com/hc/en-gb/articles/11557849416594-Who-is-eligible-for-free-individual-educational-licenses"]] },
@@ -613,7 +606,9 @@
           { n: "Tableau", o: "Free academic access (Tableau Desktop/Public) for students.", c: "Student verification", s: [["awesome-edu-perks", "https://github.com/sdhutchins/awesome-edu-perks"]] },
           { n: "Raycast Pro", o: "50% off for verified students (excludes the Advanced AI add-on).", c: "Student verification", s: [["awesome-edu-perks", "https://github.com/sdhutchins/awesome-edu-perks"]] },
           { n: "Ulysses", o: "$10.99 for 6 months across Mac/iPad/iPhone, renewable while enrolled.", c: "Student verification", s: [["awesome-edu-perks", "https://github.com/sdhutchins/awesome-edu-perks"]] },
-          { n: "Prezi EDU plans", o: "EDU Plus $4/month, EDU Pro $8/month, EDU Teams $19/user/month (billed annually).", c: "EDU pricing", s: [["awesome-edu-perks", "https://github.com/sdhutchins/awesome-edu-perks"]] }
+          { n: "Prezi EDU plans", o: "EDU Plus $4/month, EDU Pro $8/month, EDU Teams $19/user/month (billed annually).", c: "EDU pricing", s: [["awesome-edu-perks", "https://github.com/sdhutchins/awesome-edu-perks"]] },
+          { n: "Tenable Nessus (education)", o: "Free 1-year Nessus Essentials Plus license for verified students and instructors — 20-IP scans with real-time plugin updates (the always-free Essentials tier covers 5 IPs). One license per person; includes a free on-demand Nessus Fundamentals course.", c: "Tenable eligibility verification", s: [["Tenable Nessus for Education (read live Oct 8, 2026)", "https://www.tenable.com/tenable-nessus-for-education"]] },
+          { n: "Shodan (academic upgrade)", o: "Free academic membership upgrade when you register with an academic email (.edu, .ac.uk, …): monitor up to 16 IPs, 100 query + 100 scan credits/month, Shodan Maps/Images access, and the vuln search filter on the website.", c: "Academic email at signup", note: "The registered email can't be changed afterward — sign up with the school address you plan to keep.", s: [["Shodan help (read live Oct 8, 2026)", "https://help.shodan.io/the-basics/academic-upgrade"]] }
         ]},
         { g: "Cloud credits (beyond the Pack)", items: [
           { n: "Microsoft Azure for Students", o: "$100/year in credits + 25+ always-free services, no credit card (also available through the Pack).", c: ".edu email", s: [["awesome-edu-perks", "https://github.com/sdhutchins/awesome-edu-perks"]] },
@@ -645,7 +640,8 @@
         { g: "AI tools & other online offers", items: [
           { n: "Google AI Pro (Gemini)", o: "FREE 1 year for eligible US college students 18+ — 1M-token context, 5TB storage, higher Gemini limits. Redeem by December 31, 2026; renews at $19.99/month unless canceled.", c: "Student offer page", s: [["dupple", "https://dupple.com/learn/chatgpt-for-students"]] },
           { n: "ChatGPT Plus", o: "4 free months for US college students — claim deadline October 31, 2026 (card required; renews at $20/month).", c: "SheerID via OpenAI's student offer page", note: "OpenAI's 2026 Back to School offer, confirmed on OpenAI's help center: full/part-time college and grad students at eligible US institutions; the 4 months start the day you claim, so claim close to when you'll use them.", s: [["Medium", "https://medium.com/@adi_leviim/which-ai-student-deal-is-actually-free-7a34c539ec78"]] },
-          { n: "Perplexity Pro", o: "Free for 1 year for verified students ($20/month value; rolls back to the free tier after).", c: "SheerID", s: [["dupple", "https://dupple.com/learn/chatgpt-for-students"]] },
+          { n: "ElevenLabs for Students", o: "3 months each of ElevenCreative, ElevenAgents, and ElevenAPI access, plus a full year of ElevenReader Ultra — free for university students 18+ in the US, Canada, EU27, UK, and Australia. Announced September 2026.", c: "Student signup (18+, eligible countries)", s: [["EdTech Innovation Hub", "https://www.edtechinnovationhub.com/news/1dfbw006a572ltt2jpnbztsm551xys"]] },
+          { n: "Perplexity Education Pro", o: "Education Pro at $9/month billed annually — 50% off the $17/month annual Personal Pro price — for verified students and educators. The widely shared free 12-month Education Plan has ENDED; older guides describing it are outdated.", c: "Perplexity academic verification", note: "Enrollment in the free year expired around January 2026 — any guide still promising a free year of Perplexity is stale.", s: [["Perplexity academic page (read live Oct 8, 2026)", "https://www.perplexity.ai/academic"]] },
           { n: "Anthropic Claude", o: "No personal student discount published as of Sept 2026.", c: "—", tag: "none", s: [["Medium", "https://medium.com/@adi_leviim/which-ai-student-deal-is-actually-free-7a34c539ec78"]] },
           { n: "Headspace", o: "$9.99/year student plan (85%+ off).", c: "Student verification", s: [["awesome-edu-perks", "https://github.com/sdhutchins/awesome-edu-perks"]] },
           { n: "Evernote", o: "50% off Evernote Personal for 1 year with .edu email.", c: "UNiDAYS", s: [["RebateKey", "https://rebatekey.com/blog/8-best-college-student-discounts/"]] },
@@ -684,23 +680,6 @@
         "Notion": "notion", "Notion Template Collection": "notion-templates", "PomoDone": "pomodone",
         "1Password": "1password", "Dashlane": "dashlane", "HazeOver": "hazeover", "ToDiagram": "todiagram",
         "AstraSecurity": "astra", "Stripe": "stripe", "CARTO": "cartodb"
-      };
-      var PICK_URLS = {
-        "GitHub Copilot Student": "https://education.github.com/pack#github-copilot",
-        "Namecheap .me domain + SSL": "https://education.github.com/pack#namecheap",
-        "Name.com domain (.dev / .app)": "https://education.github.com/pack#namecom",
-        "Microsoft Azure — $100 credit": "https://education.github.com/pack#microsoft",
-        "Heroku — $13/mo for 24 months": "https://education.github.com/pack#heroku",
-        "JetBrains — all IDEs free": "https://education.github.com/pack#jetbrains",
-        "Sentry — Team tier, 1 year": "https://education.github.com/pack#sentry",
-        "BrowserStack / LambdaTest": "https://education.github.com/pack#browserstack",
-        "Clerk — free Pro plan": "https://education.github.com/pack#clerk",
-        "1Password — free 1 year": "https://education.github.com/pack#1password",
-        "Notion Education + AI responses": "https://education.github.com/pack#notion",
-        "Figma for Education": "https://www.figma.com/education"
-      };
-      var PICK_EXTRA = {
-        "BrowserStack / LambdaTest": [["LambdaTest", "https://education.github.com/pack#lambdatest"]]
       };
 
       /* ============ APPLY DESTINATIONS (the page where each offer is claimed) ============ */
@@ -768,7 +747,12 @@
         "The Economist": "https://www.economist.com", "Wired": "https://www.wired.com", "Scribd": "https://www.scribd.com",
         "Google AI Pro (Gemini)": "https://gemini.google/students",
         "ChatGPT Plus": "https://chatgpt.com/students/2026",
-        "Perplexity Pro": "https://www.perplexity.ai",
+        "Perplexity Education Pro": "https://www.perplexity.ai/academic",
+        "ElevenLabs for Students": "https://elevenlabs.io/students",
+        "Tenable Nessus (education)": "https://www.tenable.com/tenable-nessus-for-education",
+        "Shodan (academic upgrade)": "https://account.shodan.io",
+        "Dashlane (student offer)": "https://www.dashlane.com/students",
+        "SoFi (student banking)": "https://www.sofi.com/banking/checking-account/",
         "Headspace": "https://www.headspace.com", "YNAB (You Need A Budget)": "https://www.ynab.com",
         "NBA / WNBA League Pass": "https://www.nba.com", "TurboTax": "https://turbotax.intuit.com"
       };
@@ -1337,11 +1321,11 @@
           "Add a payment method and finish activation — nothing is charged during the 4 free months; they start the day you claim.",
           "Claim by October 31, 2026, and calendar the end of month 4: it renews at $20/mo unless you cancel. Already on Plus through the App Store/Google Play? Cancel there, let the period lapse, then claim on the web."
         ],
-        "Perplexity Pro": [
-          "Create/sign in to your Perplexity account (Apply).",
-          "Find the student offer (Perplexity's education verification) and verify via SheerID.",
-          "Once verified, the student offer attaches: a free year of Pro has been the student deal (afterward it rolls back to the free tier unless you subscribe).",
-          "Use Pro — cited answers and Deep Research confirm it's live. Re-verify if prompted."
+        "Perplexity Education Pro": [
+          "Open Perplexity's academic page (Apply) and choose View plans.",
+          "Switch to the Education tab and pick “Verify as student” (or “Verify as educator”), then complete the verification with your school details.",
+          "Subscribe to Education Pro at $9/month billed annually — half the $17/month annual Personal Pro price — and add your payment method.",
+          "Pro is live once the Education plan shows on your account. Ignore older guides promising a free year: that enrollment ended around January 2026, and without subscribing you simply stay on the free tier."
         ],
         "Anthropic Claude": [
           "No personal student discount is published for Claude — there is nothing to claim.",
@@ -1372,6 +1356,36 @@
           "A single 2026 roundup reports Grammarly Pro at half price (~$12/mo) for students — treat as unconfirmed.",
           "Check grammarly.com's plans/education pages for a live student offer before paying full price.",
           "If your school provides Grammarly institutionally, sign in with your school account instead — that's free."
+        ],
+        "ElevenLabs for Students": [
+          "Open the ElevenLabs student signup (Apply) and start creating your account — you must be 18+ and enrolled at a university in the US, Canada, EU27, UK, or Australia.",
+          "Complete the student verification it asks for (school details / student email).",
+          "Activate each piece on your account: 3 months of ElevenCreative, 3 months of ElevenAgents, and 3 months of ElevenAPI access, plus a full year of ElevenReader Ultra.",
+          "Open each product once and confirm the student term shows active — that's the offer redeemed. Calendar the 3-month expiries: the tools stop being free when their student term ends, while ElevenReader Ultra runs the full year."
+        ],
+        "Tenable Nessus (education)": [
+          "Open Tenable's Nessus for Education page (Apply) and start the registration.",
+          "Complete the student/instructor eligibility verification — one free license per person.",
+          "Take the license Tenable issues you (a 1-year Nessus Essentials Plus subscription) and install Nessus, activating it with that license.",
+          "Run your first scan — up to 20 IPs with real-time plugin updates confirms the license is live. The same page links a free on-demand Nessus Fundamentals course; questions go to education@tenable.com."
+        ],
+        "Shodan (academic upgrade)": [
+          "Go to Shodan's account signup (Apply) and register with your academic email (.edu, .ac.uk, or another school domain) — pick the address you plan to keep, because the registered email can't be changed later.",
+          "Confirm the account from the verification email; the academic membership upgrade normally applies automatically to academic addresses.",
+          "Not upgraded? Email academic@shodan.io from the registered school email and ask for the academic upgrade — non-obvious school domains can be manually verified this way.",
+          "Check your account page: monitoring for up to 16 IPs, 100 query + 100 scan credits/month, Shodan Maps/Images, and the vuln filter on the website confirm the upgrade is live."
+        ],
+        "Dashlane (student offer)": [
+          "Open Dashlane's student page (Apply) and enter your student email — the offer works for new and existing customers with an eligible student email.",
+          "Create your Dashlane account (or sign in) under that email and finish the signup.",
+          "Premium activates free for 1 year — confirm Premium shows on your account (the student Premium excludes the built-in VPN).",
+          "Set up your vault and add your first logins. Calendar month 11: after the free year it converts to paid unless you cancel."
+        ],
+        "SoFi (student banking)": [
+          "Open SoFi's checking page (Apply) and start the student banking offer with your .edu email.",
+          "Open the account and complete identity verification.",
+          "Fund at least $10 within 5 days of opening — that's the bonus trigger.",
+          "The $30 bonus posts per the offer terms, and the account itself carries no monthly fees. The offer expires January 31, 2027; SoFi's separate general direct-deposit bonus (up to $400) is a different promotion."
         ]
       };
       function stepsHTML(steps) {
@@ -1390,21 +1404,6 @@
         if (tag === "none") return ' <span class="tag gray">no student deal</span>';
         return "";
       }
-
-      var picksGrid = document.getElementById("picksGrid");
-      picksGrid.innerHTML = PICKS.map(function (p) {
-        var extra = (PICK_EXTRA[p.name] || []).map(function (x) {
-          return ' · <a href="' + esc(x[1]) + '" target="_blank" rel="noopener">' + esc(x[0]) + ' ↗</a>';
-        }).join("");
-        var applyBtn = PICK_URLS[p.name]
-          ? '<a class="apply-btn small" href="' + esc(PICK_URLS[p.name]) + '" target="_blank" rel="noopener">Apply ↗</a>'
-          : "";
-        return '<article class="pick"><div class="p-name">' + esc(p.name) + ' <span class="tag">' + esc(p.tag) + '</span></div>' +
-          '<p class="p-why">' + esc(p.why) + '</p>' +
-          '<p class="p-offer"><b>Offer:</b> ' + esc(p.offer) + extra + '</p>' +
-          '<div class="e-actions">' + applyBtn + '</div>' +
-          (p.steps ? stepsHTML(p.steps) : "") + '</article>';
-      }).join("");
 
       var PACK_STEP_OVERRIDES = {
         "GitHub Copilot": ["Open the Copilot offer on the Pack page (Apply) — your Pack verification already qualifies you.", "Confirm Copilot Student is attached to your GitHub account (GitHub → Settings → Copilot).", "Install the GitHub Copilot extension in your editor and sign in with that GitHub account.", "Check the Copilot status shows the plan active — unlimited completions are live. Free while you're a verified student; revalidate your Pack status when prompted (about every 2 years)."],
