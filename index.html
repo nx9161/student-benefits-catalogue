@@ -59,8 +59,11 @@
         --surface-2: #e9ede9;
         --ink: #16211b;
         --ink-2: #45534a;
-        --ink-3: #74827a;
+        --ink-3: #5d6d63;
         --line: #d8ded9;
+        --radius: 12px;
+        --radius-lg: 14px;
+        --gutter: 20px;
         --accent: #0b6b45;
         --accent-ink: #ffffff;
         --accent-soft: #e2efe7;
@@ -94,9 +97,11 @@
       * { box-sizing: border-box; }
       html {
         scroll-behavior: smooth;
+        scroll-padding-top: 16px;
         -webkit-text-size-adjust: 100%;
         text-size-adjust: 100%;
         overflow-x: hidden;
+        overflow-x: clip;
       }
       body {
         margin: 0;
@@ -105,9 +110,12 @@
         font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
         font-size: 16px;
         line-height: 1.55;
+        text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         -webkit-tap-highlight-color: rgba(11, 107, 69, 0.14);
         overflow-x: hidden;
+        overflow-x: clip;
         max-width: 100%;
       }
       img, svg, canvas { max-width: 100%; }
@@ -115,7 +123,7 @@
       a { color: var(--accent); text-decoration: none; }
       a:hover { text-decoration: underline; }
       .wrap {
-        max-width: 1120px; margin: 0 auto; width: 100%;
+        max-width: 1160px; margin: 0 auto; width: 100%;
         padding: 0 max(20px, env(safe-area-inset-right)) max(72px, calc(24px + env(safe-area-inset-bottom))) max(20px, env(safe-area-inset-left));
         overflow-x: clip;
       }
@@ -183,10 +191,13 @@
       /* ---------- Free totals band ---------- */
       .freeband {
         margin: 28px 0 4px; background: var(--accent); color: var(--accent-ink);
-        border-radius: 14px; padding: 26px 26px 20px; box-shadow: var(--shadow);
+        border-radius: var(--radius-lg); padding: 26px 26px 20px; box-shadow: var(--shadow);
       }
       .freeband .fb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-      @media (max-width: 640px) { .freeband .fb-grid { grid-template-columns: 1fr; gap: 16px; } }
+      @media (max-width: 640px) {
+        .freeband .fb-grid { grid-template-columns: 1fr 1fr; gap: 18px 16px; }
+        .freeband .fb-item:first-child { grid-column: 1 / -1; }
+      }
       .freeband .fb-item b {
         display: block; font-family: "Newsreader", Georgia, serif; font-weight: 650;
         font-size: clamp(44px, 6.5vw, 64px); line-height: 1.02; letter-spacing: -0.01em;
@@ -235,7 +246,7 @@
       /* ---------- Verify platforms ---------- */
       .verify { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 20px; }
       .verify a.vcard {
-        background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
         padding: 16px; color: var(--ink); box-shadow: var(--shadow); display: block; min-height: 44px;
       }
       .verify a.vcard:active { border-color: var(--accent); background: var(--accent-soft); }
@@ -276,9 +287,15 @@
       .filterbar .showing { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--ink-3); margin-top: 8px; }
 
       /* ---------- Benefit rows ---------- */
-      .entries { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; }
-      @media (max-width: 760px) { .entries { grid-template-columns: 1fr; } }
-      .entry { padding: 14px 0 13px; border-bottom: 1px solid var(--line); }
+      .entries { display: grid; grid-template-columns: 1fr; gap: 14px; align-items: stretch; }
+      @media (min-width: 761px) { .entries { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+      @media (min-width: 1180px) { .entries { grid-template-columns: repeat(3, 1fr); } }
+      .entry {
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+        padding: 16px 18px; box-shadow: var(--shadow);
+        display: flex; flex-direction: column;
+      }
+      .entry .e-actions { margin-top: auto; }
       .entry .e-top { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
       .entry .e-name { font-weight: 600; font-size: 15.5px; }
       .entry .e-offer { color: var(--ink-2); font-size: 14px; margin: 3px 0 0; }
@@ -390,33 +407,44 @@
       .kofi-btn .kofi-cup { font-size: 17px; line-height: 1; }
       .support-cta {
         margin-top: 36px; background: var(--surface); border: 1px solid var(--line);
-        border-radius: 14px; padding: 22px; box-shadow: var(--shadow);
+        border-radius: var(--radius-lg); padding: 22px; box-shadow: var(--shadow);
         display: flex; flex-wrap: wrap; gap: 14px 20px; align-items: center; justify-content: space-between;
       }
       .support-cta h3 { margin: 0 0 4px; font-size: 18px; }
       .support-cta p { margin: 0; color: var(--ink-2); font-size: 14.5px; max-width: 640px; }
       /* ---------- Page nav (hash routing) ---------- */
       .pagenav {
-        display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 6px;
+        display: flex; flex-wrap: nowrap; gap: 6px; margin: 18px 0 6px;
         background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px;
         box-shadow: var(--shadow);
       }
       .pagenav a {
-        flex: 1 1 22%; text-align: center; text-decoration: none;
-        font-weight: 600; font-size: 14.5px; line-height: 1.2;
-        padding: 12px 16px; border-radius: 999px; color: var(--ink-2);
+        flex: 1 1 auto; min-width: 0; text-align: center; text-decoration: none;
+        font-weight: 600; font-size: 13.5px; line-height: 1.2; white-space: nowrap;
+        padding: 11px 10px; border-radius: 999px; color: var(--ink-2);
         min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 6px;
         border: 1px solid transparent;
       }
       .pagenav a:hover { text-decoration: none; color: var(--ink); }
       .pagenav a[aria-current="page"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
       .pagenav a:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 2px; }
-      @media (max-width: 640px) { .pagenav { border-radius: 16px; } .pagenav a { flex: 1 1 40%; font-size: 14px; padding: 12px 10px; } }
+      @media (prefers-reduced-motion: no-preference) { .pagenav a { transition: background-color .15s ease, color .15s ease; } }
+      @media (max-width: 1023px) {
+        .pagenav {
+          border-radius: 18px; overflow-x: auto; overscroll-behavior-x: contain;
+          scroll-snap-type: x proximity; scroll-padding: 6px;
+          scrollbar-width: none; -webkit-overflow-scrolling: touch;
+          -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 30px), transparent 100%);
+          mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 30px), transparent 100%);
+        }
+        .pagenav::-webkit-scrollbar { display: none; }
+        .pagenav a { flex: 0 0 auto; scroll-snap-align: start; font-size: 14px; padding: 12px 14px; }
+      }
       /* ---------- Graduation freebies ---------- */
       .grad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
       @media (max-width: 760px) { .grad-grid { grid-template-columns: 1fr; } }
       .grad-card {
-        background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg);
         padding: 18px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 10px;
       }
       .grad-card h3 { margin: 0; font-size: 17px; line-height: 1.25; }
@@ -467,7 +495,7 @@
       @media (max-width: 900px) { .hub-grid { grid-template-columns: 1fr 1fr; } }
       @media (max-width: 560px) { .hub-grid { grid-template-columns: 1fr; } }
       .hub-card {
-        background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg);
         padding: 18px; box-shadow: var(--shadow); color: var(--ink); display: flex; flex-direction: column; gap: 6px;
         min-height: 44px;
       }
@@ -483,7 +511,14 @@
       .hub-card.grad .hub-count, .hub-card.grad .hub-go { color: var(--accent); }
       @media (prefers-color-scheme: dark) { .hub-card.grad .hub-count, .hub-card.grad .hub-go { color: #4cc488; } }
       /* ---------- Per-page search ---------- */
-      .pagesearch { margin-top: 22px; }
+      .pagesearch {
+        position: sticky; top: 0; z-index: 30;
+        margin: 22px calc(-1 * max(var(--gutter), env(safe-area-inset-right))) 8px calc(-1 * max(var(--gutter), env(safe-area-inset-left)));
+        padding: 12px max(var(--gutter), env(safe-area-inset-right)) 12px max(var(--gutter), env(safe-area-inset-left));
+        background: color-mix(in srgb, var(--bg) 92%, transparent);
+        backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
       .pagesearch .showing { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--ink-3); margin-top: 8px; }
       .page-empty { display: none; text-align: center; padding: 40px 20px; color: var(--ink-2); border: 1px dashed var(--line); border-radius: 12px; margin-top: 24px; }
       .page-empty.show { display: block; }
@@ -506,7 +541,7 @@
       .crypto-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
       @media (max-width: 760px) { .crypto-grid { grid-template-columns: 1fr; } }
       .crypto-card {
-        background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
         padding: 18px 16px 16px; box-shadow: var(--shadow); text-align: center;
       }
       .crypto-card .coin-name { font-weight: 700; font-size: 16px; }
@@ -534,6 +569,31 @@
       .fee-note { margin-top: 10px; font-size: 12.5px; line-height: 1.5; color: var(--ink-2); }
       .fee-note b { color: var(--ink); }
 
+      /* ---------- Personal note (one per page) ---------- */
+      .naman-note {
+        margin: 18px 0 4px; background: var(--accent-soft);
+        border: 1px solid var(--line); border-radius: var(--radius-lg);
+        padding: 18px 20px; box-shadow: var(--shadow);
+      }
+      .naman-note p {
+        margin: 0; font-family: "Newsreader", Georgia, serif; font-weight: 500;
+        font-size: 18px; line-height: 1.5; color: var(--ink); max-width: 760px;
+      }
+      @media (max-width: 640px) { .naman-note { padding: 16px; } .naman-note p { font-size: 17px; } }
+
+      /* ---------- Focus states & reduced motion ---------- */
+      a:focus-visible, button:focus-visible, summary:focus-visible,
+      textarea:focus-visible, input:focus-visible, [tabindex]:focus-visible {
+        outline: 3px solid var(--accent); outline-offset: 2px;
+      }
+      .search input:focus-visible { outline: none; }
+      .search:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+      .grad-card .template-box { margin-top: auto; }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { transition: none !important; animation: none !important; }
+      }
+
       /* ---------- iPhone / mobile hardening (390px) ---------- */
       @media (hover: none) {
         a:hover, .apply-btn:hover, .copy-btn:hover, .chip-btn:hover { text-decoration: none; filter: none; transform: none; }
@@ -560,13 +620,18 @@
           padding-right: max(16px, env(safe-area-inset-right));
         }
         .filterbar .row { flex-direction: column; align-items: stretch; gap: 10px; }
+        .pagesearch {
+          margin-left: calc(-1 * max(16px, env(safe-area-inset-left)));
+          margin-right: calc(-1 * max(16px, env(safe-area-inset-right)));
+          padding-left: max(16px, env(safe-area-inset-left));
+          padding-right: max(16px, env(safe-area-inset-right));
+        }
         .search { flex: 1 1 auto; width: 100%; min-height: 48px; }
         .chips { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; }
         .chip-btn { padding: 10px 6px; font-size: 13px; width: 100%; }
         .verify { grid-template-columns: 1fr; gap: 10px; }
         .verify a.vcard { padding: 16px; min-height: 44px; }
-        .entries { gap: 0; }
-        .entry { padding: 16px 0 14px; }
+        .entry { padding: 16px; }
         .entry .e-actions { gap: 8px; }
         .entry .e-actions .apply-btn { flex: 1 1 auto; width: 100%; }
         .support-cta { padding: 18px 16px; }
@@ -621,6 +686,7 @@
         </div>
         <h1 class="home-only">Every student benefit, in one place</h1>
         <p class="lede home-only">The complete GitHub Student Developer Pack, plus everything a verified US student email unlocks off GitHub — in stores, on campus, and online. Search it, filter it, work through it.</p>
+        <aside class="naman-note home-only" data-naman-note="home"><p>I started this catalogue after realizing how much money I'd been leaving on the table as a student — free software, discounts, trials, all just sitting there. I researched and organized every benefit on this site — a few are marked unconfirmed where I couldn't verify current terms, so double-check those before you count on them. If it saves you even one subscription fee, it did its job. — Naman</p></aside>
         <!-- Ko-fi hero button hidden for now (kept restorable): set .kofi-hidden removal or SHOW_KOFI_WIDGETS=true to bring it back. -->
         <div class="kofi-row kofi-hidden" aria-hidden="true">
           <a class="kofi-btn" href="https://ko-fi.com/nx9161" target="_blank" rel="noopener" tabindex="-1"><span class="kofi-cup" aria-hidden="true">☕</span> Support Us on Ko-fi</a>
@@ -674,13 +740,13 @@
         </div>
         <a href="#/graduation-freebies">Open Graduation Freebies →</a>
       </div>
-      </div>
       </div><!-- /view-home -->
 
       <div id="view-github-pack" data-view="github-pack" hidden>
       <section class="block" id="pack" data-section="github-pack">
         <div class="sec-head"><h2>The GitHub Student Developer Pack</h2><span class="count">83 offers · read live Oct 8, 2026</span></div>
         <p class="sec-intro">Eligibility: students aged 13+, verified with a school-issued email or uploaded enrollment proof. Validation lasts about 2 years, then you re-verify. Teachers, faculty, and staff aren't Pack-eligible (they get other GitHub Education benefits). Every offer below is claimed from its card on the Pack page: <a href="https://education.github.com/pack" target="_blank" rel="noopener">education.github.com/pack</a>.</p>
+        <aside class="naman-note" data-naman-note="github-pack"><p>The GitHub Student Developer Pack is genuinely the best deal in student life — I use these tools every day for my coursework. I went through all 83 offers and wrote down exactly how to claim each one, so you don't have to figure it out alone. — Naman</p></aside>
 
         <div class="callout">
           <h3>Yes — Copilot is in your pack, free</h3>
@@ -713,6 +779,7 @@
       <section class="block" id="unidays" data-section="unidays">
         <div class="sec-head"><h2>UNiDAYS benefits</h2><span class="count">verified through UNiDAYS</span></div>
         <p class="sec-intro">Every benefit in the catalogue that you claim through a free <a href="https://www.myunidays.com" target="_blank" rel="noopener">UNiDAYS</a> account — verify once there, then activate each offer from its Apply button. New to UNiDAYS? Start with the <a href="#/guides">Guides page</a>.</p>
+        <aside class="naman-note" data-naman-note="unidays"><p>UNiDAYS takes about two minutes to verify and then unlocks student pricing at brands you'll actually shop at. These are the offers I think are worth your time — skip the rest. — Naman</p></aside>
         <div class="pagesearch"><label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input class="page-search-input" type="search" placeholder="Search this page…" aria-label="Search this page" /></label><div class="showing" data-showing></div></div>
         <div id="unidaysGroups"></div>
         <div class="page-empty" data-empty><p><b>Nothing matches that search.</b></p><p>Try a broader term — a brand name, or a category like “music”, “cloud”, or “domain”.</p></div>
@@ -724,6 +791,7 @@
       <section class="block" id="sheerid" data-section="sheerid">
         <div class="sec-head"><h2>SheerID-verified benefits</h2><span class="count">verified through SheerID</span></div>
         <p class="sec-intro">Every benefit in the catalogue that checks your student status with <a href="https://www.sheerid.com" target="_blank" rel="noopener">SheerID</a> — you verify inside each brand&rsquo;s signup, and the step-by-step guide on every card walks you through it. How SheerID works: <a href="#/guides">Guides page</a>.</p>
+        <aside class="naman-note" data-naman-note="sheerid"><p>SheerID is the verification engine behind a surprising amount of student pricing — verify once, save everywhere. Here's where that one verification pays off the most. — Naman</p></aside>
         <div class="pagesearch"><label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input class="page-search-input" type="search" placeholder="Search this page…" aria-label="Search this page" /></label><div class="showing" data-showing></div></div>
         <div id="sheeridGroups"></div>
         <div class="page-empty" data-empty><p><b>Nothing matches that search.</b></p><p>Try a broader term — a brand name, or a category like “music”, “cloud”, or “domain”.</p></div>
@@ -735,6 +803,7 @@
       <section class="block" id="in-store" data-section="in-store">
         <div class="sec-head"><h2>In-store &amp; in-person discounts</h2><span class="count">with a verified student email</span></div>
         <p class="sec-intro">Stores, food, travel, carriers, and campus-life benefits across the US that you claim in person or with a student ID — the offers verified through UNiDAYS or SheerID live on their own pages (see the nav). Where a deal is campus-local or has quietly ended, it says so — no padding.</p>
+        <aside class="naman-note" data-naman-note="in-store"><p>Some of the best student discounts never appear online — you just have to ask and show your ID. I keep this list on my phone for when I'm out shopping. — Naman</p></aside>
         <div id="physicalGroups"></div>
       </section>
       </div><!-- /view-in-store -->
@@ -743,6 +812,7 @@
       <section class="block" id="online" data-section="online-sec">
         <div class="sec-head"><h2>Online: software, streaming, cloud, learning</h2><span class="count">digital benefits beyond the Pack</span></div>
         <p class="sec-intro">Everything claimable from your desk — subscriptions, developer tools, cloud credits, courses, news, and AI offers. Offers verified through UNiDAYS or SheerID live on their own pages (see the nav).</p>
+        <aside class="naman-note" data-naman-note="online"><p>Free tiers, student plans, and trials that are actually worth signing up for. This is the page I wish someone had sent me in my first semester. — Naman</p></aside>
         <div id="onlineGroups"></div>
       </section>
       </div><!-- /view-online -->
@@ -751,6 +821,7 @@
       <section class="block" id="guides">
         <div class="sec-head"><h2>Verify once, claim everywhere</h2></div>
         <p class="sec-intro">Most student discounts don't check your .edu email directly — they route through one of these five platforms. Set them up once and every claim in this catalogue gets much faster. Each platform card below opens its official site; the guides under them explain how verification and claiming actually work.</p>
+        <aside class="naman-note" data-naman-note="guides"><p>Claiming these benefits is usually easy, but the steps are never in one place. I wrote every guide the way I'd explain it to a friend — follow them in order and you're set. — Naman</p></aside>
         <div class="verify">
           <a class="vcard" href="https://www.myunidays.com" target="_blank" rel="noopener"><span class="v-name">UNiDAYS</span><div class="v-desc">Powers Apple Education, adidas, ASOS, J.Crew, H&amp;M, Max, Uber student offers.</div><span class="v-go">myunidays.com →</span></a>
           <a class="vcard" href="https://www.studentbeans.com" target="_blank" rel="noopener"><span class="v-name">Student Beans</span><div class="v-desc">Alternative aggregator — H&amp;M, Urban Outfitters, Lululemon, plus rotating codes.</div><span class="v-go">studentbeans.com →</span></a>
@@ -794,6 +865,7 @@
       <section class="block" id="graduation-freebies">
         <div class="sec-head"><h2>Graduation Freebies — Class of 2026</h2><span class="count">verified programs only · year-specific · check before you go</span></div>
         <p class="sec-intro">These are <b>not</b> the year-round student discounts on the catalogue page. They’re short, graduation-season treats — mostly “show up in cap &amp; gown on one day” or “a local franchise chooses to be generous.” Dates, participating locations, and stock change every year, so treat every card as <b>verify before you rely on it</b>.</p>
+        <aside class="naman-note" data-naman-note="graduation"><p>Graduating? Congratulations — seriously, you earned it. A lot of companies send free stuff to new grads if you just ask, so I made copy-paste email templates for each one. Fill in the brackets, send it from your student email, and see what shows up. Nothing's guaranteed, but it's a cheap lottery ticket. — Naman</p></aside>
 
         <div class="callout">
           <h3>How to use this page (read this first)</h3>
@@ -1067,7 +1139,7 @@ Warmly,
             <div class="crypto-card">
               <div class="coin-sub">Solana</div>
               <div class="coin-name">SOL</div>
-              <div class="qr-box" id="qr-sol" role="img" aria-label="Solana wallet address QR code — 4aJVuzjfQEgAFEjitjjBJMCV2yLkjCiXjQ6fXYoViZLX"></div>
+              <div class="qr-box" role="img" aria-label="Solana wallet address QR code — 4aJVuzjfQEgAFEjitjjBJMCV2yLkjCiXjQ6fXYoViZLX"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbwAAAG8AQMAAACffoKcAAAABlBMVEURERH////YdsArAAACCklEQVR42u2cS27DMAxEiV5A97+lb+A2lUwOmbgLd0EtnhAUSuq3EQZj/mw7n63DAAEBAQHvQPM1XvufH+d+buYF5bLz+LKHCxDw4XqJcCzlTq2mrzd7tArYpdVlqqrGufm12WW/ehlaBdxAq/Hju82iVcDdtOpx7IxaB1oF3C5ejZxL8rXlscSrgO1a1TrAHx/qAIDdWi3rg9++X4ZWAVu0et3uPUANoUoFwMMDfBWw11cjWJVSleZWc3PJm1MF7IlXawX16l5V1w0r5lQBm3KrVYkKL117SzGAXMmpAvbEq15BjRv9FOph6e5/UAcA7I5XxUjdY71U5f+lvgrYHAOMNEmlTatStiJeBeyPAS6Vrr+lUWWpqIWvAnb2WI8Pc1bVeKlZAW4TA6SCqidcXrk6jF4A4Ca5VWn9p06WfNAqYKevjjy2OupDLsSrgJv4anVUL67edAfQKmCjr5bJVbFQGQyI7gCnCthUBxDFhkTP2ET3ajATCNjtq6ktlSpUZR4ArQI2z1nlAQCtDHizQOoGnCpgT26VJlflUdbSwwoErQI2+epauRSg7YBQLLkVYHduVZ5bSWNXZvgq4C65laXQ1IPYYrbEq4B7aXXEUy0RtZrlkWxOFbBbq/I6IB2xLmJGq4Dt8ao6au0CiLWiVcD2OkB8zbGrdKzIrQBtk/eu8CJlQEBAwH+A33MuaJBzT9+aAAAAAElFTkSuQmCC" alt="" width="444" height="444" decoding="async" /></div>
               <div class="addr-box">4aJVuzjfQEgAFEjitjjBJMCV2yLkjCiXjQ6fXYoViZLX</div>
               <button class="copy-btn" type="button" data-copy="4aJVuzjfQEgAFEjitjjBJMCV2yLkjCiXjQ6fXYoViZLX">Copy SOL address</button>
               <p class="fee-note"><b>Network fee:</b> about <b>$0.00025</b> per transfer — effectively free, which makes Solana the best pick for small tips. Fees can move slightly with network congestion.</p>
@@ -1075,7 +1147,7 @@ Warmly,
             <div class="crypto-card">
               <div class="coin-sub">Bitcoin</div>
               <div class="coin-name">BTC</div>
-              <div class="qr-box" id="qr-btc" role="img" aria-label="Bitcoin wallet address QR code — bc1qu3fefcncyyjysmceddjmmu0zkqx6k9fdd8855d"></div>
+              <div class="qr-box" role="img" aria-label="Bitcoin wallet address QR code — bc1qu3fefcncyyjysmceddjmmu0zkqx6k9fdd8855d"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYwAAAGMAQMAAADz9wcJAAAABlBMVEURERH////YdsArAAABsElEQVR42u2cQW7DMAwEiX7A//+lfpDCoEktneQQUYcUHcMIUtVzMRarJU3HHp8ew0BAQEC+DbE8Dlk5zv9fn+WCH/v4APnPiKWQ/Mt55uIoSotFbjLIisbco/y8/HDMFb0AjYF0NRY7phoaGgPZqLFU1/VZtYfGQPp5TAN/HuQxkK7GpGx8fVJXgvQ0VizrfVEZ7Q5uMki7d+GlpZ9RYJ6fLkg0BrLgY6mocV85//QvUWaiMZBFH5NysthXpLX5EAGNgSxl/pK+6jMpvQaNgXTqytwoS0gruyR1JUjPx8KpVGm+PkWIxkAavQsPY6XJry3ZwV4JYs1nSbN+lF0yfUycjZsMsuJj2s+/d8Zi0gyNgXR7F5nHXg1gSNXJTQZZqit13vWYVYBpZwyNgfR8LE2sjPccz8Ox3GSQpcxfw1jpV6i5kcdAGr0L2Q2lMfs8VIbGQNbyWJjVLDPTxGTHRGMg63ns8fZhZfoYeQxkzzx/HVC8ZTN8DGSPxqx0+C0nyvAxkF3vJVl5Kek+QobGQPp5TKK+jCby7hvInrpS05d4l1FXgnQ0xq/QgICA/GXkF1p1S2aNdK/CAAAAAElFTkSuQmCC" alt="" width="396" height="396" decoding="async" /></div>
               <div class="addr-box">bc1qu3fefcncyyjysmceddjmmu0zkqx6k9fdd8855d</div>
               <button class="copy-btn" type="button" data-copy="bc1qu3fefcncyyjysmceddjmmu0zkqx6k9fdd8855d">Copy BTC address</button>
               <p class="fee-note"><b>Network fee:</b> about <b>$1–$5</b> depending on how busy the Bitcoin network is. Better for larger tips where the fee is a small share of the amount.</p>
@@ -1083,7 +1155,7 @@ Warmly,
             <div class="crypto-card">
               <div class="coin-sub">Ethereum</div>
               <div class="coin-name">ETH</div>
-              <div class="qr-box" id="qr-eth" role="img" aria-label="Ethereum wallet address QR code — 0x9bce53780b246602f0c7d48c05302431a705963e"></div>
+              <div class="qr-box" role="img" aria-label="Ethereum wallet address QR code — 0x9bce53780b246602f0c7d48c05302431a705963e"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYwAAAGMAQMAAADz9wcJAAAABlBMVEURERH////YdsArAAABvklEQVR42u2cQW7DMAwEiXxA//+lfuAmsEQu5V5M69CgIxiB43guwoJartTacXd0AwEBAflriPlonyfv8XnYjvFTW1542e0B8p+RkFPoqh1DbPrVX0BjICWNjXrVxr0rKp7PGzQG8lRj7yd9XIvw0BjIrjqW1se+voDGQB76MV8rh8PHj4Fs0Zi0jb9f9JUgzzSmQ4XnnznuYJJBqn5sLo7Dhp22v4XwpkNjkkHu17Fp7D2APdV19pjRC3TWSpC6H4tIPyvqvNGEFo2B1OpYVC0PYE2KmwSzaAyk6MckaB1K67bYfvpKkEd1zIauxiV74ktWhsZA6nVsFrHYSJJOUwTJJIMU+8plH9xDjFgxOxoDeZDzt3S2R/fEY/XEj4E805hvguvmeHyNNpNJBqn4savS1PmnTSU0BlLWWFsNmEb9YdvQGEhNY91SsC995aVBYJJB7veVeu5CTou5H8uxP5MMUvL8Fl2kiip5ftZKkC3nYHOOsQQa1DGQssa8qUyKuvgxNAayR2MzuEjnFQ/qGIht+9u36znYxn4lyDY/NovVUruMfAxkV18p/aN0mm7G0BhISWP8FxoQEJBvRn4AqOpgJEkwv5kAAAAASUVORK5CYII=" alt="" width="396" height="396" decoding="async" /></div>
               <div class="addr-box">0x9bce53780b246602f0c7d48c05302431a705963e</div>
               <button class="copy-btn" type="button" data-copy="0x9bce53780b246602f0c7d48c05302431a705963e">Copy ETH address</button>
               <p class="fee-note"><b>Network fee:</b> about <b>$0.50–$5+</b> depending on gas prices and congestion — Ethereum fees spike at busy times, so check the fee in your wallet before sending a small tip.</p>
@@ -1474,7 +1546,41 @@ Warmly,
         "Dashlane (student offer)": "https://www.dashlane.com/students",
         "SoFi (student banking)": "https://www.sofi.com/banking/checking-account/",
         "Headspace": "https://www.headspace.com", "YNAB (You Need A Budget)": "https://www.ynab.com",
-        "NBA / WNBA League Pass": "https://www.nba.com", "TurboTax": "https://turbotax.intuit.com"
+        "NBA / WNBA League Pass": "https://www.nba.com", "TurboTax": "https://turbotax.intuit.com",
+        /* Restored claim destinations — official student-offer, verification, or brand pages */
+        "Lenovo": "https://www.lenovo.com/us/en/students/",
+        "Best Buy": "https://www.bestbuy.com/",
+        "IKEA": "https://www.ikea.com/us/en/",
+        "Levi's": "https://www.levi.com/US/en_US/",
+        "Uber One for Students": "https://www.uber.com/us/en/uber-one/",
+        "Chick-fil-A": "https://www.chick-fil-a.com/",
+        "Chipotle": "https://www.chipotle.com/",
+        "Papa John's": "https://www.papajohns.com/",
+        "Starbucks": "https://www.starbucks.com/",
+        "Delta": "https://www.delta.com/",
+        "Car rental — young-driver fee waivers": "https://www.hertz.com/",
+        "AMC Theatres": "https://www.amctheatres.com/",
+        "Cinemark": "https://www.cinemark.com/",
+        "Concerts & live events": "https://www.ticketmaster.com/",
+        "Good student auto-insurance discount": "https://www.statefarm.com/insurance/auto/discounts",
+        "Driver's education discount": "https://www.geico.com/save/discounts/car-insurance-discounts/",
+        "Student banking": "https://www.chase.com/personal/checking/student-checking",
+        "Campus gyms & YMCA": "https://www.ymca.org/",
+        "Disney+ student": "https://www.disneyplus.com/",
+        "Apple Creator Studio (student)": "https://www.apple.com/us-edu/store",
+        "Netflix": "https://www.netflix.com/",
+        "Canva Pro for Education": "https://www.canva.com/education/",
+        "Unity Student": "https://unity.com/products/unity-student",
+        "AWS Educate": "https://aws.amazon.com/education/awseducate/",
+        "Google Cloud": "https://cloud.google.com/",
+        "Oracle Cloud Free Tier": "https://www.oracle.com/cloud/free/",
+        "LinkedIn Learning": "https://www.linkedin.com/learning/",
+        "JetBrains Academy": "https://www.jetbrains.com/academy/",
+        "Kaggle": "https://www.kaggle.com/",
+        "Postman Student Expert": "https://www.postman.com/student-program/",
+        "Financial Times": "https://www.ft.com/",
+        "Anthropic Claude": "https://claude.ai/",
+        "Grammarly": "https://www.grammarly.com/"
       };
 
       /* ============ CLAIM STEPS (signup -> redeemed, per offer) ============ */
@@ -2179,9 +2285,10 @@ Warmly,
           var items = grp.items.map(function (it) {
             var steps = CLAIM_STEPS[it.n] || templateSteps(it);
             var searchText = (it.n + " " + it.o + " " + (it.c || "") + " " + (it.note || "") + " " + grp.g + " " + steps.join(" ")).toLowerCase();
-            var applyBtn = APPLY[it.n]
-              ? '<a class="apply-btn small" href="' + esc(APPLY[it.n]) + '" target="_blank" rel="noopener">Apply ↗</a>'
-              : "";
+            /* Never ship a card without an action: fall back to the official
+               verification hub if a benefit ever lacks a mapped destination. */
+            var applyUrl = APPLY[it.n] || UNIDAYS;
+            var applyBtn = '<a class="apply-btn small" href="' + esc(applyUrl) + '" target="_blank" rel="noopener">Apply ↗</a>';
             return '<div class="entry" data-search="' + esc(searchText) + '">' +
               '<div class="e-top"><span class="e-name">' + esc(it.n) + '</span>' + tagHTML(it.tag || "") + '</div>' +
               '<p class="e-offer">' + esc(it.o) + '</p>' +
@@ -2293,6 +2400,15 @@ Warmly,
             if (a.getAttribute("data-route-link") === route) a.setAttribute("aria-current", "page");
             else a.removeAttribute("aria-current");
           });
+          /* On narrow screens the nav is a scrollable pill row — keep the
+             active tab in view without moving the page itself. */
+          var navEl = document.querySelector(".pagenav");
+          var activeEl = document.querySelector('[data-route-link="' + route + '"]');
+          if (navEl && activeEl && navEl.scrollWidth > navEl.clientWidth) {
+            var navRect = navEl.getBoundingClientRect();
+            var actRect = activeEl.getBoundingClientRect();
+            navEl.scrollLeft += (actRect.left - navRect.left) - (navEl.clientWidth - actRect.width) / 2;
+          }
           document.title = TITLES[route] || TITLES.home;
           if (scroll === "top") window.scrollTo({ top: 0, behavior: "auto" });
           if (scroll === "support") {
@@ -2336,23 +2452,8 @@ Warmly,
         });
       })();
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script>
       (function () {
-        function makeQR(id, text) {
-          var el = document.getElementById(id);
-          if (!el || typeof QRCode === 'undefined') return;
-          new QRCode(el, { text: text, width: 172, height: 172, correctLevel: QRCode.CorrectLevel.M });
-          /* The container carries the accessible label (role="img" + aria-label);
-             mark the generated canvas/img as decorative so screen readers don't double-announce. */
-          el.querySelectorAll('img, canvas').forEach(function (node) {
-            node.setAttribute('alt', '');
-            node.setAttribute('aria-hidden', 'true');
-          });
-        }
-        makeQR('qr-sol', '4aJVuzjfQEgAFEjitjjBJMCV2yLkjCiXjQ6fXYoViZLX');
-        makeQR('qr-btc', 'bc1qu3fefcncyyjysmceddjmmu0zkqx6k9fdd8855d');
-        makeQR('qr-eth', '0x9bce53780b246602f0c7d48c05302431a705963e');
         document.querySelectorAll('[data-copy]').forEach(function (btn) {
           btn.addEventListener('click', function () {
             var text = btn.getAttribute('data-copy');
