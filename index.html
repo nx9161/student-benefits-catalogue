@@ -7,8 +7,8 @@
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4efe1" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141412" />
     <link rel="icon" href="data:," />
-    <title>Student Discounts, Freebies &amp; Deals — 247 Benefits Worth $2,500+</title>
-    <meta name="description" content="Discover 247 student discounts, freebies and deals across food, fashion, everyday shopping, entertainment, electronics, learning and tech. Browse offers from UNiDAYS, SheerID, Student Beans, ID.me, ISIC, the GitHub Student Developer Pack and more, with direct links and step-by-step claim guides." />
+    <title>Student Discounts, Freebies &amp; Deals — 246 Benefits Worth $2,500+</title>
+    <meta name="description" content="Discover 246 student discounts, freebies and deals across food, fashion, everyday shopping, entertainment, electronics, learning and tech. Browse offers from UNiDAYS, SheerID, Student Beans, ID.me, ISIC, the GitHub Student Developer Pack and more, with direct links and step-by-step claim guides." />
     <meta name="keywords" content="student discounts, student freebies, student deals, food discounts for students, student fashion discounts, student entertainment deals, student electronics discounts, everyday student savings, college student discounts, .edu discounts, UNiDAYS, Student Beans, SheerID, ID.me, ISIC, GitHub Student Developer Pack" />
     <meta name="author" content="Naman Parmar" />
     <meta name="robots" content="index, follow" />
@@ -17,26 +17,26 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://student-benefits-catalogue.vercel.app/" />
     <meta property="og:site_name" content="Student Benefits Catalogue" />
-    <meta property="og:title" content="Student Discounts, Freebies &amp; Deals — 247 Benefits Worth $2,500+" />
-    <meta property="og:description" content="Discover 247 student discounts, freebies and deals across food, fashion, everyday shopping, entertainment, electronics, learning and tech. Browse offers from UNiDAYS, SheerID, Student Beans, ID.me, ISIC, the GitHub Student Developer Pack and more, with direct links and step-by-step claim guides." />
-    <meta property="og:image" content="https://student-benefits-catalogue.vercel.app/assets/og-image.png" />
+    <meta property="og:title" content="Student Discounts, Freebies &amp; Deals — 246 Benefits Worth $2,500+" />
+    <meta property="og:description" content="Discover 246 student discounts, freebies and deals across food, fashion, everyday shopping, entertainment, electronics, learning and tech. Browse offers from UNiDAYS, SheerID, Student Beans, ID.me, ISIC, the GitHub Student Developer Pack and more, with direct links and step-by-step claim guides." />
+    <meta property="og:image" content="https://student-benefits-catalogue.vercel.app/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Student Benefits Catalogue — 247 student discounts, freebies and deals across food, fashion, entertainment, everyday shopping and tech." />
+    <meta property="og:image:alt" content="Student Benefits Catalogue — 246 student discounts, freebies and deals across food, fashion, entertainment, everyday shopping and tech." />
     <meta property="og:locale" content="en_US" />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Student Discounts, Freebies &amp; Deals — 247 Benefits Worth $2,500+" />
-    <meta name="twitter:description" content="Discover 247 student discounts, freebies and deals across food, fashion, everyday shopping, entertainment, electronics, learning and tech. Browse offers from UNiDAYS, SheerID, Student Beans, ID.me, ISIC, the GitHub Student Developer Pack and more, with direct links and step-by-step claim guides." />
-    <meta name="twitter:image" content="https://student-benefits-catalogue.vercel.app/assets/og-image.png" />
-    <meta name="twitter:image:alt" content="Student Benefits Catalogue — 247 student discounts, freebies and deals across food, fashion, entertainment, everyday shopping and tech." />
+    <meta name="twitter:title" content="Student Discounts, Freebies &amp; Deals — 246 Benefits Worth $2,500+" />
+    <meta name="twitter:description" content="Discover 246 student discounts, freebies and deals across food, fashion, everyday shopping, entertainment, electronics, learning and tech. Browse offers from UNiDAYS, SheerID, Student Beans, ID.me, ISIC, the GitHub Student Developer Pack and more, with direct links and step-by-step claim guides." />
+    <meta name="twitter:image" content="https://student-benefits-catalogue.vercel.app/og-image.png" />
+    <meta name="twitter:image:alt" content="Student Benefits Catalogue — 246 student discounts, freebies and deals across food, fashion, entertainment, everyday shopping and tech." />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Student Benefits Catalogue",
       "url": "https://student-benefits-catalogue.vercel.app/",
-      "description": "Discover 247 student discounts, freebies and deals across food, fashion, everyday shopping, entertainment, electronics, learning and tech. Browse offers from UNiDAYS, SheerID, Student Beans, ID.me, ISIC, the GitHub Student Developer Pack and more, with direct links and step-by-step claim guides.",
+      "description": "Discover 246 student discounts, freebies and deals across food, fashion, everyday shopping, entertainment, electronics, learning and tech. Browse offers from UNiDAYS, SheerID, Student Beans, ID.me, ISIC, the GitHub Student Developer Pack and more, with direct links and step-by-step claim guides.",
       "inLanguage": "en",
       "author": {
         "@type": "Person",
@@ -67,6 +67,11 @@
         --radius: 10px;
         --radius-lg: 12px;
         --gutter: 20px;
+        /* Macro spacing scale: 24 / 40 / 64 / 96 */
+        --space-24: 24px;
+        --space-40: 40px;
+        --space-64: 64px;
+        --space-96: 96px;
         --yellow: #ffd21f;
         --pink: #ff5c9e;
         --sky: #3ec1ff;
@@ -216,7 +221,10 @@
         .tip-hero { padding: 20px 16px 18px; text-align: center; box-shadow: 5px 5px 0 var(--shadowc); }
         .tip-top-btn { width: 100%; white-space: normal; text-align: center; }
       }
-      .stats { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 6px; }
+      /* ---------- No-JS fallback (noscript) ---------- */
+      .nojs-panel { margin-top: var(--space-24); }
+      .nojs-links-label { margin: var(--space-24) 0 0; font-family: var(--font-disp); font-weight: 800; font-size: 17px; text-transform: uppercase; }
+      .stats { display: flex; flex-wrap: wrap; gap: 12px; margin: var(--space-24) 0 6px; }
       .stat {
         border: var(--bw) solid #141414; border-radius: var(--radius);
         padding: 12px 16px; min-width: 150px; flex: 1 1 150px; box-shadow: var(--shadow-sm);
@@ -231,7 +239,7 @@
 
       .quick-explainer {
         display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px;
-        margin: 24px 0 30px;
+        margin: var(--space-24) 0 var(--space-40);
       }
       .quick-explainer article {
         border: var(--bw) solid var(--borderc); border-radius: var(--radius);
@@ -251,7 +259,7 @@
 
       /* ---------- Free totals band ---------- */
       .freeband {
-        margin: 28px 0 4px; background: var(--band-bg); color: var(--band-ink);
+        margin: var(--space-24) 0 4px; background: var(--band-bg); color: var(--band-ink);
         border: var(--bw) solid #141414; border-radius: var(--radius-lg); padding: 26px 26px 20px; box-shadow: var(--shadow);
       }
       .freeband .fb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -269,41 +277,8 @@
       }
       .freeband .fb-note { margin: 18px 0 0; font-size: 12.5px; line-height: 1.55; opacity: .85; max-width: 900px; }
 
-      /* ---------- Deadline ticker ---------- */
-      .deadlines {
-        margin: 26px 0 0; background: var(--ticker-bg); color: var(--ticker-ink);
-        border: var(--bw) solid #141414; box-shadow: var(--shadow);
-        overflow: hidden;
-      }
-      .deadlines h2 {
-        margin: 0; padding: 10px 16px; font-family: var(--font-disp); font-size: 13px; font-weight: 800;
-        letter-spacing: .09em; text-transform: uppercase;
-        background: var(--ticker-head-bg); color: var(--ticker-head-ink);
-        border-bottom: var(--bw) solid var(--borderc);
-      }
-      .deadlines ul {
-        margin: 0; padding: 0; list-style: none;
-        display: flex; flex-wrap: nowrap; width: max-content; max-width: none;
-        animation: ticker-scroll 46s linear infinite;
-      }
-      .deadlines:hover ul { animation-play-state: paused; }
-      @keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-      .deadlines li {
-        display: flex; flex-wrap: nowrap; gap: 6px 12px; align-items: baseline; font-size: 14.5px;
-        white-space: nowrap; padding: 12px 26px;
-        border-right: 2px solid color-mix(in srgb, var(--ticker-ink) 35%, transparent);
-      }
-      .deadlines .when { font-family: var(--font-mono); font-size: 12.5px; font-weight: 700; color: var(--ticker-when); white-space: nowrap; text-transform: uppercase; }
-      .deadlines .days { font-family: var(--font-mono); font-size: 11.5px; font-weight: 700; background: var(--pink); color: #141414; border: 2px solid #141414; border-radius: 20px; padding: 1px 8px; white-space: nowrap; }
-
-      @media (min-width: 761px) {
-        .deadlines ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: auto; animation: none; }
-        .deadlines li { white-space: normal; min-width: 0; border-right: 2px solid color-mix(in srgb, var(--ticker-ink) 35%, transparent); }
-        .deadlines li[aria-hidden="true"] { display: none; }
-      }
-
       /* ---------- Sections ---------- */
-      section.block { margin-top: 52px; }
+      section.block { margin-top: var(--space-64); }
       .sec-head { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; border-bottom: var(--bw) solid var(--borderc); padding-bottom: 12px; }
       .sec-head h2 {
         font-family: var(--font-disp); font-weight: 800; text-transform: uppercase;
@@ -319,9 +294,9 @@
         font-family: var(--font-mono); font-size: 12.5px; font-weight: 700;
         letter-spacing: .1em; text-transform: uppercase; color: #141414;
         background: var(--mint); border: 2px solid #141414; box-shadow: var(--shadow-sm);
-        padding: 4px 10px; margin: 34px 0 6px;
+        padding: 4px 10px; margin: var(--space-40) 0 6px;
       }
-      h3.group-title:first-of-type { margin-top: 22px; }
+      h3.group-title:first-of-type { margin-top: var(--space-24); }
 
       .tag {
         font-family: var(--font-mono); font-size: 10.5px; font-weight: 700;
@@ -344,15 +319,7 @@
       .vcard .v-desc { font-size: 13px; color: var(--ink-2); margin-top: 3px; }
       .vcard .v-go { font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--accent); margin-top: 8px; display: inline-block; }
 
-      /* ---------- Filter bar ---------- */
-      .filterbar {
-        position: sticky; top: 0; z-index: 20;
-        background: var(--bg);
-        margin: 40px calc(-1 * max(20px, env(safe-area-inset-right))) 0 calc(-1 * max(20px, env(safe-area-inset-left)));
-        padding: calc(14px + env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) 12px max(20px, env(safe-area-inset-left));
-        border-bottom: var(--bw) solid var(--borderc);
-      }
-      .filterbar .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+      /* ---------- Search ---------- */
       .search {
         flex: 1 1 240px; display: flex; align-items: center; gap: 8px;
         background: var(--surface); border: var(--bw) solid var(--borderc); border-radius: 10px; padding: 0 12px;
@@ -365,17 +332,6 @@
         -webkit-appearance: none; appearance: none;
       }
       .search input::placeholder { color: var(--ink-3); }
-      .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-      .chip-btn {
-        font: inherit; font-size: 13.5px; font-weight: 700; cursor: pointer;
-        background: var(--surface); color: var(--ink);
-        border: 2px solid var(--borderc); border-radius: 999px; padding: 10px 16px;
-        box-shadow: var(--shadow-sm);
-        min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center;
-      }
-      .chip-btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--shadowc); }
-      .chip-btn[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--borderc); }
-      .filterbar .showing { font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--ink-3); margin-top: 8px; }
 
       /* ---------- Benefit rows ---------- */
       .entries { display: grid; grid-template-columns: 1fr; gap: 14px; align-items: stretch; }
@@ -404,7 +360,7 @@
       .entry .e-name a:hover, .packtable td.pname a:hover {
         color: var(--accent); border-bottom: 2px solid var(--accent); text-decoration: none;
       }
-      .deadlines a, .callout p a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+      .callout p a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
       .plainbox a { color: var(--accent); }
       .entry .note { font-size: 13px; font-weight: 600; color: var(--amber); margin-top: 4px; }
 
@@ -413,7 +369,7 @@
         display: inline-flex; align-items: center; justify-content: center; gap: 5px;
         background: var(--accent-fill); color: #141414;
         font-size: 13px; font-weight: 700; line-height: 1;
-        border: var(--bw) solid #141414; border-radius: 10px; padding: 12px 16px; white-space: nowrap;
+        border: var(--bw) solid var(--borderc); border-radius: 10px; padding: 12px 16px; white-space: nowrap;
         box-shadow: var(--shadow-sm);
         min-height: 44px; min-width: 44px;
       }
@@ -433,7 +389,7 @@
       details.steps summary:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--shadowc); }
       details.steps summary::-webkit-details-marker { display: none; }
       details.steps summary::after { content: " +"; }
-      details.steps[open ] summary::after { content: " –"; }
+      details.steps[open] summary::after { content: " –"; }
       details.steps ol { margin: 9px 0 2px; padding-left: 21px; font-size: 13.5px; color: var(--ink-2); }
       details.steps li { margin: 4px 0; }
       details.steps li b { color: var(--ink); }
@@ -478,13 +434,7 @@
       .plainbox ul { margin: 0; padding-left: 18px; color: var(--ink-2); font-size: 14.5px; }
       .plainbox li { margin: 4px 0; }
 
-      .empty-state {
-        display: none; text-align: center; padding: 48px 20px; color: var(--ink-2);
-        border: var(--bw) dashed var(--borderc); border-radius: var(--radius); margin-top: 28px;
-      }
-      .empty-state.show { display: block; }
-
-      footer { margin-top: 64px; border-top: var(--bw) solid var(--borderc); padding-top: 20px; padding-bottom: env(safe-area-inset-bottom); color: var(--ink-3); font-size: 13px; }
+      footer { margin-top: var(--space-64); border-top: var(--bw) solid var(--borderc); padding-top: 20px; padding-bottom: env(safe-area-inset-bottom); color: var(--ink-3); font-size: 13px; }
       footer p { margin: 6px 0; }
       .legal-note { font-size: 12px; line-height: 1.6; max-width: 900px; margin-top: 14px !important; }
       .kofi-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin: 18px 0 4px; }
@@ -501,7 +451,7 @@
       .kofi-btn:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
       .kofi-btn .kofi-cup { font-size: 17px; line-height: 1; }
       .support-cta {
-        margin-top: 36px; background: var(--surface); border: var(--bw) solid var(--borderc);
+        margin-top: var(--space-40); background: var(--surface); border: var(--bw) solid var(--borderc);
         border-radius: var(--radius-lg); padding: 22px; box-shadow: var(--shadow);
         display: flex; flex-wrap: wrap; gap: 14px 20px; align-items: center; justify-content: space-between;
       }
@@ -509,7 +459,7 @@
       .support-cta p { margin: 0; color: var(--ink-2); font-size: 14.5px; max-width: 640px; }
       /* ---------- Page nav (hash routing) ---------- */
       .pagenav {
-        display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 6px; margin: 18px 0 6px;
+        display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 6px; margin: 18px 0 6px;
         background: var(--surface); border: var(--bw) solid var(--borderc); border-radius: 16px; padding: 6px;
         box-shadow: var(--shadow);
       }
@@ -528,17 +478,67 @@
       @media (max-width: 1023px) {
         .pagenav { grid-template-columns: repeat(4, minmax(0, 1fr)); }
         .pagenav a { font-size: 12px; padding: 10px 6px; }
-        .pagenav a:last-child { grid-column: 1 / -1; }
+        .pagenav a:nth-last-child(-n+2) { grid-column: span 2; }
       }
       @media (max-width: 560px) {
         .pagenav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        .pagenav a:last-child { grid-column: 1 / -1; }
+        .pagenav a:nth-last-child(-n+2) { grid-column: auto; }
+        .pagenav a:last-child { grid-column: span 2; }
+      }
+
+      /* ---------- Launch your project ---------- */
+      .launch-summary {
+        display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 20px 0;
+      }
+      .launch-summary div {
+        min-width: 0; padding: 13px 12px; background: var(--surface); color: var(--ink);
+        border: 2px solid var(--borderc); border-radius: 8px; box-shadow: var(--shadow-sm);
+      }
+      .launch-summary div:nth-child(4n+1) { background: var(--yellow); color: #141414; }
+      .launch-summary div:nth-child(4n+2) { background: var(--sky); color: #141414; }
+      .launch-summary div:nth-child(4n+3) { background: var(--mint); color: #141414; }
+      .launch-summary div:nth-child(4n) { background: var(--pink); color: #141414; }
+      .launch-summary b { display: block; font-family: var(--font-disp); font-size: 26px; line-height: 1; }
+      .launch-summary span { display: block; margin-top: 5px; font-family: var(--font-mono); font-size: 10px; font-weight: 700; line-height: 1.25; text-transform: uppercase; }
+      .launch-jumps {
+        display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: var(--space-24) 0 var(--space-40);
+      }
+      .launch-jumps a {
+        min-height: 48px; display: flex; align-items: center; justify-content: center; padding: 9px;
+        text-align: center; color: var(--ink); background: var(--surface); border: 2px solid var(--borderc);
+        border-radius: 8px; box-shadow: var(--shadow-sm); font-family: var(--font-disp); font-size: 12px;
+        font-weight: 800; line-height: 1.2; text-transform: uppercase;
+      }
+      .launch-jumps a:hover { text-decoration: none; transform: translate(-1px, -1px); box-shadow: var(--shadow); }
+      .launch-group { margin-top: var(--space-40); scroll-margin-top: 18px; }
+      .launch-group .sec-head { margin-bottom: 15px; }
+      .launch-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+      .launch-card {
+        min-width: 0; display: flex; flex-direction: column; background: var(--surface); color: var(--ink);
+        border: var(--bw) solid var(--borderc); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow-sm);
+      }
+      .launch-card h3 { margin: 0; font-family: var(--font-disp); font-size: 16px; line-height: 1.25; text-transform: none; }
+      .launch-card p { margin: 7px 0 14px; color: var(--ink-2); font-size: 13.5px; line-height: 1.5; }
+      .launch-card a {
+        margin-top: auto; min-height: 44px; display: inline-flex; align-items: center; justify-content: center;
+        padding: 9px 12px; background: var(--yellow); color: #141414; border: 2px solid var(--borderc);
+        border-radius: 8px; box-shadow: 2px 2px 0 var(--shadowc); font-family: var(--font-mono); font-size: 12px; font-weight: 700;
+      }
+      .launch-card a:hover { text-decoration: none; transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--shadowc); }
+      .launch-card .launch-actions { margin-top: auto; gap: 8px; }
+      .launch-card .launch-actions a { margin-top: 0; flex: 1 1 140px; }
+      .source-credit { margin-top: var(--space-40); }
+      @media (max-width: 900px) { .launch-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (max-width: 640px) {
+        .launch-summary, .launch-jumps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .launch-grid { grid-template-columns: 1fr; }
+        .launch-card { padding: 15px; }
       }
 
       /* ---------- Browse everything ---------- */
       .browse-jumps {
         display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px;
-        margin: 20px 0 30px;
+        margin: 20px 0 var(--space-40);
       }
       .browse-jumps a {
         min-height: 48px; display: flex; align-items: center; justify-content: center;
@@ -552,12 +552,12 @@
       .browse-jumps a:nth-child(4n) { background: var(--pink); color: #141414; }
       .browse-jumps a:hover { text-decoration: none; transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--shadowc); }
       .browse-jumps a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
-      .browse-category { scroll-margin-top: 18px; margin-top: 42px; }
+      .browse-category { scroll-margin-top: 18px; margin-top: var(--space-40); }
       .browse-category:first-child { margin-top: 0; }
       .browse-category .sec-head { margin-bottom: 14px; }
       .browse-category .count { white-space: nowrap; }
       .also-see {
-        margin: 38px 0 6px; padding: 18px; background: var(--band-bg); color: var(--band-ink);
+        margin: var(--space-40) 0 6px; padding: 18px; background: var(--band-bg); color: var(--band-ink);
         border: var(--bw) solid var(--borderc); border-radius: var(--radius-lg); box-shadow: var(--shadow);
         display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 20px;
       }
@@ -740,57 +740,6 @@
       .page-empty { display: none; text-align: center; padding: 40px 20px; color: var(--ink-2); border: var(--bw) dashed var(--borderc); border-radius: var(--radius); margin-top: 24px; }
       .page-empty.show { display: block; }
 
-      /* ---------- Temporary owner mapping review ---------- */
-      .review-banner {
-        margin: 0 0 18px; padding: 18px 20px; background: var(--pink); color: #141414;
-        border: var(--bw) solid #141414; border-radius: var(--radius-lg); box-shadow: var(--shadow);
-      }
-      .review-banner strong {
-        display: block; font-family: var(--font-disp); font-size: clamp(24px, 4vw, 38px);
-        line-height: 1.05; text-transform: uppercase;
-      }
-      .review-banner p { margin: 8px 0 0; font-weight: 600; }
-      .review-summary {
-        display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin: 22px 0;
-      }
-      .review-count {
-        min-width: 0; padding: 12px; background: var(--surface); color: var(--ink);
-        border: 2px solid var(--borderc); border-radius: 8px; box-shadow: var(--shadow-sm);
-      }
-      .review-count b { display: block; font-family: var(--font-disp); font-size: 25px; line-height: 1; }
-      .review-count span { display: block; margin-top: 6px; font-family: var(--font-mono); font-size: 10px; line-height: 1.3; font-weight: 700; text-transform: uppercase; }
-      .review-count.low { background: var(--red-soft); }
-      .review-check {
-        margin: 0 0 20px; padding: 12px 14px; background: var(--accent-soft); color: var(--ink);
-        border: var(--bw) solid var(--borderc); border-radius: var(--radius); box-shadow: var(--shadow-sm);
-        font-family: var(--font-mono); font-size: 12px; font-weight: 700;
-      }
-      .review-check.problem { background: var(--red-soft); }
-      .review-table {
-        width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface);
-        border: var(--bw) solid var(--borderc); box-shadow: var(--shadow); font-size: 13px;
-      }
-      .review-table th, .review-table td { padding: 11px 10px; border-right: 2px solid var(--borderc); border-bottom: 2px solid var(--borderc); vertical-align: top; text-align: left; }
-      .review-table th:last-child, .review-table td:last-child { border-right: 0; }
-      .review-table tr:last-child td { border-bottom: 0; }
-      .review-table th { position: sticky; top: 0; z-index: 2; background: var(--yellow); color: #141414; font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }
-      .review-table .benefit-name { font-family: var(--font-disp); font-size: 14px; font-weight: 700; }
-      .review-table .page-slug, .review-table .category-slug, .review-table .cross-tags { font-family: var(--font-mono); font-size: 11px; }
-      .review-table .category-slug { font-weight: 700; }
-      .review-table .dispute-yes { color: var(--red); font-weight: 700; }
-      .review-table .dispute-no { color: var(--ink-3); }
-      @media (max-width: 900px) { .review-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-      @media (max-width: 700px) {
-        .review-summary { grid-template-columns: 1fr 1fr; }
-        .review-table, .review-table tbody, .review-table tr, .review-table td { display: block; width: 100%; }
-        .review-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-        .review-table { border: 0; background: transparent; box-shadow: none; }
-        .review-table tr { margin: 0 0 14px; background: var(--surface); border: var(--bw) solid var(--borderc); border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden; }
-        .review-table td { display: grid; grid-template-columns: minmax(90px, 34%) 1fr; gap: 10px; padding: 9px 11px; border-right: 0; border-bottom: 1px solid var(--borderc); overflow-wrap: anywhere; }
-        .review-table td::before { content: attr(data-label); font-family: var(--font-mono); font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--ink-3); }
-        .review-table tr:last-child td { border-bottom: 1px solid var(--borderc); }
-        .review-table td:last-child { border-bottom: 0; }
-      }
       [hidden] { display: none !important; }
       .hidden-by-filter { display: none !important; }
       .kofi-hidden { display: none !important; }
@@ -868,9 +817,7 @@
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
         *, *::before, *::after { transition: none !important; animation: none !important; }
-        .deadlines ul { flex-wrap: wrap; width: auto; }
-        .deadlines li { white-space: normal; border-right: 0; }
-        .apply-btn:active, .copy-btn:active, .copy-template-btn:active, .chip-btn:active,
+        .apply-btn:active, .copy-btn:active, .copy-template-btn:active,
         .tip-top-btn:active, .kofi-btn:active, .insta-btn:active, .hub-card:active,
         .verify a.vcard:active, .grad-quicknav a:active, .grad-quicknav button:active,
         details.steps summary:active, .grad-promo a:active, .stat, .naman-note, .sec-head h2 { transform: none !important; }
@@ -878,7 +825,7 @@
 
       /* ---------- iPhone / mobile hardening (390px) ---------- */
       @media (hover: none) {
-        a:hover, .apply-btn:hover, .copy-btn:hover, .chip-btn:hover { text-decoration: none; transform: none; }
+        a:hover, .apply-btn:hover, .copy-btn:hover { text-decoration: none; transform: none; }
         .tip-top-btn:hover, .hub-card:hover, .verify a.vcard:hover, .kofi-btn:hover, .insta-btn:hover,
         .copy-template-btn:hover, .grad-quicknav a:hover, .grad-quicknav button:hover { transform: none; box-shadow: var(--shadow-sm); }
       }
@@ -893,21 +840,8 @@
         .stat { min-width: 0; flex: none; padding: 12px 12px; }
         .stat b { font-size: 26px; }
         .freeband { padding: 20px 16px 16px; border-radius: var(--radius-lg); }
-        .deadlines li { font-size: 14px; }
-        /* Phones: the marquee parks deadline links off-screen; lay the three out statically so every link is reachable, duplicates hidden */
-        .deadlines ul { animation: none; flex-wrap: wrap; width: auto; max-width: 100%; }
-        .deadlines li { white-space: normal; width: 100%; border-right: 0; border-bottom: 2px solid color-mix(in srgb, var(--ticker-ink) 35%, transparent); }
-        .deadlines li:last-child { border-bottom: 0; }
-        .deadlines li[aria-hidden="true"] { display: none; }
-        section.block { margin-top: 40px; }
+        section.block { margin-top: var(--space-24); }
         .sec-head h2 { font-size: 24px; }
-        .filterbar {
-          margin-left: calc(-1 * max(16px, env(safe-area-inset-left)));
-          margin-right: calc(-1 * max(16px, env(safe-area-inset-right)));
-          padding-left: max(16px, env(safe-area-inset-left));
-          padding-right: max(16px, env(safe-area-inset-right));
-        }
-        .filterbar .row { flex-direction: column; align-items: stretch; gap: 10px; }
         .pagesearch {
           margin-left: calc(-1 * max(16px, env(safe-area-inset-left)));
           margin-right: calc(-1 * max(16px, env(safe-area-inset-right)));
@@ -915,8 +849,6 @@
           padding-right: max(16px, env(safe-area-inset-right));
         }
         .search { flex: 1 1 auto; width: 100%; min-height: 48px; }
-        .chips { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; }
-        .chip-btn { padding: 10px 6px; font-size: 13px; width: 100%; }
         .verify { grid-template-columns: 1fr; gap: 10px; }
         .verify a.vcard { padding: 16px; min-height: 44px; }
         .entry { padding: 16px; }
@@ -937,14 +869,80 @@
       }
       @media (max-width: 390px) {
         .stats { grid-template-columns: 1fr 1fr; }
-        .chips { grid-template-columns: 1fr 1fr; }
-        .chip-btn { font-size: 13.5px; }
         h1 { font-size: 34px; }
       }
 
+
+      /* ---------- Completion layer: sticker-book utility chrome ---------- */
+      .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+      .sitebar { position:sticky; top:0; z-index:50; margin:18px 0 8px; padding:8px; background:var(--surface); border:var(--bw) solid var(--borderc); border-radius:14px; box-shadow:var(--shadow); }
+      .sitebar .pagenav { margin:0; padding:0; border:0; border-radius:0; box-shadow:none; background:transparent; }
+      .pagenav { grid-template-columns:repeat(6,minmax(0,1fr)); }
+      .pagenav a { gap:7px; min-height:44px; border-radius:999px; }
+      .pagenav a svg,.hub-icon svg,[data-icon] svg { width:19px; height:19px; flex:none; }
+      .pagenav a[aria-current="page"] { transform:rotate(-.6deg); }
+      .nav-badge { display:inline-flex; min-width:20px; height:20px; align-items:center; justify-content:center; border:2px solid #141414; border-radius:999px; padding:0 4px; background:var(--pink); color:#141414; font:700 10px/1 var(--font-mono); }
+      .global-search { margin-top:8px; border-top:2px solid var(--borderc); padding-top:8px; }
+      .global-search label,.drawer-input { display:flex; align-items:center; gap:10px; min-height:48px; background:var(--bg); border:2px solid var(--borderc); border-radius:10px; padding:0 12px; box-shadow:var(--shadow-sm); }
+      .global-search svg,.drawer-input svg { width:20px; height:20px; flex:none; }
+      .global-search input,.drawer-input input { width:100%; min-width:0; min-height:44px; border:0; outline:0; background:transparent; color:var(--ink); font:600 15px/1.2 "IBM Plex Sans",sans-serif; }
+      .global-search kbd { border:2px solid var(--borderc); border-radius:5px; background:var(--surface); color:var(--ink-2); padding:2px 7px; font:700 12px/1.4 var(--font-mono); }
+      section.block,.launch-group,.browse-category { scroll-margin-top:156px; }
+      .entry { padding:20px; }
+      .entry .e-top { align-items:center; }
+      .entry .e-name { font-size:17px; }
+      .entry .e-actions { align-items:center; }
+      .icon-btn { width:44px; height:44px; flex:none; display:inline-flex; align-items:center; justify-content:center; cursor:pointer; background:var(--surface); color:var(--ink); border:var(--bw) solid var(--borderc); border-radius:10px; box-shadow:var(--shadow-sm); padding:8px; }
+      .icon-btn svg { width:21px; height:21px; }
+      .icon-btn:hover { transform:translate(-1px,-1px); box-shadow:4px 4px 0 var(--shadowc); }
+      .icon-btn:active,.apply-btn:active,.pagenav a:active,.search-result-link:active { transform:translate(3px,3px); box-shadow:0 0 0 var(--shadowc); transition:transform .1s ease,box-shadow .1s ease; }
+      .fav-btn.is-saved { background:var(--pink); color:#141414; }
+      .packtable th:last-child,.packtable td.row-tools { width:56px; padding-right:0; text-align:right; }
+      .visit-note { display:flex; gap:12px; align-items:center; justify-content:space-between; margin:18px 0; padding:12px 14px; background:var(--sky-soft); border:2px solid var(--borderc); box-shadow:var(--shadow-sm); font-size:13px; font-weight:600; }
+      .visit-note button { border:0; background:transparent; color:var(--ink); font:900 22px/1 var(--font-disp); min-width:44px; min-height:44px; cursor:pointer; }
+      .favorites-empty { padding:44px 20px; border:var(--bw) dashed var(--borderc); text-align:center; color:var(--ink-2); }
+      .favorites-empty h3 { margin:0 0 6px; color:var(--ink); font-family:var(--font-disp); font-size:20px; text-transform:uppercase; }
+      .spotlight { margin:var(--space-24) 0 0; display:grid; grid-template-columns:auto 1fr; align-items:stretch; border:var(--bw) solid #141414; background:var(--ticker-bg); color:var(--ticker-ink); box-shadow:var(--shadow); }
+      .spotlight strong { display:flex; align-items:center; padding:12px 16px; background:var(--ticker-head-bg); color:var(--ticker-head-ink); border-right:var(--bw) solid #141414; font:800 12px/1.2 var(--font-disp); letter-spacing:.08em; text-transform:uppercase; }
+      .spotlight a { display:flex; align-items:center; min-height:50px; padding:10px 18px; color:inherit; font-weight:700; }
+      .spotlight a:hover { background:color-mix(in srgb,var(--ticker-ink) 10%,transparent); text-decoration:none; }
+      .search-drawer { position:fixed; inset:0; z-index:9000; overflow:auto; padding:max(18px,env(safe-area-inset-top)) max(18px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left)); background:rgba(20,20,18,.76); }
+      .search-drawer[hidden] { display:none!important; }
+      .drawer-panel { width:min(1160px,100%); min-height:min(760px,calc(100vh - 36px)); margin:0 auto; background:var(--bg); color:var(--ink); border:4px solid var(--borderc); box-shadow:10px 10px 0 var(--shadowc); padding:22px; }
+      .drawer-head { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:16px; }
+      .drawer-kicker { display:inline-block; margin-bottom:6px; padding:4px 8px; background:var(--mint); color:#141414; border:2px solid #141414; font:700 11px/1.2 var(--font-mono); letter-spacing:.08em; text-transform:uppercase; }
+      .drawer-head h2 { margin:0; font:900 clamp(27px,5vw,48px)/.98 var(--font-disp); text-transform:uppercase; text-shadow:3px 3px 0 var(--yellow); }
+      .drawer-close { font-size:28px; line-height:1; }
+      .drawer-input { background:var(--surface); min-height:58px; border-width:3px; }
+      .drawer-input input { font-size:18px; min-height:52px; }
+      .drawer-status { margin:10px 2px 16px; color:var(--ink-3); font:600 12px/1.4 var(--font-mono); }
+      .drawer-group { margin:24px 0; }
+      .drawer-group>h3 { display:flex; gap:8px; align-items:center; margin:0 0 10px; font:800 15px/1.2 var(--font-disp); text-transform:uppercase; }
+      .drawer-group>h3 span { background:var(--yellow); color:#141414; border:2px solid #141414; padding:2px 7px; }
+      .drawer-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+      .search-result-link { color:var(--ink); min-width:0; display:flex; flex-direction:column; gap:6px; }
+      .search-result-link:hover { text-decoration:none; }
+      .search-result-link mark { background:var(--yellow); color:#141414; padding:0 2px; }
+      .result-go { margin-top:auto; color:var(--accent); font:700 12px/1.3 var(--font-mono); }
+      body.drawer-open { overflow:hidden; }
+      .sbc-toast { position:fixed; z-index:9500; right:22px; bottom:22px; transform:translateY(130%); padding:13px 18px; background:var(--yellow); color:#141414; border:3px solid #141414; box-shadow:4px 4px 0 #141414; font:800 13px/1.2 var(--font-disp); letter-spacing:.04em; text-transform:uppercase; transition:transform .18s ease; }
+      .sbc-toast.show { transform:translateY(0); }
+      .celebration-canvas { position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:9999; }
+      .flash-card { animation:card-flash 1.5s ease 1; }
+      @keyframes card-flash { 0%,100%{background:var(--surface)} 25%,75%{background:var(--yellow);color:#141414} }
+      .urgent { background:var(--pink)!important; color:#141414!important; }
+      .hub-icon { width:42px; height:42px; display:inline-flex; align-items:center; justify-content:center; background:var(--yellow); color:#141414; border:2px solid #141414; border-radius:8px; transform:rotate(-3deg); }
+      .hub-card:nth-child(4n+2) .hub-icon { background:var(--sky); transform:rotate(2deg); }
+      .hub-card:nth-child(4n+3) .hub-icon { background:var(--mint); transform:rotate(-1deg); }
+      .hub-card:nth-child(4n) .hub-icon { background:var(--pink); transform:rotate(3deg); }
+      .open-source-credit { margin-top:14px!important; font:500 11.5px/1.55 var(--font-mono); }
+      .freeband .fb-grid { grid-template-columns:repeat(4,1fr); }
+      @media(max-width:1023px){ .pagenav{grid-template-columns:repeat(4,minmax(0,1fr))}.drawer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pagenav a:nth-last-child(-n+2){grid-column:auto}.pagenav a:last-child{grid-column:span 2} }
+      @media(max-width:640px){
+        section.block{margin-top:var(--space-24)}.entry{padding:16px}.sitebar{margin:14px -4px 8px;padding:6px;border-radius:10px}.pagenav{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}.pagenav a{padding:9px 7px;font-size:11.5px}.pagenav a:last-child{grid-column:auto}.pagenav a[href="#/favorites"]{grid-column:1/-1}.global-search{margin-top:6px;padding-top:6px}.global-search kbd{display:none}.freeband .fb-grid{grid-template-columns:1fr 1fr}.freeband .fb-item:first-child{grid-column:auto}.spotlight{grid-template-columns:1fr}.spotlight strong{border-right:0;border-bottom:2px solid #141414}.drawer-panel{padding:15px;border-width:3px;box-shadow:5px 5px 0 var(--shadowc)}.drawer-grid{grid-template-columns:1fr}.drawer-head h2{font-size:30px}.sbc-toast{left:16px;right:16px;bottom:max(16px,env(safe-area-inset-bottom));text-align:center}.packtable td.row-tools{width:100%;padding:8px 0 0;text-align:left}.packtable td.row-tools::before{content:"Save — ";font:700 11px/1 var(--font-mono);color:var(--ink-3);margin-right:7px}.e-actions .apply-btn{flex:1 1 auto}.visit-note{align-items:flex-start}}
+      @media(prefers-reduced-motion:reduce){.flash-card{animation:none!important;background:var(--yellow)!important;color:#141414!important}.sbc-toast{transition:none}.pagenav a[aria-current="page"],.hub-icon{transform:none!important}}
+
     </style>
-    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
-    <script defer src="data:application/javascript;base64,InVzZSBzdHJpY3QiOygoKT0+e3ZhciB0PSh0LGUpPT4oKT0+KHQmJihlPXQodD0wKSksZSksZT0odCxlKT0+KCk9PihlfHx0KChlPXtleHBvcnRzOnt9fSkuZXhwb3J0cyxlKSxlLmV4cG9ydHMpO2Z1bmN0aW9uIG4odCl7bGV0IGU9bG9jYXRpb24uaHJlZjtpZih0KXtsZXQgbj1uZXcgVVJMKGUpO2lmKG4ucGF0aG5hbWUhPT10KXJldHVybiBuLnBhdGhuYW1lPXQsbi5zZWFyY2g9IiIsbi5ocmVmfXJldHVybiBlfWZ1bmN0aW9uIHIoKXtyZXR1cm4hIShuYXZpZ2F0b3Iud2ViZHJpdmVyfHxuYXZpZ2F0b3IudXNlckFnZW50LmluY2x1ZGVzKCJIZWFkbGVzcyIpKX12YXIgaT10KCgpPT57fSk7ZnVuY3Rpb24gYSh0LGUsbil7bGV0IHI9bCgpLGk9cCh0KSxhPXJbdF0sbz1yW2ldLHU9YT09PWU/ey4uLm8sLi4ubn06bjtpZihhPT09ZSYmZihvLHUpKXJldHVybiExO2xldHtbaV06ZCwuLi5jfT1yO3JldHVybiBzKHsuLi5jLFt0XTplLC4uLk9iamVjdC5rZXlzKHUpLmxlbmd0aCYme1tpXTp1fX0pLCEwfWZ1bmN0aW9uIG8oKXtzKHt9KX1mdW5jdGlvbiB1KCl7bGV0e3VzZXJJZDp0LGdyb3VwSWQ6ZSx0cmFpdHM6bixncm91cFRyYWl0czpyfT1sKCksaT17Li4ubn07Zm9yKGxldFthLG9db2YgT2JqZWN0LmVudHJpZXMobnVsbCE9cj9yOnt9KSlpW2Bncm91cF8ke2F9YF09bztyZXR1cm57Li4udCYme3VzZXJJZDp0fSwuLi5lJiZ7Z3JvdXBJZDplfSwuLi5PYmplY3Qua2V5cyhpKS5sZW5ndGgmJntwcm9wczppfX19ZnVuY3Rpb24gbCgpe2lmKGcpcmV0dXJuIGg7dHJ5e2xldCB0PWxvY2FsU3RvcmFnZS5nZXRJdGVtKHYpO2g9dD9kKEpTT04ucGFyc2UodCkpOnt9fWNhdGNoKGUpe31yZXR1cm4gaH1mdW5jdGlvbiBzKHQpe2g9dDt0cnl7dC51c2VySWR8fHQuZ3JvdXBJZD9sb2NhbFN0b3JhZ2Uuc2V0SXRlbSh2LEpTT04uc3RyaW5naWZ5KHQpKTpsb2NhbFN0b3JhZ2UucmVtb3ZlSXRlbSh2KSxnPSExfWNhdGNoKGUpe2c9ITB9fWZ1bmN0aW9uIGQodCl7cmV0dXJuey4uLiJzdHJpbmciPT10eXBlb2YgdC51c2VySWQmJnt1c2VySWQ6dC51c2VySWQsLi4uYyh0LnRyYWl0cykmJnt0cmFpdHM6dC50cmFpdHN9fSwuLi4ic3RyaW5nIj09dHlwZW9mIHQuZ3JvdXBJZCYme2dyb3VwSWQ6dC5ncm91cElkLC4uLmModC5ncm91cFRyYWl0cykmJntncm91cFRyYWl0czp0Lmdyb3VwVHJhaXRzfX19fWZ1bmN0aW9uIGModCl7cmV0dXJuIm9iamVjdCI9PXR5cGVvZiB0JiZudWxsIT09dCYmIUFycmF5LmlzQXJyYXkodCl9ZnVuY3Rpb24gcCh0KXtyZXR1cm4idXNlcklkIj09PXQ/InRyYWl0cyI6Imdyb3VwVHJhaXRzIn1mdW5jdGlvbiBmKHQ9e30sZT17fSl7bGV0IG49T2JqZWN0LmtleXModCk7cmV0dXJuIG4ubGVuZ3RoPT09T2JqZWN0LmtleXMoZSkubGVuZ3RoJiZuLmV2ZXJ5KG49Pm4gaW4gZSYmdFtuXT09PWVbbl0pfXZhciB2LGgsZyx5PXQoKCk9Pnt2PSJfX3ZhX2F0dHJpYnV0aW9uIixoPXt9LGc9ITF9KTtlKCgpPT57aSgpLHkoKSxmdW5jdGlvbigpe3ZhciB0O2xldCBlPSIwLjEuMyIsaT10PT50LGw9ZG9jdW1lbnQscz1sLmN1cnJlbnRTY3JpcHQ7aWYocigpKXJldHVybjtsZXQgZD1udWxsIT0odD1udWxsPT1zP3ZvaWQgMDpzLmRhdGFzZXQpP3Q6e30sYz13KGQsInZpZXciKSxwPXcoZCwiZXZlbnQiKSxmPXcoZCwic2Vzc2lvbiIpLHY9dyhkLCJpZGVudGlmeSIpLGg9dyhkLCJncm91cCIpLGc9bnVsbCx5PW51bGwsXz0hMDtmdW5jdGlvbiB3KHQsZSl7cmV0dXJuIHRbYCR7ZX1FbmRwb2ludGBdfHwoImVuZHBvaW50ImluIHQ/YCR7dC5lbmRwb2ludH0vJHtlfWA6YCR7bnVsbCE9cyYmcy5zcmMuaW5jbHVkZXMoIi92YS8iKT8iL3ZhIjoiL192ZXJjZWwvaW5zaWdodHMifS8ke2V9YCl9YXN5bmMgZnVuY3Rpb24gSSh0KXtpZih0JiYhQXJyYXkuaXNBcnJheSh0KSlyZXR1cm57cDp0fTtsZXQgZT1sLnF1ZXJ5U2VsZWN0b3JBbGwoIltkYXRhLWZsYWctdmFsdWVzXSIpO2lmKCFzfHwhZS5sZW5ndGgpcmV0dXJuO2xldCBuPW5ldyBVUkwocy5zcmMpLHI9bi5wYXRobmFtZS5zcGxpdCgiLyIpLGk9ci5wb3AoKTtyZXR1cm4gaSYmci5wdXNoKCJmbGFncyIsaSksbi5wYXRobmFtZT1yLmpvaW4oIi8iKSxpbXBvcnQobi5ocmVmKS50aGVuKG49Pm4uZ2F0aGVyKGUsdCkpfWFzeW5jIGZ1bmN0aW9uIG0odCxlKXt0cnl7YXdhaXQgZmV0Y2godCx7bWV0aG9kOiJQT1NUIixrZWVwYWxpdmU6ITAsaGVhZGVyczp7IkNvbnRlbnQtVHlwZSI6ImFwcGxpY2F0aW9uL2pzb24ifSxib2R5OkpTT04uc3RyaW5naWZ5KGUpfSl9Y2F0Y2gobil7fX1hc3luYyBmdW5jdGlvbiBrKHt0eXBlOnQsZGF0YTpyLG9wdGlvbnM6YX0pe3ZhciBvO2xldCBzPW4oeSksZj1udWxsPT1hP3ZvaWQgMDphLl9fY2RwLHY9bC5yZWZlcnJlcixoPWkoe3R5cGU6dCx1cmw6cyxwYXlsb2FkOnIsLi4udm9pZCAwIT09ZiYme19fY2RwOmZ9fSk7aWYoITE9PT1ofHxudWxsPT09aClyZXR1cm47aCYmKHM9aC51cmwscj1udWxsIT0obz1oLnBheWxvYWQpP286cixmPWguX19jZHApO2xldCBfPXYuaW5jbHVkZXMobG9jYXRpb24uaG9zdCksdz17bzpzLHN2OmUsc2RrbjpkLnNka24sc2RrdjpkLnNka3YsdHM6RGF0ZS5ub3coKSwuLi5nJiZ7ZHA6Z30sLi4ubnVsbCE9YSYmYS53aXRoUmVmZXJyZXImJiFfP3tyOnZ9Ont9LC4uLnUoKSwuLi4iZXZlbnQiPT09dCYmciYme2VuOnIubmFtZSxlZDpyLmRhdGF9LGY6YXdhaXQgSShudWxsPT1hP3ZvaWQgMDphLmZsYWdzKS5jYXRjaCgoKT0+e30pLC4uLnZvaWQgMCE9PWYmJntfX2NkcDpmfX07cmV0dXJuIG0oInBhZ2V2aWV3Ij09PXQ/YzpwLHcpfWFzeW5jIGZ1bmN0aW9uIGIodD17fSl7cmV0dXJuIGsoe3R5cGU6InBhZ2V2aWV3IixvcHRpb25zOnt3aXRoUmVmZXJyZXI6dC53aXRoUmVmZXJyZXIsX19jZHA6dC5fX2NkcH19KX1hc3luYyBmdW5jdGlvbiBTKHQsZSxuKXtyZXR1cm4gayh7dHlwZToiZXZlbnQiLGRhdGE6e25hbWU6dCxkYXRhOmV9LG9wdGlvbnM6e3dpdGhSZWZlcnJlcjohMCxmbGFnczpudWxsPT1uP3ZvaWQgMDpuLmZsYWdzLF9fY2RwOm51bGw9PW4/dm9pZCAwOm4uX19jZHB9fSl9YXN5bmMgZnVuY3Rpb24gUih0LHIsbyxsLHMpe3ZhciBjLHA7bGV0IGY9e3R5cGU6ImV2ZW50Iix1cmw6bih5KSxwYXlsb2FkOntuYW1lOnQsZGF0YTp7Li4ubCxbcl06b319LC4uLnZvaWQgMCE9PXMmJntfX2NkcDpzfX0sXz1pKGYpO2lmKCExPT09X3x8bnVsbD09PV8pcmV0dXJuO2xldCB3PV98fGY7cz13Ll9fY2RwO2xldHtbcl06SSwuLi5rfT1udWxsIT0ocD1udWxsPT0oYz13LnBheWxvYWQpP3ZvaWQgMDpjLmRhdGEpP3A6e307aWYoInN0cmluZyIhPXR5cGVvZiBJfHwhSXx8IWEocixJLGspJiZ2b2lkIDA9PT1zKXJldHVybjtsZXQgYj17Li4ue286dy51cmwsc3Y6ZSxzZGtuOmQuc2RrbixzZGt2OmQuc2Rrdix0czpEYXRlLm5vdygpLC4uLmcmJntkcDpnfX0sLi4udSgpLGVuOnQsLi4uT2JqZWN0LmtleXMoaykubGVuZ3RoJiZ7ZWQ6a30sLi4udm9pZCAwIT09cyYme19fY2RwOnN9fTtyZXR1cm4gbSgiaWRlbnRpZnkiPT09dD92OmgsYil9YXN5bmMgZnVuY3Rpb24gTygpe2F3YWl0IGZldGNoKGYse21ldGhvZDoiR0VUIixrZWVwYWxpdmU6ITB9KS5jYXRjaCgoKT0+e30pfWZ1bmN0aW9uIGoodCl7cmV0dXJuIHQucGF0aG5hbWU9PT1uZXcgVVJMKEEpLnBhdGhuYW1lfWZ1bmN0aW9uIFQodCl7bGV0IGU9dD8ic3RyaW5nIj09dHlwZW9mIHQ/bmV3IFVSTCh0LGxvY2F0aW9uLm9yaWdpbik6bmV3IFVSTCh0LmhyZWYpOm51bGw7IWV8fGooZSl8fGUuaGFzaCYmaihlKXx8YigpfWxldCBBPW4oKSxMPSgpPT57dmFyIHQ7d2luZG93LnZhPWZ1bmN0aW9uKHQsZSl7ImJlZm9yZVNlbmQiPT09dD9pPWU6ImV2ZW50Ij09PXQ/ZSYmUyhlLm5hbWUsZS5kYXRhLHsuLi5lLm9wdGlvbnMsX19jZHA6ZS5fX2NkcH0pOiJwYWdldmlldyI9PT10P2UmJihlLnJvdXRlJiYoZz1lLnJvdXRlKSxlLnBhdGgmJih5PWUucGF0aCksYih7d2l0aFJlZmVycmVyOl8sX19jZHA6ZS5fX2NkcH0pLF89ITEpOiJpZGVudGlmeSI9PT10P251bGwhPWUmJmUudXNlcklkJiZSKCJpZGVudGlmeSIsInVzZXJJZCIsZS51c2VySWQsZS50cmFpdHMsZS5fX2NkcCk6Imdyb3VwIj09PXQ/bnVsbCE9ZSYmZS5ncm91cElkJiZSKCJncm91cCIsImdyb3VwSWQiLGUuZ3JvdXBJZCxlLnRyYWl0cyxlLl9fY2RwKToicmVzZXQiIT09dHx8bygpLCJlbmFibGVDb29raWUiPT09dCYmTygpfSxudWxsPT0odD13aW5kb3cudmFxKXx8dC5mb3JFYWNoKChbdCxlXSk9Pnt3aW5kb3cudmEodCxlKX0pfTsoKCk9PntpZih3aW5kb3cudmFpfHwod2luZG93LnZhaT0hMCxMKCksZC5kaXNhYmxlQXV0b1RyYWNrKSlyZXR1cm47Yih7d2l0aFJlZmVycmVyOiEwfSk7bGV0IHQ9aGlzdG9yeS5wdXNoU3RhdGUuYmluZChoaXN0b3J5KTtoaXN0b3J5LnB1c2hTdGF0ZT1mdW5jdGlvbiguLi5lKXt0KC4uLmUpO3RyeXtUKGVbMl0pLEE9bigpfWNhdGNoKHIpe319LHdpbmRvdy5hZGRFdmVudExpc3RlbmVyKCJwb3BzdGF0ZSIsZnVuY3Rpb24oKXtUKG4oKSksQT1uKCl9KX0pKCl9KCl9KSgpfSkoKTs="></script>
   </head>
   <body>
     <div class="wrap">
@@ -957,82 +955,94 @@
           <p class="tip-micro">SOL &middot; BTC &middot; ETH &mdash; tip only what you can afford. Every tip is appreciated.</p>
         </div>
         <p class="byline byline-under-tip">Prepared by <b>Naman Parmar</b> — Graduate student in Data Science at Rowan University</p>
+        <div class="sitebar">
         <nav class="pagenav" aria-label="Site pages">
-          <a href="#/" data-route-link="home" aria-current="page">🏠 Home</a>
-          <a href="#/browse-everything" data-route-link="browse-everything">🔍 Browse Everything</a>
-          <a href="#/github-pack" data-route-link="github-pack">💻 GitHub Pack</a>
-          <a href="#/unidays" data-route-link="unidays">🎟️ UNiDAYS</a>
-          <a href="#/sheerid" data-route-link="sheerid">🪪 SheerID</a>
-          <a href="#/in-store" data-route-link="in-store">🏬 In-store</a>
-          <a href="#/online" data-route-link="online">🌐 Online</a>
-          <a href="#/guides" data-route-link="guides">🧭 Guides</a>
-          <a href="#/graduation-freebies" data-route-link="graduation">🎓 Graduation Freebies</a>
+          <a href="#/" data-route-link="home" aria-current="page"><span data-icon="home"></span> Home</a>
+          <a href="#/browse-everything" data-route-link="browse-everything"><span data-icon="search"></span> Browse Everything</a>
+          <a href="#/launch" data-route-link="launch"><span data-icon="rocket"></span> Launch</a>
+          <a href="#/github-pack" data-route-link="github-pack"><span data-icon="code"></span> GitHub Pack</a>
+          <a href="#/unidays" data-route-link="unidays"><span data-icon="ticket"></span> UNiDAYS</a>
+          <a href="#/sheerid" data-route-link="sheerid"><span data-icon="id-card"></span> SheerID</a>
+          <a href="#/in-store" data-route-link="in-store"><span data-icon="building-store"></span> In-store</a>
+          <a href="#/online" data-route-link="online"><span data-icon="globe"></span> Online</a>
+          <a href="#/guides" data-route-link="guides"><span data-icon="compass"></span> Guides</a>
+          <a href="#/graduation-freebies" data-route-link="graduation"><span data-icon="shield-check"></span> Graduation</a>
+          <a href="#/favorites" data-route-link="favorites"><span data-icon="bookmark"></span> Favorites <span class="nav-badge" data-fav-badge hidden>0</span></a>
         </nav>
+        </div>
         <div class="hero-meta home-only">
-          <span><span class="dot"></span>&nbsp; Snapshot updated October 11, 2026</span>
-          <span>GitHub Pack read live from education.github.com/pack that day</span>
+          <span><span class="dot"></span>&nbsp; Snapshot updated October 15, 2026</span>
+          <span>GitHub Pack read live from education.github.com/pack on October 14</span>
           <span>Offers change — re-verify before relying on any single one</span>
         </div>
         <h1 class="home-only">Every student benefit, in one place</h1>
         <p class="lede home-only">Student discounts, freebies and deals across food, fashion, everyday shopping, entertainment, electronics, learning and tech — gathered from major verification platforms, the GitHub Student Developer Pack and beyond. Search it, filter it, work through it.</p>
         <aside class="naman-note home-only" data-naman-note="home"><p>I started this catalogue after realizing how much money I'd been leaving on the table as a student — free software, discounts, trials, all just sitting there. I researched and organized every benefit on this site — a few are marked unconfirmed where I couldn't verify current terms, so double-check those before you count on them. If it saves you even one subscription fee, it did its job. — Naman</p></aside>
         <section class="quick-explainer home-only" aria-label="How to use this catalogue">
-          <article><h2>What this is</h2><p>A free catalogue of <b><span data-total>247</span> student discounts, freebies, and perks worth $2,500+</b> across food, fashion, everyday shopping, entertainment, electronics, learning, and tech — sourced from major student-verification platforms, the GitHub Student Developer Pack, and more.</p></article>
+          <article><h2>What this is</h2><p>A free catalogue of <b><span data-total>246</span> student discounts, freebies, and perks worth $2,500+</b> across food, fashion, everyday shopping, entertainment, electronics, learning, and tech — sourced from major student-verification platforms, the GitHub Student Developer Pack, and more.</p></article>
           <article><h2>How it works</h2><p>Pick a category or search, choose a benefit, follow the numbered claim steps, then hit Apply. Most unlock with your student email, UNiDAYS or SheerID verification, or a student ID.</p></article>
           <article><h2>Who it’s for</h2><p>Any student. College and university students get the most; plenty of food and retail perks work for high schoolers too.</p></article>
         </section>
         <!-- Ko-fi hero button hidden for now (kept restorable): set .kofi-hidden removal or SHOW_KOFI_WIDGETS=true to bring it back. -->
         <div class="kofi-row kofi-hidden" aria-hidden="true">
-          <a class="kofi-btn" href="https://ko-fi.com/nx9161" target="_blank" rel="noopener" tabindex="-1"><span class="kofi-cup" aria-hidden="true">☕</span> Support Us on Ko-fi</a>
+          <a class="kofi-btn" href="https://ko-fi.com/nx9161" target="_blank" rel="noopener" tabindex="-1">Support Us on Ko-fi</a>
           <span class="kofi-note">If this catalogue saved you money, a coffee helps keep it updated and free for the next student.</span>
         </div>
         <div class="freeband home-only" role="note">
           <div class="fb-grid">
-            <div class="fb-item"><b data-total>247</b><span>benefits in this catalogue</span></div>
-            <div class="fb-item"><b>124</b><span>completely free — no payment</span></div>
-            <div class="fb-item"><b>$2,500+</b><span>estimated combined value of the free ones</span></div>
+            <div class="fb-item"><b data-total data-countup="246">246</b><span>benefits in this catalogue</span></div>
+            <div class="fb-item"><b data-countup="123">123</b><span>completely free — no payment</span></div>
+            <div class="fb-item"><b data-countup="2500" data-prefix="$" data-suffix="+">$2,500+</b><span>estimated combined value of the free ones</span></div><div class="fb-item"><b data-upcoming-deadlines>2</b><span>upcoming claim deadlines</span></div>
           </div>
-          <p class="fb-note">Counted from the listings below (October 11, 2026). “Completely free” means $0 out of pocket for the stated term — free plans, licenses, trials, and credits you can claim and use without paying; percentage discounts don’t count. The value totals only the dollar figures printed in the listings (account credits, stated plan values, and priced plans during their free months) — most free offers state no dollar value at all, so the real combined value is considerably higher.</p>
-        </div>
-        <div class="stats home-only">
-          <div class="stat"><b data-count="pack">81</b><span>UNIQUE GITHUB PACK BENEFITS</span></div>
-          <div class="stat"><b>160+</b><span>.EDU BENEFITS LISTED</span></div>
-          <div class="stat"><b>5</b><span>VERIFICATION PLATFORMS</span></div>
-          <div class="stat"><b>3</b><span>UPCOMING CLAIM DEADLINES</span></div>
+          <p class="fb-note">Counted from the listings below (October 15, 2026). “Completely free” means $0 out of pocket for the stated term — free plans, licenses, trials, and credits you can claim and use without paying; percentage discounts don’t count. The value totals only the dollar figures printed in the listings (account credits, stated plan values, and priced plans during their free months) — most free offers state no dollar value at all, so the real combined value is considerably higher.</p>
         </div>
 
-        <div class="deadlines home-only" role="note">
-          <h2>Act soon — dated offers</h2>
-          <ul>
-            <li data-deadline="2026-10-12"><span class="when">By Oct 12, 2026</span> <span><a href="https://www.doordash.com/dashpass/student" target="_blank" rel="noopener"><b>DoorDash</b></a> — claim one free year of DashPass for Students (SheerID, in-app; canceling early ends benefits that month).</span> <span class="days">Ends Oct 12</span></li>
-            <li data-deadline="2026-10-31"><span class="when">By Oct 31, 2026</span> <span><a href="https://chatgpt.com/students/2026" target="_blank" rel="noopener"><b>ChatGPT Work</b></a> — 4 free months for US college students (OpenAI's 2026 Back to School offer; card required, renews at $20/mo).</span> <span class="days">Ends Oct 31</span></li>
-            <li data-deadline="2026-12-31"><span class="when">By Dec 31, 2026</span> <span><a href="https://gemini.google/students" target="_blank" rel="noopener"><b>Google AI Pro (Gemini)</b></a> — free 1 year for eligible US college students 18+; renews at $19.99/mo unless canceled.</span> <span class="days">Ends Dec 31</span></li>
-            <li data-deadline="2026-10-12" aria-hidden="true"><span class="when">By Oct 12, 2026</span> <span><a href="https://www.doordash.com/dashpass/student" target="_blank" rel="noopener" tabindex="-1"><b>DoorDash</b></a> — claim one free year of DashPass for Students (SheerID, in-app; canceling early ends benefits that month).</span> <span class="days">Ends Oct 12</span></li>
-            <li data-deadline="2026-10-31" aria-hidden="true"><span class="when">By Oct 31, 2026</span> <span><a href="https://chatgpt.com/students/2026" target="_blank" rel="noopener" tabindex="-1"><b>ChatGPT Work</b></a> — 4 free months for US college students (OpenAI's 2026 Back to School offer; card required, renews at $20/mo).</span> <span class="days">Ends Oct 31</span></li>
-            <li data-deadline="2026-12-31" aria-hidden="true"><span class="when">By Dec 31, 2026</span> <span><a href="https://gemini.google/students" target="_blank" rel="noopener" tabindex="-1"><b>Google AI Pro (Gemini)</b></a> — free 1 year for eligible US college students 18+; renews at $19.99/mo unless canceled.</span> <span class="days">Ends Dec 31</span></li>
-          </ul>
+        <div class="spotlight home-only" role="note">
+          <strong>Worth a look</strong>
+          <a id="spotlight-text" href="#/benefit/github-pack/github-copilot">GitHub Copilot — free while you are a verified student</a>
+        </div>
+        <div id="deadline-data" hidden>
+          <span data-deadline="2026-10-12"></span><span data-deadline="2026-10-31"></span><span data-deadline="2026-12-31"></span>
         </div>
       </header>
 
       <main id="main-content">
+      <noscript>
+        <section class="tip-hero nojs-panel" aria-label="Why this file looks empty, and how to see the full catalogue">
+          <p class="tip-eyebrow">Heads up — you&rsquo;re seeing a preview</p>
+          <p class="tip-headline">This catalogue needs JavaScript to open</p>
+          <p class="tip-copy">All <strong>246 benefits</strong>, their Apply links and the menu above load with JavaScript — and this preview can&rsquo;t run it. Nothing is broken. Nothing is missing.</p>
+          <p class="tip-copy">Previewing this file in Files or Quick Look? Open it in Safari or any browser instead — or skip the file entirely and use the live site:</p>
+          <a class="tip-top-btn" href="https://student-benefits-catalogue.vercel.app/" target="_blank" rel="noopener">Open the live catalogue &#8599;</a>
+          <p class="tip-micro">On a computer? Just double-click the file — it opens in your browser.</p>
+        </section>
+        <h2 class="nojs-links-label">Or start with the big four — they unlock most of the 246</h2>
+        <div class="verify">
+          <a class="vcard" href="https://www.myunidays.com" target="_blank" rel="noopener"><span class="v-name">UNiDAYS</span><div class="v-desc">Powers Apple Education, adidas, ASOS, J.Crew, H&amp;M, Max, Uber student offers.</div><span class="v-go">myunidays.com &rarr;</span></a>
+          <a class="vcard" href="https://www.studentbeans.com" target="_blank" rel="noopener"><span class="v-name">Student Beans</span><div class="v-desc">Alternative aggregator — H&amp;M, Urban Outfitters, Lululemon, plus rotating codes.</div><span class="v-go">studentbeans.com &rarr;</span></a>
+          <a class="vcard" href="https://www.sheerid.com" target="_blank" rel="noopener"><span class="v-name">SheerID</span><div class="v-desc">Verification engine behind Spotify, Hulu, Adobe, Max, Paramount+, DoorDash.</div><span class="v-go">sheerid.com &rarr;</span></a>
+          <a class="vcard" href="https://education.github.com/pack" target="_blank" rel="noopener"><span class="v-name">GitHub Student Developer Pack</span><div class="v-desc">All 81 Pack benefits — Copilot, cloud credits, domains, IDEs, each claimed from its Pack card.</div><span class="v-go">education.github.com/pack &rarr;</span></a>
+        </div>
+      </noscript>
       <div id="view-home" data-view="home">
       <section class="block" id="hub">
         <div class="sec-head"><h2>Browse by page</h2><span class="count">every benefit lives on exactly one page</span></div>
         <p class="sec-intro">The catalogue is split into focused pages so nothing gets buried. Pick where to start — the same verified listings, organised by how you claim them.</p>
         <div class="hub-grid">
-          <a class="hub-card" href="#/github-pack"><span class="hub-icon" aria-hidden="true">💻</span><span class="hub-name">GitHub Student Developer Pack</span><p class="hub-desc">All 81 unique Pack benefits — Copilot, cloud credits, domains, IDEs — each claimed from its Pack card.</p><span class="hub-count"><span data-count="pack">81</span> unique benefits</span><span class="hub-go">Open the Pack page →</span></a>
-          <a class="hub-card" href="#/unidays"><span class="hub-icon" aria-hidden="true">🎟️</span><span class="hub-name">UNiDAYS benefits</span><p class="hub-desc">Apple Education, adidas, ASOS, Max and every other offer you activate through a free UNiDAYS account.</p><span class="hub-count"><span data-count="unidays">–</span> benefits</span><span class="hub-go">Open the UNiDAYS page →</span></a>
-          <a class="hub-card" href="#/sheerid"><span class="hub-icon" aria-hidden="true">🪪</span><span class="hub-name">SheerID-verified benefits</span><p class="hub-desc">Spotify + Hulu, Adobe, DoorDash, YouTube Premium and every offer that verifies you with SheerID at signup.</p><span class="hub-count"><span data-count="sheerid">–</span> benefits</span><span class="hub-go">Open the SheerID page →</span></a>
-          <a class="hub-card" href="#/in-store"><span class="hub-icon" aria-hidden="true">🏬</span><span class="hub-name">In-store &amp; in-person</span><p class="hub-desc">Stores, food, travel, carriers and campus deals you claim at the counter or with a student ID.</p><span class="hub-count"><span data-count="instore">–</span> benefits</span><span class="hub-go">Open the In-store page →</span></a>
-          <a class="hub-card" href="#/online"><span class="hub-icon" aria-hidden="true">🌐</span><span class="hub-name">Online resources</span><p class="hub-desc">Software, streaming, cloud credits, courses, news and AI tools you claim from your desk.</p><span class="hub-count"><span data-count="online">–</span> benefits</span><span class="hub-go">Open the Online page →</span></a>
-          <a class="hub-card" href="#/guides"><span class="hub-icon" aria-hidden="true">🧭</span><span class="hub-name">Verification &amp; how-to guides</span><p class="hub-desc">UNiDAYS, Student Beans, SheerID, ID.me and ISIC explained — verify once, claim everywhere, fix failed checks.</p><span class="hub-count">5 platforms · step-by-step</span><span class="hub-go">Read the guides →</span></a>
-          <a class="hub-card grad" href="#/graduation-freebies"><span class="hub-icon" aria-hidden="true">🎓</span><span class="hub-name">Graduation Freebies</span><p class="hub-desc">Class of 2026 only: verified in-store treats, the mail-an-announcement trend, and copy-paste outreach templates.</p><span class="hub-count">Separate page · verified only</span><span class="hub-go">Open Graduation Freebies →</span></a>
+          <a class="hub-card" href="#/launch"><span class="hub-icon" data-icon="rocket" aria-hidden="true"></span><span class="hub-name">Launch your project</span><p class="hub-desc">A current, student-friendly launch list for side projects, apps, games, and startups, with dead destinations removed.</p><span class="hub-count">69 verified places</span><span class="hub-go">Open the launch page →</span></a>
+          <a class="hub-card" href="#/github-pack"><span class="hub-icon" data-icon="code" aria-hidden="true"></span><span class="hub-name">GitHub Student Developer Pack</span><p class="hub-desc">All 81 unique Pack benefits — Copilot, cloud credits, domains, IDEs — each claimed from its Pack card.</p><span class="hub-count"><span data-count="pack">81</span> unique benefits</span><span class="hub-go">Open the Pack page →</span></a>
+          <a class="hub-card" href="#/unidays"><span class="hub-icon" data-icon="ticket" aria-hidden="true"></span><span class="hub-name">UNiDAYS benefits</span><p class="hub-desc">Apple Education, adidas, ASOS, Max and every other offer you activate through a free UNiDAYS account.</p><span class="hub-count"><span data-count="unidays">–</span> benefits</span><span class="hub-go">Open the UNiDAYS page →</span></a>
+          <a class="hub-card" href="#/sheerid"><span class="hub-icon" data-icon="id-card" aria-hidden="true"></span><span class="hub-name">SheerID-verified benefits</span><p class="hub-desc">Spotify + Hulu, Adobe, DoorDash, YouTube Premium and every offer that verifies you with SheerID at signup.</p><span class="hub-count"><span data-count="sheerid">–</span> benefits</span><span class="hub-go">Open the SheerID page →</span></a>
+          <a class="hub-card" href="#/in-store"><span class="hub-icon" data-icon="building-store" aria-hidden="true"></span><span class="hub-name">In-store &amp; in-person</span><p class="hub-desc">Stores, food, travel, carriers and campus deals you claim at the counter or with a student ID.</p><span class="hub-count"><span data-count="instore">–</span> benefits</span><span class="hub-go">Open the In-store page →</span></a>
+          <a class="hub-card" href="#/online"><span class="hub-icon" data-icon="globe" aria-hidden="true"></span><span class="hub-name">Online resources</span><p class="hub-desc">Software, streaming, cloud credits, courses, news and AI tools you claim from your desk.</p><span class="hub-count"><span data-count="online">–</span> benefits</span><span class="hub-go">Open the Online page →</span></a>
+          <a class="hub-card" href="#/guides"><span class="hub-icon" data-icon="compass" aria-hidden="true"></span><span class="hub-name">Verification &amp; how-to guides</span><p class="hub-desc">UNiDAYS, Student Beans, SheerID, ID.me and ISIC explained — verify once, claim everywhere, fix failed checks.</p><span class="hub-count">5 platforms · step-by-step</span><span class="hub-go">Read the guides →</span></a>
+          <a class="hub-card grad" href="#/graduation-freebies"><span class="hub-icon" data-icon="shield-check" aria-hidden="true"></span><span class="hub-name">Graduation Freebies</span><p class="hub-desc">Class of 2026 only: verified in-store treats, the mail-an-announcement trend, and copy-paste outreach templates.</p><span class="hub-count">Separate page · verified only</span><span class="hub-go">Open Graduation Freebies →</span></a>
         </div>
       </section>
 
       <div class="grad-promo">
         <div>
-          <h3>🎓 Graduating soon? Don’t miss the freebies page</h3>
+          <h3>Graduating soon? Don’t miss the freebies page</h3>
           <p>Separate page just for Class of 2026: in-store free treats in cap &amp; gown, the viral “mail your announcement to brands” trend, and copy-paste outreach templates with placeholders — no invented emails, no guaranteed promises.</p>
         </div>
         <a href="#/graduation-freebies">Open Graduation Freebies →</a>
@@ -1041,9 +1051,11 @@
 
       <div id="view-browse-everything" data-view="browse-everything" hidden>
       <section class="block" id="browse-everything" aria-labelledby="browse-everything-title">
-        <div class="sec-head"><h2 id="browse-everything-title">Browse everything</h2><span class="count"><span data-total>247</span> benefits · every platform</span></div>
+        <div class="sec-head"><h2 id="browse-everything-title">Browse everything</h2><span class="count"><span data-total>246</span> benefits · every platform</span></div>
         <p class="sec-intro">The complete student catalogue in one place — food, fashion, everyday essentials, entertainment, learning, devices, software, audio, cloud, and developer tools. Start with what matters to you, compare every offer, then use each card&rsquo;s Apply link and claim steps.</p>
         <aside class="naman-note" data-naman-note="browse-everything"><p>This is for every student, not just people in tech. The categories begin with everyday student life — food, clothing, shopping and entertainment — then move into learning and technology, with the verification method kept on every card so you know exactly how to claim each deal. — Naman</p></aside>
+        <div class="pagesearch"><label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input class="page-search-input" type="search" placeholder="Search this page…" aria-label="Search this page" /></label><div class="showing" data-showing></div></div>
+        <div class="page-empty" data-empty><p><b>Nothing matches that search.</b></p><p>Try a broader term such as food, music, learning, or cloud.</p></div>
         <nav class="browse-jumps" id="browseJumps" aria-label="Jump to a product category"></nav>
         <div id="browseCategoryGroups"></div>
         <div class="also-see" role="note">
@@ -1052,6 +1064,148 @@
         </div>
       </section>
       </div><!-- /view-browse-everything -->
+
+      <div id="view-launch" data-view="launch" hidden>
+      <section class="block" id="launch" aria-labelledby="launch-title">
+        <div class="sec-head"><h2 id="launch-title">Launch your project</h2><span class="count">69 useful places · 101 original links checked</span></div>
+        <p class="sec-intro">Built for students putting a side project, app, game, or first startup into the world. This is not a dusty link dump: every destination from the original 2014 list was checked, dead and irrelevant pages were removed, and the survivors are organized by what they can actually do for your launch.</p>
+        <aside class="naman-note" data-naman-note="launch"><p>I know how easy it is to finish a project and then freeze when it is time to tell people about it. Start with two or three places that fit what you made, read the rules, and write a real post instead of dropping the same link everywhere. You do not need a huge audience. You need the first few people who care. — Naman</p></aside>
+        <div class="launch-summary" aria-label="Launch directory counts">
+          <div><b>69</b><span>places kept</span></div><div><b>32</b><span>dead or poor-fit links cut</span></div><div><b>8</b><span>useful groups</span></div><div><b>Oct 14</b><span>verified in 2026</span></div>
+        </div>
+        <div class="callout"><h3>Do not post everywhere at once</h3><p>Pick the channels where your project belongs. Read each community&rsquo;s rules, tailor the title and explanation, disclose that you built it, and be ready to answer questions. Reddit communities especially remove drive-by promotion.</p></div>
+        <nav class="launch-jumps" aria-label="Jump to a launch channel group">
+          <a href="#/launch/reddit">Reddit · 17</a><a href="#/launch/platforms">Launch platforms · 11</a><a href="#/launch/directories">Directories · 13</a><a href="#/launch/testing">Testing · 1</a><a href="#/launch/press">Press · 10</a><a href="#/launch/founders">Founder communities · 4</a><a href="#/launch/design">Design · 1</a><a href="#/launch/software">Software discovery · 12</a>
+        </nav>
+
+        <section class="launch-group" id="launch-reddit" aria-labelledby="launch-reddit-title">
+          <div class="sec-head"><h2 id="launch-reddit-title">Reddit communities</h2><span class="count">17 places · follow each community&rsquo;s rules</span></div>
+          <div class="launch-grid">
+            <article class="launch-card"><h3>r/AlphaandBetausers</h3><p>Recruit early testers for an unfinished product and explain exactly what kind of feedback you need.</p><a href="https://www.reddit.com/r/alphaandbetausers/" target="_blank" rel="noopener">Open community →</a></article>
+            <article class="launch-card"><h3>r/buildinpublic</h3><p>Share milestones, lessons, and honest progress as you build, rather than posting a bare launch link.</p><a href="https://www.reddit.com/r/buildinpublic/" target="_blank" rel="noopener">Open community →</a></article>
+            <article class="launch-card"><h3>r/Coupons</h3><p>Useful only when you have a real launch discount or promo code that follows the subreddit rules.</p><a href="https://www.reddit.com/r/coupons/" target="_blank" rel="noopener">Open community →</a></article>
+            <article class="launch-card"><h3>r/Design_Critiques</h3><p>Ask for focused feedback on your interface, landing page, or visual system before a wider launch.</p><a href="https://www.reddit.com/r/design_critiques/" target="_blank" rel="noopener">Open community →</a></article>
+            <article class="launch-card"><h3>r/Entrepreneur</h3><p>Lead with a useful lesson or launch result. Simple promotional posts are not welcome.</p><a href="https://www.reddit.com/r/entrepreneur" target="_blank" rel="noopener">Open community →</a></article>
+            <article class="launch-card"><h3>r/EntrepreneurRideAlong</h3><p>Tell the story as it happens, with decisions, numbers, setbacks, and what you are trying next.</p><a href="https://www.reddit.com/r/EntrepreneurRideAlong/" target="_blank" rel="noopener">Open community →</a></article>
+            <article class="launch-card"><h3>r/IMadeThis</h3><p>A straightforward show-and-tell community for something you personally built or created.</p><a href="https://www.reddit.com/r/imadethis" target="_blank" rel="noopener">Open community →</a></article>
+            <article class="launch-card"><h3>r/IndieBiz</h3><p>Share a small independent business or product and connect with other bootstrapped builders.</p><a href="https://www.reddit.com/r/indiebiz/" target="_blank" rel="noopener">Open community →</a></article>
+            <article class="launch-card"><h3>r/indiehackers</h3><p>Use the community&rsquo;s SHOW IH format when you have a real product and want maker feedback.</p><a href="https://www.reddit.com/r/indiehackers/" target="_blank" rel="noopener">Open community →</a></article>
+            <article class="launch-card"><h3>r/LadyBusiness</h3><p>A community for women, trans, and non-binary founders; promotions belong in its recurring plug thread.</p><a href="https://www.reddit.com/r/ladybusiness/" target="_blank" rel="noopener">Open community →</a></article>
+            <article class="launch-card"><h3>r/microsaas</h3><p>A focused audience for small subscription software, including launch lessons and product feedback.</p><a href="https://www.reddit.com/r/microsaas/" target="_blank" rel="noopener">Open community →</a></article>
+            <article class="launch-card"><h3>r/RoastMyStartup</h3><p>Invite blunt criticism of your idea, product, or landing page and arrive ready to take it.</p><a href="https://www.reddit.com/r/roastmystartup" target="_blank" rel="noopener">Open community →</a></article>
+            <article class="launch-card"><h3>r/SaaS</h3><p>For software-as-a-service projects; use its designated feedback thread instead of spamming the feed.</p><a href="https://www.reddit.com/r/SaaS/" target="_blank" rel="noopener">Open community →</a></article>
+            <article class="launch-card"><h3>r/SideProject</h3><p>One of the most launch-friendly places to show a side project, explain it, and ask for feedback.</p><a href="https://reddit.com/r/sideproject" target="_blank" rel="noopener">Open community →</a></article>
+            <article class="launch-card"><h3>r/SmallBusiness</h3><p>Best for a real small business; keep promotion inside the weekly business-promotion thread.</p><a href="https://www.reddit.com/r/smallbusiness/" target="_blank" rel="noopener">Open community →</a></article>
+            <article class="launch-card"><h3>r/Startups</h3><p>Use the recurring Share Your Startup thread. Standalone self-promotion is removed.</p><a href="https://www.reddit.com/r/startups" target="_blank" rel="noopener">Open community →</a></article>
+            <article class="launch-card"><h3>r/thesidehustle</h3><p>Share the practical business angle of a side hustle and join the discussion around running it.</p><a href="https://www.reddit.com/r/thesidehustle/" target="_blank" rel="noopener">Open community →</a></article>
+          </div>
+        </section>
+
+        <section class="launch-group" id="launch-platforms" aria-labelledby="launch-platforms-title">
+          <div class="sec-head"><h2 id="launch-platforms-title">Launch platforms</h2><span class="count">11 places · dedicated launch feeds</span></div>
+          <div class="launch-grid">
+            <article class="launch-card"><h3>Product Hunt</h3><p>The best-known daily product launch board. Prepare screenshots, a clear first comment, and launch-day replies.</p><a href="https://www.producthunt.com/" target="_blank" rel="noopener">Launch on Product Hunt →</a></article>
+            <article class="launch-card"><h3>Show HN</h3><p>For something people can try now. Start the title with “Show HN” and explain what you made.</p><a href="https://news.ycombinator.com/showhn.html" target="_blank" rel="noopener">Read Show HN rules →</a></article>
+            <article class="launch-card"><h3>TinyLaunch</h3><p>A smaller daily launch board with community voting and a free route for new products.</p><a href="https://www.tinylaunch.com" target="_blank" rel="noopener">Launch on TinyLaunch →</a></article>
+            <article class="launch-card"><h3>Startup88</h3><p>Pitch a startup through a free form and join an active stream of recent founder submissions.</p><a href="https://startup88.com/" target="_blank" rel="noopener">Pitch your startup →</a></article>
+            <article class="launch-card"><h3>StartupBase</h3><p>Create a free account, add your product, and put it in front of founders browsing new launches.</p><a href="https://startupbase.io/submit" target="_blank" rel="noopener">Submit to StartupBase →</a></article>
+            <article class="launch-card"><h3>Website Hunt</h3><p>A discovery feed for useful or interesting websites, with free product submissions after signup.</p><a href="https://www.websitehunt.co" target="_blank" rel="noopener">Submit your website →</a></article>
+            <article class="launch-card"><h3>Launching Next</h3><p>A long-running startup launch list with free review and an optional paid fast-track.</p><a href="https://www.launchingnext.com/submit/" target="_blank" rel="noopener">Submit to Launching Next →</a></article>
+            <article class="launch-card"><h3>PitchWall</h3><p>List a product after creating an account; the free queue is slower than its paid placements.</p><a href="https://pitchwall.co/product/submit" target="_blank" rel="noopener">Submit to PitchWall →</a></article>
+            <article class="launch-card"><h3>Awesome Indie</h3><p>A daily indie-product board where makers sign in free and compete for community attention.</p><a href="https://awesomeindie.com" target="_blank" rel="noopener">Join Awesome Indie →</a></article>
+            <article class="launch-card"><h3>AppRater</h3><p>Submit a mobile app to its active listing feed; paid bids can raise placement, but entry is open.</p><a href="https://apprater.net/add/" target="_blank" rel="noopener">Add your app →</a></article>
+            <article class="launch-card"><h3>Side Projectors</h3><p>Showcase a side project or list it for sale; free submissions are reviewed before publishing.</p><a href="https://www.sideprojectors.com" target="_blank" rel="noopener">Submit a side project →</a></article>
+          </div>
+        </section>
+
+        <section class="launch-group" id="launch-directories" aria-labelledby="launch-directories-title">
+          <div class="sec-head"><h2 id="launch-directories-title">Startup &amp; product directories</h2><span class="count">13 places · longer-lived listings</span></div>
+          <div class="launch-grid">
+            <article class="launch-card"><h3>AI Collection</h3><p>For AI tools only; submit through its free form for manual review in a large curated catalogue.</p><a href="https://www.thataicollection.com/" target="_blank" rel="noopener">Submit an AI tool →</a></article>
+            <article class="launch-card"><h3>All Top Startups</h3><p>An editorial startup directory with paid listing packages; there is currently no free submission route.</p><a href="https://alltopstartups.com/submit-startup/" target="_blank" rel="noopener">View paid options →</a></article>
+            <article class="launch-card"><h3>Crunchbase</h3><p>Create a basic company profile so people can find your startup, team, and public company details.</p><a href="https://www.crunchbase.com/" target="_blank" rel="noopener">Create a company profile →</a></article>
+            <article class="launch-card"><h3>Getworm</h3><p>Sign up to publish a simple startup profile that can be discovered outside your own site.</p><a href="https://getworm.com/submit-startup" target="_blank" rel="noopener">Submit to Getworm →</a></article>
+            <article class="launch-card"><h3>Micro SaaS Examples</h3><p>A niche catalogue for small SaaS products with free, manually reviewed submissions.</p><a href="https://www.microsaasexamples.com/" target="_blank" rel="noopener">Submit a micro-SaaS →</a></article>
+            <article class="launch-card"><h3>Postmake</h3><p>Add a product free when you place its badge; one-time paid options remove the badge requirement.</p><a href="https://postmake.io/submit" target="_blank" rel="noopener">Submit to Postmake →</a></article>
+            <article class="launch-card"><h3>Startup Benchmarks</h3><p>Submit a software product free for review and comparison in a dedicated product directory.</p><a href="https://www.startupbenchmarks.com/" target="_blank" rel="noopener">Submit a product →</a></article>
+            <article class="launch-card"><h3>Startup Buffer</h3><p>A no-account, no-fee form for startups seeking a basic public listing after review.</p><a href="https://startupbuffer.com" target="_blank" rel="noopener">Submit to Startup Buffer →</a></article>
+            <article class="launch-card"><h3>Startup Inspire</h3><p>Send your startup for a curated profile among recently added companies.</p><a href="https://www.startupinspire.com/submit" target="_blank" rel="noopener">Submit to Startup Inspire →</a></article>
+            <article class="launch-card"><h3>Startup Ranking</h3><p>Register a company for free to receive a public ranking profile; paid visibility is optional.</p><a href="https://www.startupranking.com/" target="_blank" rel="noopener">Register your startup →</a></article>
+            <article class="launch-card"><h3>Startup Stash</h3><p>Best for products that help founders; use its List A Product route to enter the curated toolbox.</p><a href="https://startupstash.com/" target="_blank" rel="noopener">List a product →</a></article>
+            <article class="launch-card"><h3>StartupBlink</h3><p>Add your startup to a global ecosystem map; a company-domain email is required for review.</p><a href="https://www.startupblink.com/" target="_blank" rel="noopener">Add your startup →</a></article>
+            <article class="launch-card"><h3>Startups Gallery</h3><p>A free human-curated gallery with a separate submission form and regular new entries.</p><a href="https://startups.gallery/" target="_blank" rel="noopener">Submit to the gallery →</a></article>
+          </div>
+        </section>
+
+        <section class="launch-group" id="launch-testing" aria-labelledby="launch-testing-title">
+          <div class="sec-head"><h2 id="launch-testing-title">Testing &amp; feedback</h2><span class="count">1 place · pre-launch recruiting</span></div>
+          <div class="launch-grid">
+            <article class="launch-card"><h3>Beta Bound</h3><p>Post a beta-testing opportunity free when your product needs real testers before public launch.</p><a href="https://www.betabound.com/announce/" target="_blank" rel="noopener">Submit a beta →</a></article>
+          </div>
+        </section>
+
+        <section class="launch-group" id="launch-press" aria-labelledby="launch-press-title">
+          <div class="sec-head"><h2 id="launch-press-title">Press &amp; editorial</h2><span class="count">10 places · pitch a story, not an ad</span></div>
+          <div class="launch-grid">
+            <article class="launch-card"><h3>Built In Chicago</h3><p>Chicago tech founders can send a launch tip through the publication&rsquo;s news form.</p><a href="https://www.builtinchicago.org/send-us-tip" target="_blank" rel="noopener">Send a Chicago tip →</a></article>
+            <article class="launch-card"><h3>GeekWire Startup List</h3><p>For Pacific Northwest startups only; submit company details to its regional startup list.</p><a href="https://geekwire.com/startup-list/" target="_blank" rel="noopener">Submit to GeekWire →</a></article>
+            <article class="launch-card"><h3>Inc42</h3><p>Pitch a startup in the Indian ecosystem through its submission form for editorial consideration.</p><a href="https://inc42.com/startup-submission/" target="_blank" rel="noopener">Pitch Inc42 →</a></article>
+            <article class="launch-card"><h3>KillerStartups</h3><p>Send a free editorial submission that may be featured across its site, newsletter, and social channels.</p><a href="https://killerstartups.com/submit-startup/" target="_blank" rel="noopener">Submit to KillerStartups →</a></article>
+            <article class="launch-card"><h3>Netted</h3><p>Pitch consumer-facing websites or apps as a story idea; business-to-business products are not its focus.</p><a href="https://www.netted.net/contact-us/" target="_blank" rel="noopener">Pitch Netted →</a></article>
+            <article class="launch-card"><h3>Next Big What</h3><p>Submit a product for possible coverage in its technology newsletter and product spotlight.</p><a href="https://nextbigwhat.com/" target="_blank" rel="noopener">Submit a product →</a></article>
+            <article class="launch-card"><h3>SnapMunk</h3><p>Submit startup details free or claim an existing directory listing for a more complete profile.</p><a href="https://www.snapmunk.com/submit-your-startup/" target="_blank" rel="noopener">Submit to SnapMunk →</a></article>
+            <article class="launch-card"><h3>Startup Beat</h3><p>Pitch an early-stage company that meets its age and funding limits through the Lightning Pitch form.</p><a href="https://startupbeat.com/startup-beat-featured-startup-pitch-guidelines/" target="_blank" rel="noopener">Read pitch rules →</a></article>
+            <article class="launch-card"><h3>TechPluto</h3><p>Send a startup for free editorial review, with a paid fast-track offered separately.</p><a href="https://www.techpluto.com/submit-a-startup/" target="_blank" rel="noopener">Submit to TechPluto →</a></article>
+            <article class="launch-card"><h3>WebAppRater</h3><p>Submit a web or mobile app for a review-style feature, with several visibility options.</p><a href="https://webapprater.com/submit-your-web-application-for-review-html" target="_blank" rel="noopener">Submit an app →</a></article>
+          </div>
+        </section>
+
+        <section class="launch-group" id="launch-founders" aria-labelledby="launch-founders-title">
+          <div class="sec-head"><h2 id="launch-founders-title">Founder communities</h2><span class="count">4 places · relationships and programs</span></div>
+          <div class="launch-grid">
+            <article class="launch-card"><h3>Indie Hackers</h3><p>Share a build story, useful numbers, or a thoughtful launch post with other independent founders.</p><a href="https://www.indiehackers.com/" target="_blank" rel="noopener">Join Indie Hackers →</a></article>
+            <article class="launch-card"><h3>F6S</h3><p>Build a company profile and apply to accelerators, grants, founder programs, and startup deals.</p><a href="https://www.f6s.com/" target="_blank" rel="noopener">Explore F6S →</a></article>
+            <article class="launch-card"><h3>Gust</h3><p>Create a founder profile and discover accelerator or angel-network opportunities, rather than a daily launch feed.</p><a href="https://www.gust.com" target="_blank" rel="noopener">Explore Gust →</a></article>
+            <article class="launch-card"><h3>The TechMap</h3><p>An Austin-focused network where local founders can promote companies and find in-person founder events.</p><a href="https://thetechmap.com/" target="_blank" rel="noopener">Open The TechMap →</a></article>
+          </div>
+        </section>
+
+        <section class="launch-group" id="launch-design" aria-labelledby="launch-design-title">
+          <div class="sec-head"><h2 id="launch-design-title">Design &amp; inspiration</h2><span class="count">1 place · visual-quality gate</span></div>
+          <div class="launch-grid">
+            <article class="launch-card"><h3>Land-book</h3><p>Submit a polished website to a curated design gallery when the interface itself is launch-worthy.</p><a href="https://land-book.com/guidelines" target="_blank" rel="noopener">Read submission guidelines →</a></article>
+          </div>
+        </section>
+
+        <section class="launch-group" id="launch-software" aria-labelledby="launch-software-title">
+          <div class="sec-head"><h2 id="launch-software-title">Software discovery &amp; reviews</h2><span class="count">12 places · product profiles and comparisons</span></div>
+          <div class="launch-grid">
+            <article class="launch-card"><h3>AlternativeTo</h3><p>Add software free so people comparing alternatives can discover your product by use case.</p><a href="https://alternativeto.net/" target="_blank" rel="noopener">Add software →</a></article>
+            <article class="launch-card"><h3>Alternative.me</h3><p>Create a free software listing in a large catalogue of tools and competing options.</p><a href="https://alternative.me/" target="_blank" rel="noopener">List your software →</a></article>
+            <article class="launch-card"><h3>Capterra</h3><p>Create or claim a free software profile for buyers browsing business-software categories.</p><a href="https://www.capterra.com/" target="_blank" rel="noopener">Start with Capterra →</a></article>
+            <article class="launch-card"><h3>CrozDesk</h3><p>Use the no-card vendor signup to create a free business-software listing.</p><a href="https://vendor.crozdesk.com/user/signup" target="_blank" rel="noopener">Create a vendor account →</a></article>
+            <article class="launch-card"><h3>DiscoverCloud</h3><p>A vendor marketplace for business software with a dedicated become-a-vendor route.</p><a href="https://www.discovercloud.com/become-a-vendor" target="_blank" rel="noopener">Become a vendor →</a></article>
+            <article class="launch-card"><h3>eBool</h3><p>Submit free if you can wait through the long queue, or choose a one-time paid review tier.</p><a href="https://www.ebool.com/submit" target="_blank" rel="noopener">Submit to eBool →</a></article>
+            <article class="launch-card"><h3>G2</h3><p>Create a free product listing; meaningful visibility usually comes after customers add real reviews.</p><a href="https://www.g2crowd.com/products/new" target="_blank" rel="noopener">List a product on G2 →</a></article>
+            <article class="launch-card"><h3>GetApp</h3><p>Start the Gartner Digital Markets vendor-listing process for a business-software product.</p><a href="https://getapp.com/" target="_blank" rel="noopener">Start with GetApp →</a></article>
+            <article class="launch-card"><h3>SaaSHub</h3><p>Submit a software product to an active comparison and alternatives directory.</p><a href="https://www.saashub.com/" target="_blank" rel="noopener">Submit to SaaSHub →</a></article>
+            <article class="launch-card"><h3>SaasRow</h3><p>Publish a free 90-day SaaS listing with a backlink and no credit card.</p><a href="https://saasrow.com/" target="_blank" rel="noopener">List on SaasRow →</a></article>
+            <article class="launch-card"><h3>Slant</h3><p>Add your product only where it honestly answers an existing “best X” comparison question.</p><a href="https://www.slant.co/" target="_blank" rel="noopener">Find a relevant question →</a></article>
+            <article class="launch-card"><h3>StackShare</h3><p>Submit a developer or AI tool free so technical teams can add it to their software stacks.</p><a href="https://stackshare.io/" target="_blank" rel="noopener">Submit to StackShare →</a></article>
+          </div>
+        </section>
+
+        <div class="plainbox source-credit">
+          <h3>Source and verification note</h3>
+          <ul>
+            <li>Built from <a href="https://github.com/mmccaff/PlacesToPostYourStartup" target="_blank" rel="noopener">mmccaff/PlacesToPostYourStartup</a>, released under CC0-1.0. Credit is given even though attribution is not required.</li>
+            <li>All 101 Reddit and website entries in the source list were reviewed on October 14, 2026. This page keeps 69 and removes 32 dead, parked, inactive, unrelated, or impractical destinations.</li>
+            <li>Submission rules, pricing, and community policies can change. Read the destination&rsquo;s current rules before posting or paying.</li>
+          </ul>
+        </div>
+        <p style="margin-top:18px;"><a href="#/">← Back to Home</a> · <a href="#/browse-everything">Browse student benefits</a></p>
+      </section>
+      </div><!-- /view-launch -->
 
       <div id="view-github-pack" data-view="github-pack" hidden>
       <section class="block" id="pack" data-section="github-pack">
@@ -1064,9 +1218,7 @@
           <p><a href="https://education.github.com/pack#github-copilot" target="_blank" rel="noopener"><b>GitHub Copilot Student</b></a> costs nothing while you're a verified student: unlimited code completions, an allowance of GitHub AI Credits, and limited chat + agent usage (models via auto model selection only). Standalone Copilot runs $10–20/month.</p>
         </div>
 
-        <div class="pagesearch"><label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input class="page-search-input" type="search" placeholder="Search the Pack — try &quot;domain&quot;, &quot;cloud&quot;…" aria-label="Search the GitHub Pack" /></label><div class="showing" data-showing></div></div>
         <div id="packGroups"></div>
-        <div class="page-empty" data-empty><p><b>Nothing matches that search.</b></p><p>Try a broader term — a partner name or a category like “cloud” or “design”.</p></div>
 
         <div class="plainbox">
           <h3>Recently left the pack</h3>
@@ -1091,9 +1243,7 @@
         <div class="sec-head"><h2>UNiDAYS benefits</h2><span class="count">verified through UNiDAYS</span></div>
         <p class="sec-intro">Every benefit in the catalogue that you claim through a free <a href="https://www.myunidays.com" target="_blank" rel="noopener">UNiDAYS</a> account — verify once there, then activate each offer from its Apply button. New to UNiDAYS? Start with the <a href="#/guides">Guides page</a>.</p>
         <aside class="naman-note" data-naman-note="unidays"><p>UNiDAYS takes about two minutes to verify and then unlocks student pricing at brands you'll actually shop at. These are the offers I think are worth your time — skip the rest. — Naman</p></aside>
-        <div class="pagesearch"><label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input class="page-search-input" type="search" placeholder="Search this page…" aria-label="Search this page" /></label><div class="showing" data-showing></div></div>
         <div id="unidaysGroups"></div>
-        <div class="page-empty" data-empty><p><b>Nothing matches that search.</b></p><p>Try a broader term — a brand name, or a category like “music”, “cloud”, or “domain”.</p></div>
         
       </section>
       </div><!-- /view-unidays -->
@@ -1103,9 +1253,7 @@
         <div class="sec-head"><h2>SheerID-verified benefits</h2><span class="count">verified through SheerID</span></div>
         <p class="sec-intro">Every benefit in the catalogue that checks your student status with <a href="https://www.sheerid.com" target="_blank" rel="noopener">SheerID</a> — you verify inside each brand&rsquo;s signup, and the step-by-step guide on every card walks you through it. How SheerID works: <a href="#/guides">Guides page</a>.</p>
         <aside class="naman-note" data-naman-note="sheerid"><p>SheerID is the verification engine behind a surprising amount of student pricing — verify once, save everywhere. Here's where that one verification pays off the most. — Naman</p></aside>
-        <div class="pagesearch"><label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input class="page-search-input" type="search" placeholder="Search this page…" aria-label="Search this page" /></label><div class="showing" data-showing></div></div>
         <div id="sheeridGroups"></div>
-        <div class="page-empty" data-empty><p><b>Nothing matches that search.</b></p><p>Try a broader term — a brand name, or a category like “music”, “cloud”, or “domain”.</p></div>
         
       </section>
       </div><!-- /view-sheerid -->
@@ -1115,7 +1263,9 @@
         <div class="sec-head"><h2>In-store &amp; in-person discounts</h2><span class="count">with a verified student email</span></div>
         <p class="sec-intro">Stores, food, travel, carriers, and campus-life benefits across the US that you claim in person or with a student ID — the offers verified through UNiDAYS or SheerID live on their own pages (see the nav). Where a deal is campus-local or has quietly ended, it says so — no padding.</p>
         <aside class="naman-note" data-naman-note="in-store"><p>Some of the best student discounts never appear online — you just have to ask and show your ID. I keep this list on my phone for when I'm out shopping. — Naman</p></aside>
+        <div class="pagesearch"><label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input class="page-search-input" type="search" placeholder="Search this page…" aria-label="Search this page" /></label><div class="showing" data-showing></div></div>
         <div id="physicalGroups"></div>
+        <div class="page-empty" data-empty><p><b>Nothing matches that search.</b></p><p>Try a brand name or a broader category.</p></div>
       </section>
       </div><!-- /view-in-store -->
 
@@ -1124,26 +1274,11 @@
         <div class="sec-head"><h2>Online: software, streaming, cloud, learning</h2><span class="count">digital benefits beyond the Pack</span></div>
         <p class="sec-intro">Everything claimable from your desk — subscriptions, developer tools, cloud credits, courses, news, and AI offers. Offers verified through UNiDAYS or SheerID live on their own pages (see the nav).</p>
         <aside class="naman-note" data-naman-note="online"><p>Free tiers, student plans, and trials that are actually worth signing up for. This is the page I wish someone had sent me in my first semester. — Naman</p></aside>
+        <div class="pagesearch"><label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input class="page-search-input" type="search" placeholder="Search this page…" aria-label="Search this page" /></label><div class="showing" data-showing></div></div>
         <div id="onlineGroups"></div>
+        <div class="page-empty" data-empty><p><b>Nothing matches that search.</b></p><p>Try a product name or a broader category.</p></div>
       </section>
       </div><!-- /view-online -->
-
-      <div id="view-mapping-review" data-view="mapping-review" hidden>
-      <section class="block" id="mapping-review" aria-labelledby="mapping-review-title">
-        <div class="review-banner">
-          <strong id="mapping-review-title">Review only — proposed category mapping for owner sign-off.</strong>
-          <p>The site is unchanged. This temporary page maps every current benefit by what a student is looking for, not by the company that verifies it.</p>
-        </div>
-        <div class="sec-head"><h2>247-benefit mapping</h2><span class="count">one primary category per benefit · up to two cross-tags</span></div>
-        <p class="sec-intro">Primary category answers: “Where would a student look first when they want this?” Rows marked <b>Review</b> sit on a genuine category boundary. Any category below six items is automatically flagged.</p>
-        <div class="review-summary" id="mappingCounts" aria-label="Proposed category counts"></div>
-        <p class="review-check" id="mappingCheck" role="status">Checking mapping…</p>
-        <table class="review-table" aria-label="Proposed mapping of all catalogue benefits">
-          <thead><tr><th>Benefit Name</th><th>Current Page</th><th>Proposed Category</th><th>Also-in</th><th>Dispute?</th></tr></thead>
-          <tbody id="mappingRows"></tbody>
-        </table>
-      </section>
-      </div><!-- /view-mapping-review -->
 
       <div id="view-guides" data-view="guides" hidden>
       <section class="block" id="guides">
@@ -1203,26 +1338,26 @@
           <p class="howto-sub">Three different kinds of freebies live on this page. They work completely differently — use the right play for each one and you won’t waste a trip.</p>
           <div class="howto-grid">
             <div class="howto-card">
-              <div class="howto-top"><span class="howto-icon" aria-hidden="true">🎓</span><h4>In-store treats</h4></div>
+              <div class="howto-top"><span class="howto-icon" data-icon="shield-check" aria-hidden="true"></span><h4>In-store treats</h4></div>
               <p>Go on the <b>exact date</b>, in <b>cap &amp; gown</b> or with diploma / student ID, to a <b>participating</b> location only.</p>
               <div class="howto-bring"><b>Bring:</b> Cap &amp; gown · Student ID / diploma photo · Check the date first</div>
             </div>
             <div class="howto-card">
-              <div class="howto-top"><span class="howto-icon" aria-hidden="true">📍</span><h4>Local-only treats</h4></div>
+              <div class="howto-top"><span class="howto-icon" data-icon="compass" aria-hidden="true"></span><h4>Local-only treats</h4></div>
               <p><b>Chick-fil-A, Golden Corral</b> — there is <b>no national program</b>. Each store decides on its own.</p>
               <div class="howto-bring"><b>Do this:</b> Check your store’s Facebook / Instagram or <b>call ahead</b> before you go</div>
             </div>
             <div class="howto-card">
-              <div class="howto-top"><span class="howto-icon" aria-hidden="true">✉️</span><h4>Mail-an-announcement trend</h4></div>
+              <div class="howto-top"><span class="howto-icon" data-icon="ticket" aria-hidden="true"></span><h4>Mail-an-announcement trend</h4></div>
               <p>You physically <b>mail a graduation announcement</b> to a brand HQ. Some students report surprise gifts — <b>LEGO, Sun Bum, Crumbl</b> go viral most years.</p>
-              <div class="howto-warn"><b>⚠ Not guaranteed:</b> most brands never reply, and postage is on you.</div>
+              <div class="howto-warn"><b>Warning: Not guaranteed:</b> most brands never reply, and postage is on you.</div>
             </div>
           </div>
-          <p class="howto-note"><span class="warn-icon" aria-hidden="true">⚠️</span><span>Responses are <b>not guaranteed</b> — only mail brands you actually like, and <b>never send original documents</b> — always send copies. If a brand replies, it’s a bonus, not a promise.</span></p>
+          <p class="howto-note"><span class="warn-icon" aria-hidden="true">Warning:</span><span>Responses are <b>not guaranteed</b> — only mail brands you actually like, and <b>never send original documents</b> — always send copies. If a brand replies, it’s a bonus, not a promise.</span></p>
           <nav class="grad-quicknav" aria-label="Jump to graduation freebie types">
-            <button type="button" data-scroll-to="grad-instore">🏬 In-store treats ↓</button>
-            <button type="button" data-scroll-to="grad-mail">✉️ Mail your announcement ↓</button>
-            <button type="button" data-scroll-to="grad-safety">✓ Safety checklist ↓</button>
+            <button type="button" data-scroll-to="grad-instore">In-store treats ↓</button>
+            <button type="button" data-scroll-to="grad-mail">Mail your announcement ↓</button>
+            <button type="button" data-scroll-to="grad-safety">Safety checklist ↓</button>
           </nav>
         </div>
 
@@ -1321,18 +1456,6 @@ Best,
               <li><b>Student ID</b> or graduation proof (diploma photo works)</li>
               <li>Budget for the <b>entrée</b> — the dessert is the free part</li>
               <li>Ask <b>before you order</b> so the server can apply it correctly</li>
-            </ul>
-          </article>
-
-          <article class="grad-card">
-            <div class="grad-flags"><span class="tag">In-store / catering</span><span class="tag amber">Code may expire</span></div>
-            <h3>Buca di Beppo &amp; Brio — Free cannoli &amp; grad catering code</h3>
-            <p class="g-what">What you get: <b>Free cannoli promos</b> for grads in season, plus graduation catering offers (code <b>GRAD2026</b> has been used for catering).</p>
-            <p class="g-method"><b>Real claim method:</b> Two different things: (1) in-restaurant cannoli treats are <b>counter/table promos</b> at participating locations during graduation season — show grad proof and ask; (2) <b>GRAD2026</b> is a <b>catering promo code</b> to try at checkout / with the catering team for a graduation party order — it is not a personal free-meal code and may be expired or location-limited by the time you read this. Verify current terms on <a href="https://www.bucadibeppo.com" target="_blank" rel="noopener">bucadibeppo.com</a> / <a href="https://www.brioitalian.com" target="_blank" rel="noopener">brioitalian.com</a> before ordering.</p>
-            <p class="bring-title">What to bring / have ready — checklist</p>
-            <ul class="bring-list">
-              <li><b>Grad proof + student ID</b> for any in-store cannoli promo</li>
-              <li>For catering: party date, headcount, and code <b>GRAD2026</b> to quote — confirm it still applies before you pay a deposit</li>
             </ul>
           </article>
 
@@ -1482,9 +1605,20 @@ Warmly,
           </ul>
         </div>
 
-        <p style="margin-top:18px;"><a href="#/">← Back to the full Catalogue (<span data-total>247</span> benefits)</a></p>
+        <p style="margin-top:18px;"><a href="#/">← Back to the full Catalogue (<span data-total>246</span> benefits)</a></p>
       </section>
       </div><!-- /view-graduation -->
+
+
+      <div id="view-favorites" data-view="favorites" hidden>
+        <section class="block" aria-labelledby="favorites-title">
+          <div class="sec-head"><h2 id="favorites-title">Favorites</h2><span class="count"><span data-favorites-count>0</span> saved this visit</span></div>
+          <p class="sec-intro">Keep a short list while you compare offers, then open each official claim page when you are ready.</p>
+          <div class="visit-note"><span>Favorites live for this visit only — they reset when you leave.</span><button type="button" data-dismiss-visit-note aria-label="Dismiss this note">×</button></div>
+          <div id="favorites-grid" class="entries"></div>
+          <div id="favorites-empty" class="favorites-empty"><h3>Nothing saved yet</h3><p>Use the bookmark button on any benefit to build a short list.</p><a class="apply-btn" href="#/browse-everything">Browse all benefits →</a></div>
+        </section>
+      </div><!-- /view-favorites -->
 
       <div class="support-cta" id="support">
         <div style="flex:1 1 100%;">
@@ -1518,28 +1652,46 @@ Warmly,
           </div>
         </div>
         <!-- Ko-fi footer button hidden for now (kept restorable): remove .kofi-hidden to bring it back. -->
-        <a class="kofi-btn kofi-hidden" href="https://ko-fi.com/nx9161" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="kofi-cup" aria-hidden="true">☕</span> Support on Ko-fi</a>
+        <a class="kofi-btn kofi-hidden" href="https://ko-fi.com/nx9161" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">Support on Ko-fi</a>
       </div>
 
       </main>
 
       <footer>
-        <p>Updated October 11, 2026. Every entry has an <b>Apply</b> button that opens the page where the offer is actually claimed — the offer card on the GitHub Pack page for Pack partners, the brand's own student page or its verification platform (UNiDAYS, Student Beans, SheerID, ID.me) for the rest — plus a step-by-step claim guide that runs from signup to the redeemed offer. A few in-person-only deals (show student ID at the counter) have steps instead of a button, because there is nothing to apply for online. Pack offers are dynamic — partners leave and terms change (DigitalOcean exited in July 2026) — so confirm the terms on the claim page before counting on one.</p>
+        <p>Updated October 15, 2026. Every entry has an <b>Apply</b> button that opens the page where the offer is actually claimed — the offer card on the GitHub Pack page for Pack partners, the brand's own student page or its verification platform (UNiDAYS, Student Beans, SheerID, ID.me) for the rest — plus a step-by-step claim guide that runs from signup to the redeemed offer. Every card now includes an Apply button. In-person-only deals are claimed at the store — follow the card's numbered steps to redeem them there. Pack offers are dynamic — partners leave and terms change (DigitalOcean exited in July 2026) — so confirm the terms on the claim page before counting on one.</p>
         <p>Items tagged <b>unconfirmed</b> could not be verified as current — they're kept visible rather than silently dropped, and the open questions (hotel discounts, US IKEA, concert ticketing, Paramount+/Peacock exact tiers) are marked where they sit.</p>
         <!-- Email fallback hidden for now (kept restorable): remove .kofi-hidden to bring it back. -->
         <p class="kofi-hidden" aria-hidden="true">If the button doesn't work for you, email me at <a href="mailto:namanparmar9161@gmail.com" tabindex="-1">namanparmar9161@gmail.com</a> and we'll find another way you can support.</p>
         <div class="social-row" style="justify-content:center; margin:24px 0 8px; padding-top:20px; border-top:1px solid var(--line);">
           <span class="social-label">Follow the creator</span>
-          <a class="insta-btn" href="https://www.instagram.com/namann.50/" target="_blank" rel="noopener" aria-label="Follow Naman Parmar on Instagram (@namann.50)"><span aria-hidden="true">📷</span> @namann.50 on Instagram</a>
+          <a class="insta-btn" href="https://www.instagram.com/namann.50/" target="_blank" rel="noopener" aria-label="Follow Naman Parmar on Instagram (@namann.50)">@namann.50 on Instagram</a>
         </div>
         <p style="text-align:center; margin-top:6px;">Thanks for stopping by — more student deals and updates on Instagram.</p>
-        <p class="legal-note">This catalogue is for informational purposes only, provided as-is with no warranty. Benefit terms, eligibility, and availability change — verify with the provider before acting. All brand names belong to their owners; listing here implies no endorsement. Tips are voluntary gifts, not payment for goods or services — non-refundable and not tax-deductible. Crypto transfers are irreversible: send only the stated coin to the stated address and verify before sending. This site sets no cookies and collects no personal data. Nothing here is financial, legal, or immigration advice.</p>
+        <p class="open-source-credit">Open-source credits: search by fuse.js (Apache-2.0) · counters by countUp.js (MIT) · icons by Tabler Icons (MIT).</p>
+        <p class="legal-note">This catalogue is for informational purposes only, provided as-is with no warranty. Benefit terms, eligibility, and availability change — verify with the provider before acting. All brand names belong to their owners; listing here implies no endorsement. Tips are voluntary gifts, not payment for goods or services — non-refundable, not tax-deductible, and reportable income. Crypto transfers are irreversible: send only the stated coin to the stated address and verify before sending. This site sets no cookies and collects no names, emails, or account data — anonymous aggregate page-view stats only. Nothing here is financial, legal, immigration, or tax advice.</p>
       </footer>
     </div>
 
+    <!-- Vercel Analytics runtime (existing project integration; bundled asset untouched) -->
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="data:application/javascript;base64,InVzZSBzdHJpY3QiOygoKT0+e3ZhciB0PSh0LGUpPT4oKT0+KHQmJihlPXQodD0wKSksZSksZT0odCxlKT0+KCk9PihlfHx0KChlPXtleHBvcnRzOnt9fSkuZXhwb3J0cyxlKSxlLmV4cG9ydHMpO2Z1bmN0aW9uIG4odCl7bGV0IGU9bG9jYXRpb24uaHJlZjtpZih0KXtsZXQgbj1uZXcgVVJMKGUpO2lmKG4ucGF0aG5hbWUhPT10KXJldHVybiBuLnBhdGhuYW1lPXQsbi5zZWFyY2g9IiIsbi5ocmVmfXJldHVybiBlfWZ1bmN0aW9uIHIoKXtyZXR1cm4hIShuYXZpZ2F0b3Iud2ViZHJpdmVyfHxuYXZpZ2F0b3IudXNlckFnZW50LmluY2x1ZGVzKCJIZWFkbGVzcyIpKX12YXIgaT10KCgpPT57fSk7ZnVuY3Rpb24gYSh0LGUsbil7bGV0IHI9bCgpLGk9cCh0KSxhPXJbdF0sbz1yW2ldLHU9YT09PWU/ey4uLm8sLi4ubn06bjtpZihhPT09ZSYmZihvLHUpKXJldHVybiExO2xldHtbaV06ZCwuLi5jfT1yO3JldHVybiBzKHsuLi5jLFt0XTplLC4uLk9iamVjdC5rZXlzKHUpLmxlbmd0aCYme1tpXTp1fX0pLCEwfWZ1bmN0aW9uIG8oKXtzKHt9KX1mdW5jdGlvbiB1KCl7bGV0e3VzZXJJZDp0LGdyb3VwSWQ6ZSx0cmFpdHM6bixncm91cFRyYWl0czpyfT1sKCksaT17Li4ubn07Zm9yKGxldFthLG9db2YgT2JqZWN0LmVudHJpZXMobnVsbCE9cj9yOnt9KSlpW2Bncm91cF8ke2F9YF09bztyZXR1cm57Li4udCYme3VzZXJJZDp0fSwuLi5lJiZ7Z3JvdXBJZDplfSwuLi5PYmplY3Qua2V5cyhpKS5sZW5ndGgmJntwcm9wczppfX19ZnVuY3Rpb24gbCgpe2lmKGcpcmV0dXJuIGg7dHJ5e2xldCB0PWxvY2FsU3RvcmFnZS5nZXRJdGVtKHYpO2g9dD9kKEpTT04ucGFyc2UodCkpOnt9fWNhdGNoKGUpe31yZXR1cm4gaH1mdW5jdGlvbiBzKHQpe2g9dDt0cnl7dC51c2VySWR8fHQuZ3JvdXBJZD9sb2NhbFN0b3JhZ2Uuc2V0SXRlbSh2LEpTT04uc3RyaW5naWZ5KHQpKTpsb2NhbFN0b3JhZ2UucmVtb3ZlSXRlbSh2KSxnPSExfWNhdGNoKGUpe2c9ITB9fWZ1bmN0aW9uIGQodCl7cmV0dXJuey4uLiJzdHJpbmciPT10eXBlb2YgdC51c2VySWQmJnt1c2VySWQ6dC51c2VySWQsLi4uYyh0LnRyYWl0cykmJnt0cmFpdHM6dC50cmFpdHN9fSwuLi4ic3RyaW5nIj09dHlwZW9mIHQuZ3JvdXBJZCYme2dyb3VwSWQ6dC5ncm91cElkLC4uLmModC5ncm91cFRyYWl0cykmJntncm91cFRyYWl0czp0Lmdyb3VwVHJhaXRzfX19fWZ1bmN0aW9uIGModCl7cmV0dXJuIm9iamVjdCI9PXR5cGVvZiB0JiZudWxsIT09dCYmIUFycmF5LmlzQXJyYXkodCl9ZnVuY3Rpb24gcCh0KXtyZXR1cm4idXNlcklkIj09PXQ/InRyYWl0cyI6Imdyb3VwVHJhaXRzIn1mdW5jdGlvbiBmKHQ9e30sZT17fSl7bGV0IG49T2JqZWN0LmtleXModCk7cmV0dXJuIG4ubGVuZ3RoPT09T2JqZWN0LmtleXMoZSkubGVuZ3RoJiZuLmV2ZXJ5KG49Pm4gaW4gZSYmdFtuXT09PWVbbl0pfXZhciB2LGgsZyx5PXQoKCk9Pnt2PSJfX3ZhX2F0dHJpYnV0aW9uIixoPXt9LGc9ITF9KTtlKCgpPT57aSgpLHkoKSxmdW5jdGlvbigpe3ZhciB0O2xldCBlPSIwLjEuMyIsaT10PT50LGw9ZG9jdW1lbnQscz1sLmN1cnJlbnRTY3JpcHQ7aWYocigpKXJldHVybjtsZXQgZD1udWxsIT0odD1udWxsPT1zP3ZvaWQgMDpzLmRhdGFzZXQpP3Q6e30sYz13KGQsInZpZXciKSxwPXcoZCwiZXZlbnQiKSxmPXcoZCwic2Vzc2lvbiIpLHY9dyhkLCJpZGVudGlmeSIpLGg9dyhkLCJncm91cCIpLGc9bnVsbCx5PW51bGwsXz0hMDtmdW5jdGlvbiB3KHQsZSl7cmV0dXJuIHRbYCR7ZX1FbmRwb2ludGBdfHwoImVuZHBvaW50ImluIHQ/YCR7dC5lbmRwb2ludH0vJHtlfWA6YCR7bnVsbCE9cyYmcy5zcmMuaW5jbHVkZXMoIi92YS8iKT8iL3ZhIjoiL192ZXJjZWwvaW5zaWdodHMifS8ke2V9YCl9YXN5bmMgZnVuY3Rpb24gSSh0KXtpZih0JiYhQXJyYXkuaXNBcnJheSh0KSlyZXR1cm57cDp0fTtsZXQgZT1sLnF1ZXJ5U2VsZWN0b3JBbGwoIltkYXRhLWZsYWctdmFsdWVzXSIpO2lmKCFzfHwhZS5sZW5ndGgpcmV0dXJuO2xldCBuPW5ldyBVUkwocy5zcmMpLHI9bi5wYXRobmFtZS5zcGxpdCgiLyIpLGk9ci5wb3AoKTtyZXR1cm4gaSYmci5wdXNoKCJmbGFncyIsaSksbi5wYXRobmFtZT1yLmpvaW4oIi8iKSxpbXBvcnQobi5ocmVmKS50aGVuKG49Pm4uZ2F0aGVyKGUsdCkpfWFzeW5jIGZ1bmN0aW9uIG0odCxlKXt0cnl7YXdhaXQgZmV0Y2godCx7bWV0aG9kOiJQT1NUIixrZWVwYWxpdmU6ITAsaGVhZGVyczp7IkNvbnRlbnQtVHlwZSI6ImFwcGxpY2F0aW9uL2pzb24ifSxib2R5OkpTT04uc3RyaW5naWZ5KGUpfSl9Y2F0Y2gobil7fX1hc3luYyBmdW5jdGlvbiBrKHt0eXBlOnQsZGF0YTpyLG9wdGlvbnM6YX0pe3ZhciBvO2xldCBzPW4oeSksZj1udWxsPT1hP3ZvaWQgMDphLl9fY2RwLHY9bC5yZWZlcnJlcixoPWkoe3R5cGU6dCx1cmw6cyxwYXlsb2FkOnIsLi4udm9pZCAwIT09ZiYme19fY2RwOmZ9fSk7aWYoITE9PT1ofHxudWxsPT09aClyZXR1cm47aCYmKHM9aC51cmwscj1udWxsIT0obz1oLnBheWxvYWQpP286cixmPWguX19jZHApO2xldCBfPXYuaW5jbHVkZXMobG9jYXRpb24uaG9zdCksdz17bzpzLHN2OmUsc2RrbjpkLnNka24sc2RrdjpkLnNka3YsdHM6RGF0ZS5ub3coKSwuLi5nJiZ7ZHA6Z30sLi4ubnVsbCE9YSYmYS53aXRoUmVmZXJyZXImJiFfP3tyOnZ9Ont9LC4uLnUoKSwuLi4iZXZlbnQiPT09dCYmciYme2VuOnIubmFtZSxlZDpyLmRhdGF9LGY6YXdhaXQgSShudWxsPT1hP3ZvaWQgMDphLmZsYWdzKS5jYXRjaCgoKT0+e30pLC4uLnZvaWQgMCE9PWYmJntfX2NkcDpmfX07cmV0dXJuIG0oInBhZ2V2aWV3Ij09PXQ/YzpwLHcpfWFzeW5jIGZ1bmN0aW9uIGIodD17fSl7cmV0dXJuIGsoe3R5cGU6InBhZ2V2aWV3IixvcHRpb25zOnt3aXRoUmVmZXJyZXI6dC53aXRoUmVmZXJyZXIsX19jZHA6dC5fX2NkcH19KX1hc3luYyBmdW5jdGlvbiBTKHQsZSxuKXtyZXR1cm4gayh7dHlwZToiZXZlbnQiLGRhdGE6e25hbWU6dCxkYXRhOmV9LG9wdGlvbnM6e3dpdGhSZWZlcnJlcjohMCxmbGFnczpudWxsPT1uP3ZvaWQgMDpuLmZsYWdzLF9fY2RwOm51bGw9PW4/dm9pZCAwOm4uX19jZHB9fSl9YXN5bmMgZnVuY3Rpb24gUih0LHIsbyxsLHMpe3ZhciBjLHA7bGV0IGY9e3R5cGU6ImV2ZW50Iix1cmw6bih5KSxwYXlsb2FkOntuYW1lOnQsZGF0YTp7Li4ubCxbcl06b319LC4uLnZvaWQgMCE9PXMmJntfX2NkcDpzfX0sXz1pKGYpO2lmKCExPT09X3x8bnVsbD09PV8pcmV0dXJuO2xldCB3PV98fGY7cz13Ll9fY2RwO2xldHtbcl06SSwuLi5rfT1udWxsIT0ocD1udWxsPT0oYz13LnBheWxvYWQpP3ZvaWQgMDpjLmRhdGEpP3A6e307aWYoInN0cmluZyIhPXR5cGVvZiBJfHwhSXx8IWEocixJLGspJiZ2b2lkIDA9PT1zKXJldHVybjtsZXQgYj17Li4ue286dy51cmwsc3Y6ZSxzZGtuOmQuc2RrbixzZGt2OmQuc2Rrdix0czpEYXRlLm5vdygpLC4uLmcmJntkcDpnfX0sLi4udSgpLGVuOnQsLi4uT2JqZWN0LmtleXMoaykubGVuZ3RoJiZ7ZWQ6a30sLi4udm9pZCAwIT09cyYme19fY2RwOnN9fTtyZXR1cm4gbSgiaWRlbnRpZnkiPT09dD92OmgsYil9YXN5bmMgZnVuY3Rpb24gTygpe2F3YWl0IGZldGNoKGYse21ldGhvZDoiR0VUIixrZWVwYWxpdmU6ITB9KS5jYXRjaCgoKT0+e30pfWZ1bmN0aW9uIGoodCl7cmV0dXJuIHQucGF0aG5hbWU9PT1uZXcgVVJMKEEpLnBhdGhuYW1lfWZ1bmN0aW9uIFQodCl7bGV0IGU9dD8ic3RyaW5nIj09dHlwZW9mIHQ/bmV3IFVSTCh0LGxvY2F0aW9uLm9yaWdpbik6bmV3IFVSTCh0LmhyZWYpOm51bGw7IWV8fGooZSl8fGUuaGFzaCYmaihlKXx8YigpfWxldCBBPW4oKSxMPSgpPT57dmFyIHQ7d2luZG93LnZhPWZ1bmN0aW9uKHQsZSl7ImJlZm9yZVNlbmQiPT09dD9pPWU6ImV2ZW50Ij09PXQ/ZSYmUyhlLm5hbWUsZS5kYXRhLHsuLi5lLm9wdGlvbnMsX19jZHA6ZS5fX2NkcH0pOiJwYWdldmlldyI9PT10P2UmJihlLnJvdXRlJiYoZz1lLnJvdXRlKSxlLnBhdGgmJih5PWUucGF0aCksYih7d2l0aFJlZmVycmVyOl8sX19jZHA6ZS5fX2NkcH0pLF89ITEpOiJpZGVudGlmeSI9PT10P251bGwhPWUmJmUudXNlcklkJiZSKCJpZGVudGlmeSIsInVzZXJJZCIsZS51c2VySWQsZS50cmFpdHMsZS5fX2NkcCk6Imdyb3VwIj09PXQ/bnVsbCE9ZSYmZS5ncm91cElkJiZSKCJncm91cCIsImdyb3VwSWQiLGUuZ3JvdXBJZCxlLnRyYWl0cyxlLl9fY2RwKToicmVzZXQiIT09dHx8bygpLCJlbmFibGVDb29raWUiPT09dCYmTygpfSxudWxsPT0odD13aW5kb3cudmFxKXx8dC5mb3JFYWNoKChbdCxlXSk9Pnt3aW5kb3cudmEodCxlKX0pfTsoKCk9PntpZih3aW5kb3cudmFpfHwod2luZG93LnZhaT0hMCxMKCksZC5kaXNhYmxlQXV0b1RyYWNrKSlyZXR1cm47Yih7d2l0aFJlZmVycmVyOiEwfSk7bGV0IHQ9aGlzdG9yeS5wdXNoU3RhdGUuYmluZChoaXN0b3J5KTtoaXN0b3J5LnB1c2hTdGF0ZT1mdW5jdGlvbiguLi5lKXt0KC4uLmUpO3RyeXtUKGVbMl0pLEE9bigpfWNhdGNoKHIpe319LHdpbmRvdy5hZGRFdmVudExpc3RlbmVyKCJwb3BzdGF0ZSIsZnVuY3Rpb24oKXtUKG4oKSksQT1uKCl9KX0pKCl9KCl9KSgpfSkoKTs="></script>
+    <!-- fuse.js v6.6.2 · https://github.com/krisk/Fuse · Apache-2.0 · bundled verbatim, unmodified -->
+    <script>/**
+ * Fuse.js v6.6.2 - Lightweight fuzzy-search (http://fusejs.io)
+ *
+ * Copyright (c) 2022 Kiro Risk (http://kiro.me)
+ * All Rights Reserved. Apache Software License 2.0
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ */
+var e,t;e=this,t=function(){"use strict";function e(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function t(t){for(var n=1;n<arguments.length;n++){var r=null!=arguments[n]?arguments[n]:{};n%2?e(Object(r),!0).forEach((function(e){c(t,e,r[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(r)):e(Object(r)).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(r,e))}))}return t}function n(e){return n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},n(e)}function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}function o(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),Object.defineProperty(e,"prototype",{writable:!1}),e}function c(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");Object.defineProperty(e,"prototype",{value:Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),writable:!1}),t&&u(e,t)}function s(e){return s=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)},s(e)}function u(e,t){return u=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e},u(e,t)}function h(e,t){if(t&&("object"==typeof t||"function"==typeof t))return t;if(void 0!==t)throw new TypeError("Derived constructors may only return object or undefined");return function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}(e)}function l(e){var t=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}();return function(){var n,r=s(e);if(t){var i=s(this).constructor;n=Reflect.construct(r,arguments,i)}else n=r.apply(this,arguments);return h(this,n)}}function f(e){return function(e){if(Array.isArray(e))return d(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(e){if("string"==typeof e)return d(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);return"Object"===n&&e.constructor&&(n=e.constructor.name),"Map"===n||"Set"===n?Array.from(e):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?d(e,t):void 0}}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function d(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}function v(e){return Array.isArray?Array.isArray(e):"[object Array]"===b(e)}function g(e){return"string"==typeof e}function y(e){return"number"==typeof e}function p(e){return!0===e||!1===e||function(e){return m(e)&&null!==e}(e)&&"[object Boolean]"==b(e)}function m(e){return"object"===n(e)}function k(e){return null!=e}function M(e){return!e.trim().length}function b(e){return null==e?void 0===e?"[object Undefined]":"[object Null]":Object.prototype.toString.call(e)}var x=function(e){return"Invalid value for key ".concat(e)},w=function(e){return"Pattern length exceeds max of ".concat(e,".")},L=Object.prototype.hasOwnProperty,S=function(){function e(t){var n=this;r(this,e),this._keys=[],this._keyMap={};var i=0;t.forEach((function(e){var t=_(e);i+=t.weight,n._keys.push(t),n._keyMap[t.id]=t,i+=t.weight})),this._keys.forEach((function(e){e.weight/=i}))}return o(e,[{key:"get",value:function(e){return this._keyMap[e]}},{key:"keys",value:function(){return this._keys}},{key:"toJSON",value:function(){return JSON.stringify(this._keys)}}]),e}();function _(e){var t=null,n=null,r=null,i=1,o=null;if(g(e)||v(e))r=e,t=O(e),n=j(e);else{if(!L.call(e,"name"))throw new Error(function(e){return"Missing ".concat(e," property in key")}("name"));var c=e.name;if(r=c,L.call(e,"weight")&&(i=e.weight)<=0)throw new Error(function(e){return"Property 'weight' in key '".concat(e,"' must be a positive integer")}(c));t=O(c),n=j(c),o=e.getFn}return{path:t,id:n,weight:i,src:r,getFn:o}}function O(e){return v(e)?e:e.split(".")}function j(e){return v(e)?e.join("."):e}var A={useExtendedSearch:!1,getFn:function(e,t){var n=[],r=!1;return function e(t,i,o){if(k(t))if(i[o]){var c=t[i[o]];if(!k(c))return;if(o===i.length-1&&(g(c)||y(c)||p(c)))n.push(function(e){return null==e?"":function(e){if("string"==typeof e)return e;var t=e+"";return"0"==t&&1/e==-1/0?"-0":t}(e)}(c));else if(v(c)){r=!0;for(var a=0,s=c.length;a<s;a+=1)e(c[a],i,o+1)}else i.length&&e(c,i,o+1)}else n.push(t)}(e,g(t)?t.split("."):t,0),r?n:n[0]},ignoreLocation:!1,ignoreFieldNorm:!1,fieldNormWeight:1},I=t(t(t(t({},{isCaseSensitive:!1,includeScore:!1,keys:[],shouldSort:!0,sortFn:function(e,t){return e.score===t.score?e.idx<t.idx?-1:1:e.score<t.score?-1:1}}),{includeMatches:!1,findAllMatches:!1,minMatchCharLength:1}),{location:0,threshold:.6,distance:100}),A),C=/[^ ]+/g;function E(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:1,t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:3,n=new Map,r=Math.pow(10,t);return{get:function(t){var i=t.match(C).length;if(n.has(i))return n.get(i);var o=1/Math.pow(i,.5*e),c=parseFloat(Math.round(o*r)/r);return n.set(i,c),c},clear:function(){n.clear()}}}var $=function(){function e(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=t.getFn,i=void 0===n?I.getFn:n,o=t.fieldNormWeight,c=void 0===o?I.fieldNormWeight:o;r(this,e),this.norm=E(c,3),this.getFn=i,this.isCreated=!1,this.setIndexRecords()}return o(e,[{key:"setSources",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[];this.docs=e}},{key:"setIndexRecords",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[];this.records=e}},{key:"setKeys",value:function(){var e=this,t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[];this.keys=t,this._keysMap={},t.forEach((function(t,n){e._keysMap[t.id]=n}))}},{key:"create",value:function(){var e=this;!this.isCreated&&this.docs.length&&(this.isCreated=!0,g(this.docs[0])?this.docs.forEach((function(t,n){e._addString(t,n)})):this.docs.forEach((function(t,n){e._addObject(t,n)})),this.norm.clear())}},{key:"add",value:function(e){var t=this.size();g(e)?this._addString(e,t):this._addObject(e,t)}},{key:"removeAt",value:function(e){this.records.splice(e,1);for(var t=e,n=this.size();t<n;t+=1)this.records[t].i-=1}},{key:"getValueForItemAtKeyId",value:function(e,t){return e[this._keysMap[t]]}},{key:"size",value:function(){return this.records.length}},{key:"_addString",value:function(e,t){if(k(e)&&!M(e)){var n={v:e,i:t,n:this.norm.get(e)};this.records.push(n)}}},{key:"_addObject",value:function(e,t){var n=this,r={i:t,$:{}};this.keys.forEach((function(t,i){var o=t.getFn?t.getFn(e):n.getFn(e,t.path);if(k(o))if(v(o))!function(){for(var e=[],t=[{nestedArrIndex:-1,value:o}];t.length;){var c=t.pop(),a=c.nestedArrIndex,s=c.value;if(k(s))if(g(s)&&!M(s)){var u={v:s,i:a,n:n.norm.get(s)};e.push(u)}else v(s)&&s.forEach((function(e,n){t.push({nestedArrIndex:n,value:e})}))}r.$[i]=e}();else if(g(o)&&!M(o)){var c={v:o,n:n.norm.get(o)};r.$[i]=c}})),this.records.push(r)}},{key:"toJSON",value:function(){return{keys:this.keys,records:this.records}}}]),e}();function F(e,t){var n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{},r=n.getFn,i=void 0===r?I.getFn:r,o=n.fieldNormWeight,c=void 0===o?I.fieldNormWeight:o,a=new $({getFn:i,fieldNormWeight:c});return a.setKeys(e.map(_)),a.setSources(t),a.create(),a}function R(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=t.errors,r=void 0===n?0:n,i=t.currentLocation,o=void 0===i?0:i,c=t.expectedLocation,a=void 0===c?0:c,s=t.distance,u=void 0===s?I.distance:s,h=t.ignoreLocation,l=void 0===h?I.ignoreLocation:h,f=r/e.length;if(l)return f;var d=Math.abs(a-o);return u?f+d/u:d?1:f}function N(){for(var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:I.minMatchCharLength,n=[],r=-1,i=-1,o=0,c=e.length;o<c;o+=1){var a=e[o];a&&-1===r?r=o:a||-1===r||((i=o-1)-r+1>=t&&n.push([r,i]),r=-1)}return e[o-1]&&o-r>=t&&n.push([r,o-1]),n}var P=32;function W(e){for(var t={},n=0,r=e.length;n<r;n+=1){var i=e.charAt(n);t[i]=(t[i]||0)|1<<r-n-1}return t}var T=function(){function e(t){var n=this,i=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},o=i.location,c=void 0===o?I.location:o,a=i.threshold,s=void 0===a?I.threshold:a,u=i.distance,h=void 0===u?I.distance:u,l=i.includeMatches,f=void 0===l?I.includeMatches:l,d=i.findAllMatches,v=void 0===d?I.findAllMatches:d,g=i.minMatchCharLength,y=void 0===g?I.minMatchCharLength:g,p=i.isCaseSensitive,m=void 0===p?I.isCaseSensitive:p,k=i.ignoreLocation,M=void 0===k?I.ignoreLocation:k;if(r(this,e),this.options={location:c,threshold:s,distance:h,includeMatches:f,findAllMatches:v,minMatchCharLength:y,isCaseSensitive:m,ignoreLocation:M},this.pattern=m?t:t.toLowerCase(),this.chunks=[],this.pattern.length){var b=function(e,t){n.chunks.push({pattern:e,alphabet:W(e),startIndex:t})},x=this.pattern.length;if(x>P){for(var w=0,L=x%P,S=x-L;w<S;)b(this.pattern.substr(w,P),w),w+=P;if(L){var _=x-P;b(this.pattern.substr(_),_)}}else b(this.pattern,0)}}return o(e,[{key:"searchIn",value:function(e){var t=this.options,n=t.isCaseSensitive,r=t.includeMatches;if(n||(e=e.toLowerCase()),this.pattern===e){var i={isMatch:!0,score:0};return r&&(i.indices=[[0,e.length-1]]),i}var o=this.options,c=o.location,a=o.distance,s=o.threshold,u=o.findAllMatches,h=o.minMatchCharLength,l=o.ignoreLocation,d=[],v=0,g=!1;this.chunks.forEach((function(t){var n=t.pattern,i=t.alphabet,o=t.startIndex,y=function(e,t,n){var r=arguments.length>3&&void 0!==arguments[3]?arguments[3]:{},i=r.location,o=void 0===i?I.location:i,c=r.distance,a=void 0===c?I.distance:c,s=r.threshold,u=void 0===s?I.threshold:s,h=r.findAllMatches,l=void 0===h?I.findAllMatches:h,f=r.minMatchCharLength,d=void 0===f?I.minMatchCharLength:f,v=r.includeMatches,g=void 0===v?I.includeMatches:v,y=r.ignoreLocation,p=void 0===y?I.ignoreLocation:y;if(t.length>P)throw new Error(w(P));for(var m,k=t.length,M=e.length,b=Math.max(0,Math.min(o,M)),x=u,L=b,S=d>1||g,_=S?Array(M):[];(m=e.indexOf(t,L))>-1;){var O=R(t,{currentLocation:m,expectedLocation:b,distance:a,ignoreLocation:p});if(x=Math.min(O,x),L=m+k,S)for(var j=0;j<k;)_[m+j]=1,j+=1}L=-1;for(var A=[],C=1,E=k+M,$=1<<k-1,F=0;F<k;F+=1){for(var W=0,T=E;W<T;)R(t,{errors:F,currentLocation:b+T,expectedLocation:b,distance:a,ignoreLocation:p})<=x?W=T:E=T,T=Math.floor((E-W)/2+W);E=T;var z=Math.max(1,b-T+1),D=l?M:Math.min(b+T,M)+k,K=Array(D+2);K[D+1]=(1<<F)-1;for(var q=D;q>=z;q-=1){var B=q-1,J=n[e.charAt(B)];if(S&&(_[B]=+!!J),K[q]=(K[q+1]<<1|1)&J,F&&(K[q]|=(A[q+1]|A[q])<<1|1|A[q+1]),K[q]&$&&(C=R(t,{errors:F,currentLocation:B,expectedLocation:b,distance:a,ignoreLocation:p}))<=x){if(x=C,(L=B)<=b)break;z=Math.max(1,2*b-L)}}if(R(t,{errors:F+1,currentLocation:b,expectedLocation:b,distance:a,ignoreLocation:p})>x)break;A=K}var U={isMatch:L>=0,score:Math.max(.001,C)};if(S){var V=N(_,d);V.length?g&&(U.indices=V):U.isMatch=!1}return U}(e,n,i,{location:c+o,distance:a,threshold:s,findAllMatches:u,minMatchCharLength:h,includeMatches:r,ignoreLocation:l}),p=y.isMatch,m=y.score,k=y.indices;p&&(g=!0),v+=m,p&&k&&(d=[].concat(f(d),f(k)))}));var y={isMatch:g,score:g?v/this.chunks.length:1};return g&&r&&(y.indices=d),y}}]),e}(),z=function(){function e(t){r(this,e),this.pattern=t}return o(e,[{key:"search",value:function(){}}],[{key:"isMultiMatch",value:function(e){return D(e,this.multiRegex)}},{key:"isSingleMatch",value:function(e){return D(e,this.singleRegex)}}]),e}();function D(e,t){var n=e.match(t);return n?n[1]:null}var K=function(e){a(n,e);var t=l(n);function n(e){return r(this,n),t.call(this,e)}return o(n,[{key:"search",value:function(e){var t=e===this.pattern;return{isMatch:t,score:t?0:1,indices:[0,this.pattern.length-1]}}}],[{key:"type",get:function(){return"exact"}},{key:"multiRegex",get:function(){return/^="(.*)"$/}},{key:"singleRegex",get:function(){return/^=(.*)$/}}]),n}(z),q=function(e){a(n,e);var t=l(n);function n(e){return r(this,n),t.call(this,e)}return o(n,[{key:"search",value:function(e){var t=-1===e.indexOf(this.pattern);return{isMatch:t,score:t?0:1,indices:[0,e.length-1]}}}],[{key:"type",get:function(){return"inverse-exact"}},{key:"multiRegex",get:function(){return/^!"(.*)"$/}},{key:"singleRegex",get:function(){return/^!(.*)$/}}]),n}(z),B=function(e){a(n,e);var t=l(n);function n(e){return r(this,n),t.call(this,e)}return o(n,[{key:"search",value:function(e){var t=e.startsWith(this.pattern);return{isMatch:t,score:t?0:1,indices:[0,this.pattern.length-1]}}}],[{key:"type",get:function(){return"prefix-exact"}},{key:"multiRegex",get:function(){return/^\^"(.*)"$/}},{key:"singleRegex",get:function(){return/^\^(.*)$/}}]),n}(z),J=function(e){a(n,e);var t=l(n);function n(e){return r(this,n),t.call(this,e)}return o(n,[{key:"search",value:function(e){var t=!e.startsWith(this.pattern);return{isMatch:t,score:t?0:1,indices:[0,e.length-1]}}}],[{key:"type",get:function(){return"inverse-prefix-exact"}},{key:"multiRegex",get:function(){return/^!\^"(.*)"$/}},{key:"singleRegex",get:function(){return/^!\^(.*)$/}}]),n}(z),U=function(e){a(n,e);var t=l(n);function n(e){return r(this,n),t.call(this,e)}return o(n,[{key:"search",value:function(e){var t=e.endsWith(this.pattern);return{isMatch:t,score:t?0:1,indices:[e.length-this.pattern.length,e.length-1]}}}],[{key:"type",get:function(){return"suffix-exact"}},{key:"multiRegex",get:function(){return/^"(.*)"\$$/}},{key:"singleRegex",get:function(){return/^(.*)\$$/}}]),n}(z),V=function(e){a(n,e);var t=l(n);function n(e){return r(this,n),t.call(this,e)}return o(n,[{key:"search",value:function(e){var t=!e.endsWith(this.pattern);return{isMatch:t,score:t?0:1,indices:[0,e.length-1]}}}],[{key:"type",get:function(){return"inverse-suffix-exact"}},{key:"multiRegex",get:function(){return/^!"(.*)"\$$/}},{key:"singleRegex",get:function(){return/^!(.*)\$$/}}]),n}(z),G=function(e){a(n,e);var t=l(n);function n(e){var i,o=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},c=o.location,a=void 0===c?I.location:c,s=o.threshold,u=void 0===s?I.threshold:s,h=o.distance,l=void 0===h?I.distance:h,f=o.includeMatches,d=void 0===f?I.includeMatches:f,v=o.findAllMatches,g=void 0===v?I.findAllMatches:v,y=o.minMatchCharLength,p=void 0===y?I.minMatchCharLength:y,m=o.isCaseSensitive,k=void 0===m?I.isCaseSensitive:m,M=o.ignoreLocation,b=void 0===M?I.ignoreLocation:M;return r(this,n),(i=t.call(this,e))._bitapSearch=new T(e,{location:a,threshold:u,distance:l,includeMatches:d,findAllMatches:g,minMatchCharLength:p,isCaseSensitive:k,ignoreLocation:b}),i}return o(n,[{key:"search",value:function(e){return this._bitapSearch.searchIn(e)}}],[{key:"type",get:function(){return"fuzzy"}},{key:"multiRegex",get:function(){return/^"(.*)"$/}},{key:"singleRegex",get:function(){return/^(.*)$/}}]),n}(z),H=function(e){a(n,e);var t=l(n);function n(e){return r(this,n),t.call(this,e)}return o(n,[{key:"search",value:function(e){for(var t,n=0,r=[],i=this.pattern.length;(t=e.indexOf(this.pattern,n))>-1;)n=t+i,r.push([t,n-1]);var o=!!r.length;return{isMatch:o,score:o?0:1,indices:r}}}],[{key:"type",get:function(){return"include"}},{key:"multiRegex",get:function(){return/^'"(.*)"$/}},{key:"singleRegex",get:function(){return/^'(.*)$/}}]),n}(z),Q=[K,H,B,J,V,U,q,G],X=Q.length,Y=/ +(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)/;function Z(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};return e.split("|").map((function(e){for(var n=e.trim().split(Y).filter((function(e){return e&&!!e.trim()})),r=[],i=0,o=n.length;i<o;i+=1){for(var c=n[i],a=!1,s=-1;!a&&++s<X;){var u=Q[s],h=u.isMultiMatch(c);h&&(r.push(new u(h,t)),a=!0)}if(!a)for(s=-1;++s<X;){var l=Q[s],f=l.isSingleMatch(c);if(f){r.push(new l(f,t));break}}}return r}))}var ee=new Set([G.type,H.type]),te=function(){function e(t){var n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},i=n.isCaseSensitive,o=void 0===i?I.isCaseSensitive:i,c=n.includeMatches,a=void 0===c?I.includeMatches:c,s=n.minMatchCharLength,u=void 0===s?I.minMatchCharLength:s,h=n.ignoreLocation,l=void 0===h?I.ignoreLocation:h,f=n.findAllMatches,d=void 0===f?I.findAllMatches:f,v=n.location,g=void 0===v?I.location:v,y=n.threshold,p=void 0===y?I.threshold:y,m=n.distance,k=void 0===m?I.distance:m;r(this,e),this.query=null,this.options={isCaseSensitive:o,includeMatches:a,minMatchCharLength:u,findAllMatches:d,ignoreLocation:l,location:g,threshold:p,distance:k},this.pattern=o?t:t.toLowerCase(),this.query=Z(this.pattern,this.options)}return o(e,[{key:"searchIn",value:function(e){var t=this.query;if(!t)return{isMatch:!1,score:1};var n=this.options,r=n.includeMatches;e=n.isCaseSensitive?e:e.toLowerCase();for(var i=0,o=[],c=0,a=0,s=t.length;a<s;a+=1){var u=t[a];o.length=0,i=0;for(var h=0,l=u.length;h<l;h+=1){var d=u[h],v=d.search(e),g=v.isMatch,y=v.indices,p=v.score;if(!g){c=0,i=0,o.length=0;break}if(i+=1,c+=p,r){var m=d.constructor.type;ee.has(m)?o=[].concat(f(o),f(y)):o.push(y)}}if(i){var k={isMatch:!0,score:c/i};return r&&(k.indices=o),k}}return{isMatch:!1,score:1}}}],[{key:"condition",value:function(e,t){return t.useExtendedSearch}}]),e}(),ne=[];function re(e,t){for(var n=0,r=ne.length;n<r;n+=1){var i=ne[n];if(i.condition(e,t))return new i(e,t)}return new T(e,t)}var ie="$and",oe="$or",ce="$path",ae="$val",se=function(e){return!(!e[ie]&&!e[oe])},ue=function(e){return!!e[ce]},he=function(e){return!v(e)&&m(e)&&!se(e)},le=function(e){return c({},ie,Object.keys(e).map((function(t){return c({},t,e[t])})))};function fe(e,t){var n=t.ignoreFieldNorm,r=void 0===n?I.ignoreFieldNorm:n;e.forEach((function(e){var t=1;e.matches.forEach((function(e){var n=e.key,i=e.norm,o=e.score,c=n?n.weight:null;t*=Math.pow(0===o&&c?Number.EPSILON:o,(c||1)*(r?1:i))})),e.score=t}))}function de(e,t){var n=e.matches;t.matches=[],k(n)&&n.forEach((function(e){if(k(e.indices)&&e.indices.length){var n={indices:e.indices,value:e.value};e.key&&(n.key=e.key.src),e.idx>-1&&(n.refIndex=e.idx),t.matches.push(n)}}))}function ve(e,t){t.score=e.score}function ge(e,t){var n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{},r=n.includeMatches,i=void 0===r?I.includeMatches:r,o=n.includeScore,c=void 0===o?I.includeScore:o,a=[];return i&&a.push(de),c&&a.push(ve),e.map((function(e){var n=e.idx,r={item:t[n],refIndex:n};return a.length&&a.forEach((function(t){t(e,r)})),r}))}var ye=function(){function e(n){var i=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},o=arguments.length>2?arguments[2]:void 0;r(this,e),this.options=t(t({},I),i),this.options.useExtendedSearch,this._keyStore=new S(this.options.keys),this.setCollection(n,o)}return o(e,[{key:"setCollection",value:function(e,t){if(this._docs=e,t&&!(t instanceof $))throw new Error("Incorrect 'index' type");this._myIndex=t||F(this.options.keys,this._docs,{getFn:this.options.getFn,fieldNormWeight:this.options.fieldNormWeight})}},{key:"add",value:function(e){k(e)&&(this._docs.push(e),this._myIndex.add(e))}},{key:"remove",value:function(){for(var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:function(){return!1},t=[],n=0,r=this._docs.length;n<r;n+=1){var i=this._docs[n];e(i,n)&&(this.removeAt(n),n-=1,r-=1,t.push(i))}return t}},{key:"removeAt",value:function(e){this._docs.splice(e,1),this._myIndex.removeAt(e)}},{key:"getIndex",value:function(){return this._myIndex}},{key:"search",value:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=t.limit,r=void 0===n?-1:n,i=this.options,o=i.includeMatches,c=i.includeScore,a=i.shouldSort,s=i.sortFn,u=i.ignoreFieldNorm,h=g(e)?g(this._docs[0])?this._searchStringList(e):this._searchObjectList(e):this._searchLogical(e);return fe(h,{ignoreFieldNorm:u}),a&&h.sort(s),y(r)&&r>-1&&(h=h.slice(0,r)),ge(h,this._docs,{includeMatches:o,includeScore:c})}},{key:"_searchStringList",value:function(e){var t=re(e,this.options),n=this._myIndex.records,r=[];return n.forEach((function(e){var n=e.v,i=e.i,o=e.n;if(k(n)){var c=t.searchIn(n),a=c.isMatch,s=c.score,u=c.indices;a&&r.push({item:n,idx:i,matches:[{score:s,value:n,norm:o,indices:u}]})}})),r}},{key:"_searchLogical",value:function(e){var t=this,n=function(e,t){var n=(arguments.length>2&&void 0!==arguments[2]?arguments[2]:{}).auto,r=void 0===n||n,i=function e(n){var i=Object.keys(n),o=ue(n);if(!o&&i.length>1&&!se(n))return e(le(n));if(he(n)){var c=o?n[ce]:i[0],a=o?n[ae]:n[c];if(!g(a))throw new Error(x(c));var s={keyId:j(c),pattern:a};return r&&(s.searcher=re(a,t)),s}var u={children:[],operator:i[0]};return i.forEach((function(t){var r=n[t];v(r)&&r.forEach((function(t){u.children.push(e(t))}))})),u};return se(e)||(e=le(e)),i(e)}(e,this.options),r=function e(n,r,i){if(!n.children){var o=n.keyId,c=n.searcher,a=t._findMatches({key:t._keyStore.get(o),value:t._myIndex.getValueForItemAtKeyId(r,o),searcher:c});return a&&a.length?[{idx:i,item:r,matches:a}]:[]}for(var s=[],u=0,h=n.children.length;u<h;u+=1){var l=e(n.children[u],r,i);if(l.length)s.push.apply(s,f(l));else if(n.operator===ie)return[]}return s},i=this._myIndex.records,o={},c=[];return i.forEach((function(e){var t=e.$,i=e.i;if(k(t)){var a=r(n,t,i);a.length&&(o[i]||(o[i]={idx:i,item:t,matches:[]},c.push(o[i])),a.forEach((function(e){var t,n=e.matches;(t=o[i].matches).push.apply(t,f(n))})))}})),c}},{key:"_searchObjectList",value:function(e){var t=this,n=re(e,this.options),r=this._myIndex,i=r.keys,o=r.records,c=[];return o.forEach((function(e){var r=e.$,o=e.i;if(k(r)){var a=[];i.forEach((function(e,i){a.push.apply(a,f(t._findMatches({key:e,value:r[i],searcher:n})))})),a.length&&c.push({idx:o,item:r,matches:a})}})),c}},{key:"_findMatches",value:function(e){var t=e.key,n=e.value,r=e.searcher;if(!k(n))return[];var i=[];if(v(n))n.forEach((function(e){var n=e.v,o=e.i,c=e.n;if(k(n)){var a=r.searchIn(n),s=a.isMatch,u=a.score,h=a.indices;s&&i.push({score:u,key:t,value:n,idx:o,norm:c,indices:h})}}));else{var o=n.v,c=n.n,a=r.searchIn(o),s=a.isMatch,u=a.score,h=a.indices;s&&i.push({score:u,key:t,value:o,norm:c,indices:h})}return i}}]),e}();return ye.version="6.6.2",ye.createIndex=F,ye.parseIndex=function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=t.getFn,r=void 0===n?I.getFn:n,i=t.fieldNormWeight,o=void 0===i?I.fieldNormWeight:i,c=e.keys,a=e.records,s=new $({getFn:r,fieldNormWeight:o});return s.setKeys(c),s.setIndexRecords(a),s},ye.config=I,function(){ne.push.apply(ne,arguments)}(te),ye},"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).Fuse=t();</script>
+    <!-- countUp.js v2.9.0 · https://github.com/inorganik/countUp.js · MIT · bundled verbatim, unmodified -->
+    <script>/* countUp.js v2.9.0 — MIT License — Copyright (c) Jamie Perkins (inorganik) — https://github.com/inorganik/countUp.js */
+!function(t,i){"object"==typeof exports&&"undefined"!=typeof module?i(exports):"function"==typeof define&&define.amd?define(["exports"],i):i((t="undefined"!=typeof globalThis?globalThis:t||self).countUp={})}(this,(function(t){"use strict";var i=function(){return i=Object.assign||function(t){for(var i,n=1,s=arguments.length;n<s;n++)for(var e in i=arguments[n])Object.prototype.hasOwnProperty.call(i,e)&&(t[e]=i[e]);return t},i.apply(this,arguments)},n=function(){function t(t,n,s){var e=this;this.endVal=n,this.options=s,this.version="2.9.0",this.defaults={startVal:0,decimalPlaces:0,duration:2,useEasing:!0,useGrouping:!0,useIndianSeparators:!1,smartEasingThreshold:999,smartEasingAmount:333,separator:",",decimal:".",prefix:"",suffix:"",enableScrollSpy:!1,scrollSpyDelay:200,scrollSpyOnce:!1},this.finalEndVal=null,this.useEasing=!0,this.countDown=!1,this.error="",this.startVal=0,this.paused=!0,this.once=!1,this.count=function(t){e.startTime||(e.startTime=t);var i=t-e.startTime;e.remaining=e.duration-i,e.useEasing?e.countDown?e.frameVal=e.startVal-e.easingFn(i,0,e.startVal-e.endVal,e.duration):e.frameVal=e.easingFn(i,e.startVal,e.endVal-e.startVal,e.duration):e.frameVal=e.startVal+(e.endVal-e.startVal)*(i/e.duration);var n=e.countDown?e.frameVal<e.endVal:e.frameVal>e.endVal;e.frameVal=n?e.endVal:e.frameVal,e.frameVal=Number(e.frameVal.toFixed(e.options.decimalPlaces)),e.printValue(e.frameVal),i<e.duration?e.rAF=requestAnimationFrame(e.count):null!==e.finalEndVal?e.update(e.finalEndVal):e.options.onCompleteCallback&&e.options.onCompleteCallback()},this.formatNumber=function(t){var i,n,s,a,o=t<0?"-":"";i=Math.abs(t).toFixed(e.options.decimalPlaces);var r=(i+="").split(".");if(n=r[0],s=r.length>1?e.options.decimal+r[1]:"",e.options.useGrouping){a="";for(var l=3,u=0,h=0,p=n.length;h<p;++h)e.options.useIndianSeparators&&4===h&&(l=2,u=1),0!==h&&u%l==0&&(a=e.options.separator+a),u++,a=n[p-h-1]+a;n=a}return e.options.numerals&&e.options.numerals.length&&(n=n.replace(/[0-9]/g,(function(t){return e.options.numerals[+t]})),s=s.replace(/[0-9]/g,(function(t){return e.options.numerals[+t]}))),o+e.options.prefix+n+s+e.options.suffix},this.easeOutExpo=function(t,i,n,s){return n*(1-Math.pow(2,-10*t/s))*1024/1023+i},this.options=i(i({},this.defaults),s),this.formattingFn=this.options.formattingFn?this.options.formattingFn:this.formatNumber,this.easingFn=this.options.easingFn?this.options.easingFn:this.easeOutExpo,this.el="string"==typeof t?document.getElementById(t):t,n=null==n?this.parse(this.el.innerHTML):n,this.startVal=this.validateValue(this.options.startVal),this.frameVal=this.startVal,this.endVal=this.validateValue(n),this.options.decimalPlaces=Math.max(this.options.decimalPlaces),this.resetDuration(),this.options.separator=String(this.options.separator),this.useEasing=this.options.useEasing,""===this.options.separator&&(this.options.useGrouping=!1),this.el?this.printValue(this.startVal):this.error="[CountUp] target is null or undefined","undefined"!=typeof window&&this.options.enableScrollSpy&&(this.error?console.error(this.error,t):(window.onScrollFns=window.onScrollFns||[],window.onScrollFns.push((function(){return e.handleScroll(e)})),window.onscroll=function(){window.onScrollFns.forEach((function(t){return t()}))},this.handleScroll(this)))}return t.prototype.handleScroll=function(t){if(t&&window&&!t.once){var i=window.innerHeight+window.scrollY,n=t.el.getBoundingClientRect(),s=n.top+window.pageYOffset,e=n.top+n.height+window.pageYOffset;e<i&&e>window.scrollY&&t.paused?(t.paused=!1,setTimeout((function(){return t.start()}),t.options.scrollSpyDelay),t.options.scrollSpyOnce&&(t.once=!0)):(window.scrollY>e||s>i)&&!t.paused&&t.reset()}},t.prototype.determineDirectionAndSmartEasing=function(){var t=this.finalEndVal?this.finalEndVal:this.endVal;this.countDown=this.startVal>t;var i=t-this.startVal;if(Math.abs(i)>this.options.smartEasingThreshold&&this.options.useEasing){this.finalEndVal=t;var n=this.countDown?1:-1;this.endVal=t+n*this.options.smartEasingAmount,this.duration=this.duration/2}else this.endVal=t,this.finalEndVal=null;null!==this.finalEndVal?this.useEasing=!1:this.useEasing=this.options.useEasing},t.prototype.start=function(t){this.error||(this.options.onStartCallback&&this.options.onStartCallback(),t&&(this.options.onCompleteCallback=t),this.duration>0?(this.determineDirectionAndSmartEasing(),this.paused=!1,this.rAF=requestAnimationFrame(this.count)):this.printValue(this.endVal))},t.prototype.pauseResume=function(){this.paused?(this.startTime=null,this.duration=this.remaining,this.startVal=this.frameVal,this.determineDirectionAndSmartEasing(),this.rAF=requestAnimationFrame(this.count)):cancelAnimationFrame(this.rAF),this.paused=!this.paused},t.prototype.reset=function(){cancelAnimationFrame(this.rAF),this.paused=!0,this.resetDuration(),this.startVal=this.validateValue(this.options.startVal),this.frameVal=this.startVal,this.printValue(this.startVal)},t.prototype.update=function(t){cancelAnimationFrame(this.rAF),this.startTime=null,this.endVal=this.validateValue(t),this.endVal!==this.frameVal&&(this.startVal=this.frameVal,null==this.finalEndVal&&this.resetDuration(),this.finalEndVal=null,this.determineDirectionAndSmartEasing(),this.rAF=requestAnimationFrame(this.count))},t.prototype.printValue=function(t){var i;if(this.el){var n=this.formattingFn(t);if(null===(i=this.options.plugin)||void 0===i?void 0:i.render)this.options.plugin.render(this.el,n);else if("INPUT"===this.el.tagName)this.el.value=n;else"text"===this.el.tagName||"tspan"===this.el.tagName?this.el.textContent=n:this.el.innerHTML=n}},t.prototype.ensureNumber=function(t){return"number"==typeof t&&!isNaN(t)},t.prototype.validateValue=function(t){var i=Number(t);return this.ensureNumber(i)?i:(this.error="[CountUp] invalid start or end value: ".concat(t),null)},t.prototype.resetDuration=function(){this.startTime=null,this.duration=1e3*Number(this.options.duration),this.remaining=this.duration},t.prototype.parse=function(t){var i=function(t){return t.replace(/([.,'  ])/g,"\\$1")},n=i(this.options.separator),s=i(this.options.decimal),e=t.replace(new RegExp(n,"g"),"").replace(new RegExp(s,"g"),".");return parseFloat(e)},t}();t.CountUp=n}));
+</script>
     <script>
 
-      /* ============ GITHUB PACK (83 offers, live page 2026-10-08) ============ */
+      /* ============ GITHUB PACK (81 offers, live page 2026-10-08) ============ */
       var PACK = [
         { g: "Cloud & hosting", items: [
           ["Microsoft Azure (18+)", "25+ free services + $100 Azure credit, no credit card", "Ages 18+ only"],
@@ -1790,7 +1942,7 @@ Warmly,
         ]},
         { g: "Cloud credits (beyond the Pack)", items: [
           { n: "Microsoft Azure for Students", o: "$100/year in credits + 25+ always-free services, no credit card (also available through the Pack).", c: ".edu email", s: [["awesome-edu-perks", "https://github.com/sdhutchins/awesome-edu-perks"]] },
-          { n: "AWS Educate", o: "Free cloud credits ($50–$100 typical per sources) + training labs and badges, no credit card required.", c: "AWS Educate signup", s: [["student-perks", "https://github.com/ges2-code/student-perks"]] },
+          { n: "AWS Educate", o: "Free self-paced cloud and AI training, hands-on labs, and shareable digital badges; no credit card required. Learners 18+ can also use the AWS Educate Job Board.", c: "Email signup (ages 13+)", s: [["AWS Educate (read live Oct 14, 2026)", "https://aws.amazon.com/education/awseducate/"]] },
           { n: "Google Cloud", o: "$300 credit for new accounts plus an always-free tier (open to everyone, not student-gated); student-specific credits via edu programs/Qwiklabs.", c: "New account / edu programs", s: [["student-perks", "https://github.com/ges2-code/student-perks"]] },
           { n: "IBM Cloud Academic Initiative", o: "~$200 first month + 40+ always-free services (Watson AI, ML APIs).", c: "Academic signup", s: [["student-perks", "https://github.com/ges2-code/student-perks"]] },
           { n: "Oracle Cloud Free Tier", o: "$300 trial + generous always-free VMs (2 AMD + 4 ARM, 24GB RAM) forever; not student-specific.", c: "Free tier signup", s: [["student-perks", "https://github.com/ges2-code/student-perks"]] }
@@ -1808,7 +1960,6 @@ Warmly,
           { n: "Project Gutenberg", o: "60,000+ free eBooks.", c: "Open access", s: [["awesome-edu-perks", "https://github.com/sdhutchins/awesome-edu-perks"]] }
         ]},
         { g: "News & media subscriptions", items: [
-          { n: "New York Times", o: "FREE full digital access through many university libraries — register with your .edu email (e.g. NYU, UC Berkeley, UW).", c: ".edu email via school", s: [["UKnow (UKY)", "https://uknow.uky.edu/campus-news/free-access-digital-newspaper-subscriptions-available-uk-community"], ["Berkeley Library", "https://guides.lib.berkeley.edu/business_news"]] },
           { n: "Wall Street Journal", o: "FREE digital access via many schools (school portals); standalone student offer ~$4/month digital.", c: "School portal / student offer", s: [["UKnow (UKY)", "https://uknow.uky.edu/campus-news/free-access-digital-newspaper-subscriptions-available-uk-community"]] },
           { n: "Financial Times", o: "Free via some university libraries.", c: "Library access", s: [["UW Tacoma Library", "https://sites.uw.edu/uwtacomalibrary/2023/09/18/free-online-access-to-digital-newspapers/"]] },
           { n: "The Economist", o: "Student pricing via its subscription flow.", c: "Subscription flow", s: [["awesome-edu-perks", "https://github.com/sdhutchins/awesome-edu-perks"]] },
@@ -1966,7 +2117,6 @@ Warmly,
         "Codecademy": "https://www.codecademy.com",
         "Microsoft Learn": "https://www.microsoft.com/en-us/education/students",
         "OpenStax": "https://openstax.org", "Project Gutenberg": "https://www.gutenberg.org",
-        "New York Times": "https://accessnyt.com",
         "Wall Street Journal": "https://education.wsj.com",
         "The Economist": "https://www.economist.com", "Wired": "https://www.wired.com", "Scribd": "https://www.scribd.com",
         "Google AI Pro (Gemini)": "https://gemini.google/students",
@@ -2469,10 +2619,10 @@ Warmly,
           "Check the Azure portal's cost view to see the credit balance; it refreshes yearly while you're a student, and the always-free services stay after."
         ],
         "AWS Educate": [
-          "Create an AWS account and open the AWS Educate signup (search “AWS Educate” on aws.amazon.com).",
-          "Register with your student email and complete the Educate enrollment.",
-          "Your starter credits (typically $50–$100 per program sources) and the training labs/badges land in your account — no credit card needed.",
-          "Launch a lab or an EC2 free-tier resource to confirm the credits are spendable."
+          "Open the official AWS Educate page (Apply) and choose a learning path or hands-on lab.",
+          "Register with an email address — AWS says learners age 13+ can join and no credit card is required.",
+          "Start a free self-paced course or hands-on lab, then earn the available shareable digital badges as you complete the material.",
+          "If you're 18 or older, you can also use the AWS Educate Job Board to search and apply for jobs and internships."
         ],
         "Google Cloud": [
           "This isn't student-gated: any new Google Cloud account gets the $300 new-account credit plus the always-free tier.",
@@ -2541,12 +2691,6 @@ Warmly,
         "Project Gutenberg": [
           "Open Project Gutenberg (Apply) and search the 60,000+ free eBooks.",
           "Download in your format (EPUB/Kindle/text) — no account or payment exists in the flow."
-        ],
-        "New York Times": [
-          "Go to accessnyt.com (Apply) and enter your .edu email.",
-          "If your university subscribes, your school appears — complete the registration with your school credentials/email confirmation.",
-          "Sign in to nytimes.com/apps with that account: full digital access is on.",
-          "Some schools require a yearly re-registration — repeat the accessnyt.com step if access lapses."
         ],
         "Wall Street Journal": [
           "First try the free door: many schools include WSJ — check your library's WSJ access page and register with your .edu email.",
@@ -2658,7 +2802,7 @@ Warmly,
 
       /* ============ RENDER ============ */
       function esc(s) {
-        return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
       }
       function tagHTML(tag) {
         if (tag === "unconfirmed") return ' <span class="tag amber">unconfirmed</span>';
@@ -2776,7 +2920,7 @@ Warmly,
       var TOTAL = PAGE_COUNTS.pack + PAGE_COUNTS.unidays + PAGE_COUNTS.sheerid + PAGE_COUNTS.instore + PAGE_COUNTS.online;
       document.querySelectorAll("[data-total]").forEach(function (el) { el.textContent = TOTAL; });
 
-      /* ============ TEMPORARY OWNER MAPPING REVIEW ============ */
+      /* ============ BROWSE EVERYTHING CATEGORIZATION ============ */
       (function () {
         var CATEGORIES = [
           ["food-drink", "Food & Drink"],
@@ -2845,8 +2989,8 @@ Warmly,
             "SymfonyCasts", "AlgoExpert", "Interview Cake", "GitHub Campus Experts", "Scrimba",
             "Pimsleur", "Coursera", "edX", "LinkedIn Learning", "Codecademy", "Microsoft Learn",
             "JetBrains Academy", "Kaggle", "Postman Student Expert", "OpenStax", "Project Gutenberg",
-            "New York Times", "Wall Street Journal", "Financial Times", "The Economist", "Wired",
-            "Scribd", "Babbel", "MasterClass", "Rosetta Stone", "Preply"
+            "Wall Street Journal", "Financial Times", "The Economist", "Wired", "Scribd", "Babbel",
+            "MasterClass", "Rosetta Stone", "Preply"
           ])) return "learning";
 
           if (inList(name, [
@@ -2915,54 +3059,6 @@ Warmly,
           "Qatar Airways Student Club": ["everyday"]
         };
 
-        var DISPUTES = {
-          "Arduino": "Hardware benefit bundled with a cloud service; placed where students first seek the board.",
-          "Adafruit": "Hardware discount and Adafruit IO+ are bundled; hardware is the first-look intent.",
-          "Icons8": "Includes music assets, but the main product is a creative software library.",
-          "Microsoft 365": "Productivity software used for coursework; software wins over Learning.",
-          "Appfigures": "Analytics product for app businesses; placed in Software rather than Developer Tools.",
-          "Simple Analytics": "A hosted analytics service; placed in Software rather than Cloud.",
-          "Stripe": "A payments service with fee credits; Everyday Services wins over Developer Tools.",
-          "CARTO": "Geospatial analysis software with cloud features; Software is the clearer first look.",
-          "Apple Education Store": "The offer spans hardware and AppleCare; Devices is the dominant shopping intent.",
-          "Samsung Education Offer Program": "Spans hardware, TVs and audio; Devices is the dominant product intent.",
-          "Best Buy": "Electronics retailer, but this entry is an open-to-all shopping status note, not a device benefit.",
-          "Walmart+ student offer": "Membership spans delivery and entertainment; Everyday Shopping is the primary intent.",
-          "Pandora Premium": "A streaming service and an audio product; Audio is primary, Entertainment is secondary.",
-          "Pimsleur": "Audio-led language software; Learning is primary, Audio is secondary.",
-          "Amazon Prime Student": "Shipping membership bundled with video, music and gaming; Everyday is primary.",
-          "Spotify Premium Student + Hulu": "Music and video are bundled; Audio is primary, Entertainment is secondary.",
-          "YouTube Premium (student)": "Video subscription includes YouTube Music; Entertainment is primary.",
-          "Apple Creator Studio (student)": "Creator-app bundle includes Logic Pro; Software is primary, Audio is secondary.",
-          "ElevenLabs for Students": "AI voice software could sit in Software; Audio reflects the product's core job.",
-          "Sonos": "Physical speakers could sit in Devices; Audio reflects the shopping intent more precisely.",
-          "GitHub Pages": "Static hosting is used through a developer platform; Cloud is primary, Dev Tools secondary.",
-          "Webflow": "Website builder includes hosting; Cloud is primary, Dev Tools secondary.",
-          "Wix": "Website builder includes hosting; Cloud is primary, Dev Tools secondary.",
-          "Squarespace": "Website builder and hosted site subscription cross Cloud and Developer Tools.",
-          "Microsoft 365 Education": "Coursework suite rather than course content; Software is primary.",
-          "Canva Pro for Education": "Creative software delivered through education eligibility; Software is primary.",
-          "MATLAB / MathWorks": "Technical software bundled with training; Software is primary.",
-          "New York Times": "News can be media entertainment, but students seek it as reading and research.",
-          "Wall Street Journal": "News can be media entertainment, but students seek it as reading and research.",
-          "Financial Times": "News can be media entertainment, but students seek it as reading and research.",
-          "The Economist": "News can be media entertainment, but students seek it as reading and research.",
-          "Wired": "Magazine subscription crosses Learning and Entertainment; Learning is primary.",
-          "Scribd": "Books and audiobooks cross Learning and Entertainment; Learning is primary.",
-          "Museums": "Could be Learning, but the benefit is admission to an outing; Entertainment is primary.",
-          "Xfinity student offers": "Internet and cable bundle crosses Everyday Services and Entertainment.",
-          "T-Mobile": "Phone service can be grouped with Devices; Everyday Services is primary.",
-          "Verizon": "Phone service can be grouped with Devices; Everyday Services is primary.",
-          "AT&T": "Phone service can be grouped with Devices; Everyday Services is primary.",
-          "Tello Mobile": "Phone service can be grouped with Devices; Everyday Services is primary.",
-          "Garmin": "Wearable hardware also serves fitness; Devices is primary.",
-          "Headspace": "Audio-led wellness app; Everyday Services is primary.",
-          "YNAB (You Need A Budget)": "A software subscription serving personal finance; Everyday Services is primary.",
-          "StudentUniverse": "Travel booking crosses services and leisure; Everyday Services is primary.",
-          "Tinder Gold": "Social app subscription is not a clean fit; Everyday Services is the closest primary.",
-          "NBA / WNBA League Pass": "Sports streaming is Entertainment; Everyday is a secondary discovery path."
-        };
-
         var rows = [];
         PACK.forEach(function (grp) {
           grp.items.forEach(function (it) {
@@ -2988,31 +3084,13 @@ Warmly,
         rows.forEach(function (row) {
           row.category = proposedCategory(row.name, row.group, row.page);
           row.cross = (CROSS[row.name] || []).filter(function (c) { return c !== row.category; }).slice(0, 2);
-          row.dispute = DISPUTES[row.name] || "";
         });
 
         var counts = {};
         CATEGORIES.forEach(function (c) { counts[c[0]] = 0; });
-        var orphans = 0;
         rows.forEach(function (row) {
-          if (!VALID[row.category]) orphans++;
-          else counts[row.category]++;
+          if (VALID[row.category]) counts[row.category]++;
         });
-
-        var countEl = document.getElementById("mappingCounts");
-        if (countEl) countEl.innerHTML = CATEGORIES.map(function (c) {
-          var low = counts[c[0]] < 6;
-          return '<div class="review-count' + (low ? ' low' : '') + '"><b>' + counts[c[0]] + '</b><span>' + esc(c[0]) + (low ? ' · FLAG: UNDER 6' : '') + '</span></div>';
-        }).join("");
-
-        var checkEl = document.getElementById("mappingCheck");
-        var lowCats = CATEGORIES.filter(function (c) { return counts[c[0]] < 6; }).map(function (c) { return c[0]; });
-        var complete = rows.length === TOTAL && orphans === 0;
-        if (checkEl) {
-          checkEl.classList.toggle("problem", !complete || lowCats.length > 0);
-          checkEl.textContent = "ORPHAN CHECK: " + rows.length + "/" + TOTAL + " rows have a primary category; " + orphans + " orphaned." +
-            (lowCats.length ? " MERGE FLAG: " + lowCats.join(", ") + " has fewer than 6 items." : " MERGE FLAG: none — every category has at least 6 items.");
-        }
 
         var order = {};
         CATEGORIES.forEach(function (c, i) { order[c[0]] = i; });
@@ -3043,45 +3121,271 @@ Warmly,
             '<div class="entries">' + cards + '</div></section>';
         }).join("");
 
-        var body = document.getElementById("mappingRows");
-        if (body) body.innerHTML = rows.map(function (row) {
-          var dispute = row.dispute ? '<span class="dispute-yes">REVIEW — ' + esc(row.dispute) + '</span>' : '<span class="dispute-no">No</span>';
-          return '<tr>' +
-            '<td data-label="Benefit Name" class="benefit-name">' + esc(row.name) + '</td>' +
-            '<td data-label="Current Page" class="page-slug">' + esc(row.page) + '</td>' +
-            '<td data-label="Proposed Category"><span class="category-slug">' + esc(row.category) + '</span><br>' + esc(VALID[row.category] || "UNMAPPED") + '</td>' +
-            '<td data-label="Also-in" class="cross-tags">' + (row.cross.length ? row.cross.map(esc).join(" · ") : "—") + '</td>' +
-            '<td data-label="Dispute?">' + dispute + '</td>' +
-          '</tr>';
-        }).join("");
       })();
 
-      /* ============ PER-PAGE SEARCH ============ */
-      document.querySelectorAll("[data-view]").forEach(function (view) {
-        var input = view.querySelector(".page-search-input");
-        if (!input) return;
-        var showing = view.querySelector("[data-showing]");
-        var empty = view.querySelector("[data-empty]");
-        var rows = view.querySelectorAll(".entry, .packtable tbody tr");
-        var total = rows.length;
-        function run() {
-          var q = input.value.trim().toLowerCase();
-          var vis = 0;
-          rows.forEach(function (row) {
-            var m = !q || (row.getAttribute("data-search") || "").indexOf(q) !== -1;
-            row.classList.toggle("hidden-by-filter", !m);
-            if (m) vis++;
-          });
-          view.querySelectorAll(".entry-group, .pack-group").forEach(function (grp) {
-            var any = grp.querySelectorAll(".entry:not(.hidden-by-filter), .packtable tbody tr:not(.hidden-by-filter)").length > 0;
-            grp.classList.toggle("hidden-by-filter", !any);
-          });
-          if (empty) empty.classList.toggle("show", vis === 0);
-          if (showing) showing.textContent = q ? ("Showing " + vis + " of " + total + " on this page") : (total + " benefits on this page · " + TOTAL + " across the catalogue");
-        }
-        input.addEventListener("input", run);
-        run();
-      });
+    </script>
+    <!-- Student Benefits Catalogue completion layer · original project code -->
+    <script>
+/* Tabler Icons — Copyright (c) 2020-2026 Pawel Kuna — MIT License — https://github.com/tabler/tabler-icons */
+(function () {
+  "use strict";
+  var svgOpen = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">';
+  var ICONS = {
+    home: svgOpen + '<path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>',
+    search: svgOpen + '<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>',
+    compass: svgOpen + '<circle cx="12" cy="12" r="9"/><path d="M16 8l-2 6-6 2 2-6z"/></svg>',
+    rocket: svgOpen + '<path d="M4 13a8 8 0 0 1 7 7 6 6 0 0 0 3-5 9 9 0 0 0 6-8 3 3 0 0 0-3-3 9 9 0 0 0-8 6 6 6 0 0 0-5 3"/><path d="M15 9l.01 0"/><path d="M6 16l-3 3"/></svg>',
+    ticket: svgOpen + '<path d="M15 5l0 2"/><path d="M15 11l0 2"/><path d="M15 17l0 2"/><path d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4V7a2 2 0 0 1 2-2"/></svg>',
+    code: svgOpen + '<path d="M7 8l-4 4 4 4"/><path d="M17 8l4 4-4 4"/><path d="M14 4l-4 16"/></svg>',
+    'id-card': svgOpen + '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M7 15c.8-1.3 3.2-1.3 4 0"/><path d="M14 9h4M14 13h4"/></svg>',
+    'shield-check': svgOpen + '<path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>',
+    'building-store': svgOpen + '<path d="M3 9l2-5h14l2 5"/><path d="M5 13v7h14v-7"/><path d="M9 20v-6h6v6"/><path d="M3 9a2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 2-2"/></svg>',
+    globe: svgOpen + '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>',
+    bookmark: svgOpen + '<path d="M6 4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18l-6-4-6 4z"/></svg>',
+    'bookmark-filled': '<svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18l-6-4-6 4z"/></svg>',
+    share: svgOpen + '<circle cx="6" cy="12" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 11l8-4M8 13l8 4"/></svg>'
+  };
+
+  window.SBC = window.SBC || {};
+  var SBC = window.SBC;
+  SBC.ICONS = ICONS;
+  SBC.favorites = new Set();
+  SBC.visitFlags = {};
+  SBC.reducedMotion = function () { return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches); };
+  SBC.hasFuse = typeof Fuse === 'function';
+  SBC.records = [];
+  SBC.recordById = {};
+  SBC._toastTimer = 0;
+  var CountUpCtor = window.countUp && window.countUp.CountUp;
+
+  function escText(s) {
+    return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+  function slugify(s) {
+    return String(s).toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 72) || 'benefit';
+  }
+  function uniqueId(page, name, used) {
+    var base = page + ':' + slugify(name), id = base, n = 2;
+    while (used[id]) { id = base + '-' + n++; }
+    used[id] = true;
+    return id;
+  }
+  function buttonHTML(id) {
+    var label = escText(id.split(':')[1].replace(/-/g, ' '));
+    return '<button type="button" class="icon-btn fav-btn" data-fav-toggle="' + escText(id) + '" aria-pressed="false" aria-label="Save ' + label + ' for this visit"><span class="icon-slot">' + ICONS.bookmark + '</span></button>';
+  }
+  function groupName(el) {
+    var group = el.closest('.entry-group,.pack-group,.browse-category,.launch-group');
+    var heading = group && group.querySelector('h2,h3.group-title');
+    return heading ? heading.textContent.trim() : '';
+  }
+
+  document.querySelectorAll('[data-icon]').forEach(function (el) {
+    var icon = ICONS[el.getAttribute('data-icon')];
+    if (icon) el.innerHTML = icon;
+  });
+
+  var used = {};
+  var canonicalByName = {};
+  var sourcePages = ['github-pack', 'unidays', 'sheerid', 'in-store', 'online'];
+  sourcePages.forEach(function (page) {
+    var view = document.querySelector('[data-view="' + page + '"]');
+    if (!view) return;
+    var nodes = view.querySelectorAll(page === 'github-pack' ? '.packtable tbody tr' : '.entry');
+    nodes.forEach(function (node) {
+      var nameEl = node.querySelector(page === 'github-pack' ? '.pname' : '.e-name');
+      var offerEl = node.querySelector(page === 'github-pack' ? 'td:nth-child(2)' : '.e-offer');
+      var name = nameEl ? nameEl.textContent.trim().replace(/↗$/, '').trim() : '';
+      var id = uniqueId(page, name, used);
+      var offer = offerEl ? offerEl.textContent.trim() : '';
+      var action = node.querySelector('.apply-btn');
+      var rec = { id: id, page: page, group: groupName(node), name: name, offer: offer, text: node.textContent.trim(), kind: 'benefit', url: action ? action.href : '' };
+      node.setAttribute('data-card-id', id);
+      canonicalByName[name] = rec;
+      SBC.records.push(rec); SBC.recordById[id] = rec;
+      if (page === 'github-pack') {
+        var tr = node;
+        var td = document.createElement('td'); td.className = 'row-tools'; td.innerHTML = buttonHTML(id); tr.appendChild(td);
+      } else {
+        var actions = node.querySelector('.e-actions');
+        if (actions) actions.insertAdjacentHTML('beforeend', buttonHTML(id));
+      }
+    });
+  });
+
+  document.querySelectorAll('#view-browse-everything .entry').forEach(function (node) {
+    var nameEl = node.querySelector('.e-name');
+    var rec = nameEl && canonicalByName[nameEl.textContent.trim()];
+    if (!rec) return;
+    node.setAttribute('data-card-id', rec.id);
+    var actions = node.querySelector('.e-actions');
+    if (actions) actions.insertAdjacentHTML('beforeend', buttonHTML(rec.id));
+  });
+
+  document.querySelectorAll('#view-launch .launch-card').forEach(function (node) {
+    var name = (node.querySelector('h3') || {}).textContent || '';
+    var link = node.querySelector('a');
+    var id = uniqueId('launch', name, used);
+    var rec = { id: id, page: 'launch', group: groupName(node), name: name.trim(), offer: (node.querySelector('p') || {}).textContent || '', text: node.textContent.trim(), kind: 'launch', url: link ? link.href : '' };
+    node.setAttribute('data-search-id', id);
+    node.setAttribute('data-card-id', id);
+    SBC.records.push(rec); SBC.recordById[id] = rec;
+    if (link) {
+      var actions = document.createElement('div');
+      actions.className = 'e-actions launch-actions';
+      link.parentNode.insertBefore(actions, link);
+      actions.appendChild(link);
+      actions.insertAdjacentHTML('beforeend', buttonHTML(id));
+    }
+  });
+
+  SBC.fuse = SBC.hasFuse ? new Fuse(SBC.records, {
+    threshold: 0.35, ignoreLocation: true, minMatchCharLength: 2,
+    keys: [{ name: 'name', weight: 0.5 }, { name: 'offer', weight: 0.3 }, { name: 'text', weight: 0.15 }, { name: 'group', weight: 0.05 }]
+  }) : null;
+  SBC.query = function (q, pageFilter) {
+    var needle = String(q || '').trim().toLowerCase();
+    var list = needle ? (SBC.fuse ? SBC.fuse.search(needle).map(function (x) { return x.item; }) : SBC.records.filter(function (r) { return (r.name + ' ' + r.offer + ' ' + r.text + ' ' + r.group).toLowerCase().indexOf(needle) !== -1; })) : SBC.records.slice();
+    if (pageFilter === 'browse-everything') return list.filter(function (r) { return r.kind === 'benefit'; });
+    if (pageFilter) return list.filter(function (r) { return r.page === pageFilter; });
+    return list;
+  };
+
+  function showToast(message) {
+    var toast = document.getElementById('sbc-toast');
+    if (!toast) { toast = document.createElement('div'); toast.id = 'sbc-toast'; toast.className = 'sbc-toast'; toast.setAttribute('role', 'status'); document.body.appendChild(toast); }
+    clearTimeout(SBC._toastTimer); toast.textContent = message; toast.classList.add('show');
+    SBC._toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 2500);
+  }
+  SBC.showToast = showToast;
+
+  function burst() {
+    if (SBC.reducedMotion() || SBC.visitFlags.burst) return;
+    SBC.visitFlags.burst = true;
+    var canvas = document.createElement('canvas');
+    canvas.className = 'celebration-canvas';
+    canvas.setAttribute('aria-hidden', 'true'); document.body.appendChild(canvas);
+    var ctx = canvas.getContext('2d'), pieces = [], start = performance.now(), frame;
+    function size() { canvas.width = innerWidth * devicePixelRatio; canvas.height = innerHeight * devicePixelRatio; ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0); }
+    size();
+    var colors = ['#ffd21f','#ff5c9e','#3ec1ff','#2fe6a7','#ff8a3d'];
+    for (var i = 0; i < 58; i++) pieces.push({ x: innerWidth * (.25 + Math.random() * .5), y: innerHeight * .38, vx: (Math.random() - .5) * 11, vy: -4 - Math.random() * 9, r: Math.random() * 6, w: 5 + Math.random() * 7, h: 3 + Math.random() * 6, c: colors[i % colors.length], a: Math.random() * 6.28 });
+    var launched = performance.now();
+    function draw(t) {
+      if (t - launched > 2500) { cancelAnimationFrame(frame); canvas.remove(); return; }
+      var dt = Math.min(32, t - start); start = t; ctx.clearRect(0, 0, innerWidth, innerHeight);
+      pieces.forEach(function (p) { p.vy += .022 * dt; p.x += p.vx * dt / 16; p.y += p.vy * dt / 16; p.a += .08; ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.a); ctx.fillStyle = p.c; ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); ctx.restore(); });
+      frame = requestAnimationFrame(draw);
+    }
+    frame = requestAnimationFrame(draw);
+  }
+
+  function renderFavorites() {
+    var grid = document.getElementById('favorites-grid');
+    var empty = document.getElementById('favorites-empty');
+    var count = document.querySelector('[data-favorites-count]');
+    if (!grid) return;
+    var records = Array.from(SBC.favorites).map(function (id) { return SBC.recordById[id]; }).filter(Boolean);
+    if (count) count.textContent = records.length;
+    if (empty) empty.hidden = records.length !== 0;
+    grid.innerHTML = records.map(function (r) {
+      return '<article class="entry" data-card-id="' + escText(r.id) + '"><div class="e-top"><span class="tag">' + escText(r.page.replace(/-/g,' ')) + '</span><span class="e-name">' + escText(r.name) + '</span></div><p class="e-offer">' + escText(r.offer) + '</p><div class="e-actions"><a class="apply-btn small" href="' + escText(r.url) + '" target="_blank" rel="noopener">Apply ↗</a>' + buttonHTML(r.id) + '</div></article>';
+    }).join('');
+  }
+  SBC.refreshFavoritesUI = function () {
+    document.querySelectorAll('[data-fav-toggle]').forEach(function (btn) {
+      var on = SBC.favorites.has(btn.getAttribute('data-fav-toggle'));
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.classList.toggle('is-saved', on);
+      var slot = btn.querySelector('.icon-slot'); if (slot) slot.innerHTML = on ? ICONS['bookmark-filled'] : ICONS.bookmark;
+      btn.setAttribute('aria-label', on ? 'Remove from favorites' : 'Save for this visit');
+    });
+    document.querySelectorAll('[data-fav-badge]').forEach(function (el) { el.textContent = SBC.favorites.size; el.hidden = SBC.favorites.size === 0; });
+    renderFavorites();
+  };
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-fav-toggle]');
+    if (!btn) return;
+    var id = btn.getAttribute('data-fav-toggle');
+    if (!/^[a-z-]+:[a-z0-9-]+$/.test(id) || !SBC.recordById[id]) return;
+    if (SBC.favorites.has(id)) { SBC.favorites.delete(id); showToast('REMOVED FROM FAVORITES'); }
+    else { SBC.favorites.add(id); showToast('SAVED FOR THIS VISIT'); if (SBC.favorites.size === 1) burst(); }
+    SBC.refreshFavoritesUI();
+  });
+  var dismiss = document.querySelector('[data-dismiss-visit-note]');
+  if (dismiss) dismiss.addEventListener('click', function () { SBC.visitFlags.favoriteNote = true; var n = dismiss.closest('.visit-note'); if (n) n.hidden = true; });
+  SBC.refreshFavoritesUI();
+
+  function highlightName(name, query) {
+    var safe = escText(name), lower = safe.toLowerCase(), ranges = [];
+    String(query || '').toLowerCase().split(/\s+/).filter(Boolean).forEach(function (token) {
+      var at = 0, idx; while ((idx = lower.indexOf(token, at)) !== -1) { ranges.push([idx, idx + token.length]); at = idx + token.length; }
+    });
+    ranges.sort(function (a,b) { return a[0]-b[0]; });
+    var merged = []; ranges.forEach(function (r) { var last = merged[merged.length-1]; if (last && r[0] <= last[1]) last[1] = Math.max(last[1], r[1]); else merged.push(r.slice()); });
+    for (var i = merged.length - 1; i >= 0; i--) safe = safe.slice(0, merged[i][0]) + '<mark>' + safe.slice(merged[i][0], merged[i][1]) + '</mark>' + safe.slice(merged[i][1]);
+    return safe;
+  }
+  var sitebar = document.querySelector('.sitebar');
+  if (sitebar && SBC.hasFuse) {
+    var box = document.createElement('div'); box.className = 'global-search';
+    box.innerHTML = '<label><span data-global-icon>' + ICONS.search + '</span><span class="sr-only">Search all benefits</span><input id="global-search-trigger" type="search" autocomplete="off" placeholder="Search all 246 benefits…" aria-haspopup="dialog" aria-controls="search-drawer"><kbd>/</kbd></label>';
+    sitebar.appendChild(box);
+    var drawer = document.createElement('section'); drawer.id = 'search-drawer'; drawer.className = 'search-drawer'; drawer.hidden = true; drawer.setAttribute('role','dialog'); drawer.setAttribute('aria-modal','true'); drawer.setAttribute('aria-labelledby','search-drawer-title');
+    drawer.innerHTML = '<div class="drawer-panel"><div class="drawer-head"><div><span class="drawer-kicker">Catalogue search</span><h2 id="search-drawer-title">Search all 246 benefits</h2></div><button type="button" class="icon-btn drawer-close" aria-label="Close search">×</button></div><label class="drawer-input"><span>' + ICONS.search + '</span><input type="search" autocomplete="off" placeholder="Try Spotify, Adobe, food, cloud…" aria-label="Search all benefits and launch destinations"></label><div class="drawer-status" aria-live="polite"></div><div class="drawer-results"></div></div>';
+    document.body.appendChild(drawer);
+    var trigger = box.querySelector('input'), dinput = drawer.querySelector('input'), results = drawer.querySelector('.drawer-results'), status = drawer.querySelector('.drawer-status'), wrap = document.querySelector('.wrap'), lastFocus = null, restoringFocus = false;
+    function renderSearch() {
+      var q = dinput.value.trim(); trigger.value = q;
+      var found = SBC.query(q).slice(0, 60); status.textContent = found.length + (found.length === 1 ? ' result' : ' results') + (SBC.query(q).length > 60 ? ' · first 60 shown' : '');
+      var groups = {}; found.forEach(function (r) { (groups[r.page] || (groups[r.page] = [])).push(r); });
+      results.innerHTML = Object.keys(groups).map(function (page) { return '<section class="drawer-group"><h3>' + escText(page.replace(/-/g,' ')) + ' <span>' + groups[page].length + '</span></h3><div class="drawer-grid">' + groups[page].map(function (r) { var href = r.kind === 'launch' ? '#/launch' : '#/benefit/' + r.page + '/' + r.id.split(':')[1]; return '<a class="search-result-link entry" href="' + href + '" data-result-id="' + escText(r.id) + '"><span class="e-name">' + highlightName(r.name,q) + '</span><span class="e-offer">' + escText(r.offer) + '</span><span class="result-go">Open →</span></a>'; }).join('') + '</div></section>'; }).join('');
+    }
+    function openDrawer() { if (!drawer.hidden) return; lastFocus = document.activeElement; drawer.hidden = false; wrap.setAttribute('inert',''); dinput.value = trigger.value; renderSearch(); requestAnimationFrame(function () { dinput.focus(); }); document.body.classList.add('drawer-open'); }
+    function closeDrawer() { drawer.hidden = true; wrap.removeAttribute('inert'); document.body.classList.remove('drawer-open'); restoringFocus = true; (lastFocus || trigger).focus(); setTimeout(function () { restoringFocus = false; }, 0); }
+    trigger.addEventListener('focus', function () { if (!restoringFocus) openDrawer(); }); trigger.addEventListener('keydown', function(e){ if(e.key==='Enter') openDrawer(); });
+    dinput.addEventListener('input', renderSearch);
+    drawer.querySelector('.drawer-close').addEventListener('click', closeDrawer);
+    drawer.addEventListener('click', function (e) { if (e.target === drawer) closeDrawer(); });
+    drawer.addEventListener('click', function (e) { if (e.target.closest('.search-result-link')) closeDrawer(); });
+    drawer.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { e.preventDefault(); closeDrawer(); return; }
+      var links = Array.from(drawer.querySelectorAll('.search-result-link'));
+      if ((e.key === 'ArrowDown' || e.key === 'ArrowUp') && links.length) { e.preventDefault(); var i = links.indexOf(document.activeElement); i = e.key === 'ArrowDown' ? (i + 1) % links.length : (i <= 0 ? links.length - 1 : i - 1); links[i].focus(); }
+      if (e.key === 'Tab') { var focusable = Array.from(drawer.querySelectorAll('button,input,a[href]')).filter(function (x) { return !x.hidden; }); if (!focusable.length) return; var first=focusable[0], last=focusable[focusable.length-1]; if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();} else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();} }
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === '/' && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName) && drawer.hidden) { e.preventDefault(); trigger.focus(); } });
+  }
+
+  document.querySelectorAll('#view-browse-everything .page-search-input,#view-in-store .page-search-input,#view-online .page-search-input').forEach(function (input) {
+    var view = input.closest('[data-view]'), page = view.getAttribute('data-view'), showing = view.querySelector('[data-showing]'), empty = view.querySelector('[data-empty]');
+    var cards = Array.from(view.querySelectorAll('.entry'));
+    function run() {
+      var q = input.value.trim(); var matched = new Set(SBC.query(q, page).map(function (r) { return r.id; })); var visible = 0;
+      cards.forEach(function (card) { var on = !q || matched.has(card.getAttribute('data-card-id')); card.classList.toggle('hidden-by-filter', !on); if (on) visible++; });
+      view.querySelectorAll('.entry-group,.browse-category').forEach(function (grp) { grp.classList.toggle('hidden-by-filter', !grp.querySelector('.entry:not(.hidden-by-filter)')); });
+      if (showing) showing.textContent = q ? 'Showing ' + visible + ' of ' + cards.length + ' on this page' : cards.length + ' benefits on this page · 246 across the catalogue';
+      if (empty) empty.classList.toggle('show', visible === 0);
+    }
+    input.addEventListener('input', run); run();
+  });
+
+  var spotlight = document.getElementById('spotlight-text');
+  if (spotlight) {
+    var picks = ['GitHub Copilot','Spotify Premium Student + Hulu','Apple Education Store','Amazon Prime Student','ChatGPT Plus','Google AI Pro (Gemini)','1Password','Adobe Creative Cloud','Headspace','Microsoft Azure (18+)'];
+    var lines = picks.map(function (n) { return canonicalByName[n]; }).filter(Boolean); var spotIndex = 0, spotTimer;
+    function setSpot(i) { if (!lines.length) return; spotIndex = i % lines.length; var r=lines[spotIndex]; spotlight.textContent = r.name + ' — ' + r.offer; spotlight.href = '#/benefit/' + r.page + '/' + r.id.split(':')[1]; }
+    function startSpot() { if (SBC.reducedMotion() || document.hidden || !lines.length) return; clearInterval(spotTimer); spotTimer = setInterval(function(){ setSpot(spotIndex+1); },6000); }
+    function stopSpot(){ clearInterval(spotTimer); }
+    setSpot(0); startSpot(); spotlight.addEventListener('mouseenter',stopSpot); spotlight.addEventListener('mouseleave',startSpot); spotlight.addEventListener('focus',stopSpot); spotlight.addEventListener('blur',startSpot); document.addEventListener('visibilitychange',function(){ if(document.hidden) stopSpot(); else startSpot(); });
+  }
+
+  if (CountUpCtor && !SBC.reducedMotion()) {
+    var moments = document.querySelectorAll('[data-countup]');
+    var io = new IntersectionObserver(function (entries) { entries.forEach(function (entry) { if (!entry.isIntersecting || entry.target.getAttribute('data-counted')) return; entry.target.setAttribute('data-counted',''); var final = Number(entry.target.getAttribute('data-countup')); var opts = { duration: 1.2, separator: ',', prefix: entry.target.getAttribute('data-prefix') || '', suffix: entry.target.getAttribute('data-suffix') || '' }; var c = new CountUpCtor(entry.target, final, opts); if (!c.error) c.start(); io.unobserve(entry.target); }); }, { threshold: .45 });
+    moments.forEach(function (el) { io.observe(el); });
+  }
+})();
     </script>
     <script>
       /* ============ LOCAL DEADLINE COUNTDOWNS ============ */
@@ -3090,53 +3394,42 @@ Warmly,
         var today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
         var dayMs = 24 * 60 * 60 * 1000;
 
-        document.querySelectorAll(".deadlines li[data-deadline]").forEach(function (item) {
+        var upcoming = 0;
+        document.querySelectorAll("[data-deadline]").forEach(function (item) {
           var parts = item.getAttribute("data-deadline").split("-").map(Number);
           var deadline = Date.UTC(parts[0], parts[1] - 1, parts[2]);
           var daysLeft = Math.round((deadline - today) / dayMs);
-          var label = item.querySelector(".days");
-
-          if (daysLeft < 0) {
-            item.hidden = true;
-            return;
-          }
-          if (!label) return;
-
-          label.classList.toggle("urgent", daysLeft <= 7);
-          label.textContent = daysLeft === 0
-            ? "ENDS TODAY"
-            : daysLeft === 1
-              ? "URGENT · TOMORROW"
-              : daysLeft + " DAYS LEFT";
+          if (daysLeft >= 0) upcoming++;
         });
+        document.querySelectorAll("[data-upcoming-deadlines]").forEach(function (el) { el.textContent = upcoming; });
       })();
     </script>
     <script>
       /* ============ HASH ROUTING ============ */
-      /* Routes: #/ home · #/browse-everything · #/github-pack · #/unidays
+      /* Routes: #/ home · #/browse-everything · #/launch · #/github-pack · #/unidays
          · #/sheerid · #/in-store · #/online · #/guides · #/graduation-freebies.
-         The temporary #/mapping-review route is intentionally absent from the
-         navigation. Unknown hashes fall back to home (no blank page, no loop). */
+         Unknown hashes fall back to home (no blank page, no loop). */
       (function () {
         var ROUTES = {
           "": "home", "#": "home", "#/": "home", "#/home": "home",
-          "#/browse-everything": "browse-everything",
+          "#/browse-everything": "browse-everything", "#/launch": "launch",
           "#/github-pack": "github-pack", "#/unidays": "unidays",
           "#/sheerid": "sheerid", "#/in-store": "in-store",
           "#/online": "online", "#/guides": "guides",
-          "#/graduation-freebies": "graduation", "#/mapping-review": "mapping-review"
+          "#/graduation-freebies": "graduation", "#/favorites": "favorites"
         };
         var TITLES = {
-          "home": "Student Discounts, Freebies & Deals — 247 Benefits Worth $2,500+",
-          "browse-everything": "Browse All 247 Student Benefits by Category | Student Benefits Catalogue",
-          "github-pack": "GitHub Student Developer Pack — 83 Offers | Student Benefits Catalogue",
+          "home": "Student Discounts, Freebies & Deals — 246 Benefits Worth $2,500+",
+          "browse-everything": "Browse All 246 Student Benefits by Category | Student Benefits Catalogue",
+          "launch": "69 Places to Launch a Student Project | Student Benefits Catalogue",
+          "github-pack": "GitHub Student Developer Pack — 81 Offers | Student Benefits Catalogue",
           "unidays": "UNiDAYS Benefits | Student Benefits Catalogue",
           "sheerid": "SheerID-Verified Benefits | Student Benefits Catalogue",
           "in-store": "In-Store & In-Person Student Discounts | Student Benefits Catalogue",
           "online": "Online Student Discounts & Resources | Student Benefits Catalogue",
           "guides": "Verification & How-To Guides | Student Benefits Catalogue",
           "graduation": "Graduation Freebies — Class of 2026 | Student Benefits Catalogue",
-          "mapping-review": "Owner Review — Proposed Benefit Mapping | Student Benefits Catalogue"
+          "favorites": "Favorites | Student Benefits Catalogue"
         };
         var current = "home";
         var links = document.querySelectorAll("[data-route-link]");
@@ -3176,6 +3469,27 @@ Warmly,
             if (section) section.scrollIntoView({ behavior: "auto", block: "start" });
             return;
           }
+          var launchMatch = h.match(/^#\/launch\/([a-z0-9-]+)$/);
+          if (launchMatch) {
+            showRoute("launch", "none");
+            var launchSection = document.getElementById("launch-" + launchMatch[1]);
+            if (launchSection) launchSection.scrollIntoView({ behavior: "auto", block: "start" });
+            return;
+          }
+          var benefitMatch = h.match(/^#\/benefit\/(github-pack|unidays|sheerid|in-store|online)\/([a-z0-9-]+)$/);
+          if (benefitMatch) {
+            var page = benefitMatch[1], id = page + ":" + benefitMatch[2];
+            showRoute(page, "none");
+            var selector = '[data-card-id="' + (window.CSS && CSS.escape ? CSS.escape(id) : id) + '"]';
+            var card = document.querySelector('[data-view="' + page + '"] ' + selector);
+            if (card) {
+              card.scrollIntoView({ behavior: (window.SBC && SBC.reducedMotion()) ? "auto" : "smooth", block: "center" });
+              card.classList.remove("flash-card"); void card.offsetWidth; card.classList.add("flash-card");
+              setTimeout(function () { card.classList.remove("flash-card"); }, 1800);
+              document.title = (window.SBC && SBC.recordById[id] ? SBC.recordById[id].name + " | " : "") + "Student Benefits Catalogue";
+            } else window.scrollTo({ top: 0, behavior: "auto" });
+            return;
+          }
           var route = Object.prototype.hasOwnProperty.call(ROUTES, h) ? ROUTES[h] : "home";
           showRoute(route, initial ? "none" : "top");
         }
@@ -3192,7 +3506,7 @@ Warmly,
             var text = ta.value;
             var done = function () {
               var old = btn.textContent;
-              btn.textContent = "Copied ✓ — replace the [BRACKETS]";
+              btn.textContent = "Copied — replace the [BRACKETS]";
               setTimeout(function () { btn.textContent = old; }, 2200);
             };
             if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -3226,7 +3540,7 @@ Warmly,
             var text = btn.getAttribute('data-copy');
             var done = function () {
               var old = btn.textContent;
-              btn.textContent = 'Copied ✓';
+              btn.textContent = 'Copied';
               setTimeout(function () { btn.textContent = old; }, 1600);
             };
             if (navigator.clipboard && navigator.clipboard.writeText) {
